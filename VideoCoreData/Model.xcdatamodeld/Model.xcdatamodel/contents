@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E252" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Split" representedClassName="Split" syncable="YES" codeGenerationType="class">
+    <entity name="Split" representedClassName="Split" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="uebung" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Uebung" inverseName="split" inverseEntity="Uebung"/>
+    </entity>
+    <entity name="Uebung" representedClassName="Uebung" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="split" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Split" inverseName="uebung" inverseEntity="Split"/>
     </entity>
 </model>
