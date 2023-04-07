@@ -11,6 +11,7 @@ import SwiftUI
 struct VideoCoreDataApp: App {
     
     @StateObject private var dataController = DataController(name: "Model")
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

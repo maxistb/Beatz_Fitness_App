@@ -19,6 +19,7 @@ class ÜbungsViewModel: ObservableObject {
 
     func fetchData() {
         let request = NSFetchRequest<Uebung>(entityName: "Uebung")
+        request.predicate = NSPredicate(format: "split == %@", split)
         request.sortDescriptors = [
             NSSortDescriptor(key: "name", ascending: true)
         ]
@@ -48,6 +49,5 @@ class ÜbungsViewModel: ObservableObject {
         save()
         fetchData()
     }
-
 }
 

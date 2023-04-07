@@ -17,7 +17,9 @@ class SplitViewModel: ObservableObject {
     
     func fetchData() {
         let request = NSFetchRequest<Split>(entityName: "Split")
-        request.sortDescriptors = [            NSSortDescriptor(key: "name", ascending: true)]
+        request.sortDescriptors = [
+            NSSortDescriptor(key: "name", ascending: true)
+        ]
         do {
             splits = try dataController.container.viewContext.fetch(request)
         } catch {

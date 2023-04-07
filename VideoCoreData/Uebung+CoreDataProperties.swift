@@ -2,7 +2,7 @@
 //  Uebung+CoreDataProperties.swift
 //  VideoCoreData
 //
-//  Created by Maximillian Stabe on 05.04.23.
+//  Created by Maximillian Stabe on 07.04.23.
 //
 //
 
@@ -18,6 +18,7 @@ extension Uebung {
 
     @NSManaged public var name: String?
     @NSManaged public var id: UUID?
+    @NSManaged public var origin: Split?
 
 }
 
