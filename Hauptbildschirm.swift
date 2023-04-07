@@ -14,7 +14,7 @@ struct Hauptbildschirm: View {
             TrainingssplitView()
                 .tabItem {
                     Image(systemName: "list.dash")
-                    Text("Trainingssplit")
+                    Text("Trainingspläne")
                     
                 }
             FortschritteView()

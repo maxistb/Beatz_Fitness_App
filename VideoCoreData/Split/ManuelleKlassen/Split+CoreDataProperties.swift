@@ -18,8 +18,9 @@ extension Split {
 
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
+    @NSManaged public var order: Int64
     @NSManaged public var uebung: NSSet?
-    
+
     var getUebungen: [Uebung] {
         get {
             return uebung?.allObjects as? [Uebung] ?? []

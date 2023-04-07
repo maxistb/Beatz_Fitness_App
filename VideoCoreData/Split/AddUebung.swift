@@ -1,5 +1,5 @@
 //
-//  SplitDetail.swift
+//  AddUebung.swift
 //  VideoCoreData
 //
 //  Created by Maximillian Stabe on 07.04.23.
@@ -7,36 +7,11 @@
 
 import SwiftUI
 
-struct SplitDetail: View {
-    @Environment(\.managedObjectContext) var moc
-    @StateObject var split: Split
-    @State private var name = ""
-    
-    var body: some View {
-        VStack {
-            List(split.getUebungen) { uebung in
-                HStack {
-                    Text(uebung.name ?? "Error")
-                    Text("\(uebung.saetze) Sätze")
-                        .foregroundColor(.gray)
-                        .font(.footnote)
-                }
-            }
-            .navigationBarTitle(Text(split.name ?? "Error"))
-            .navigationBarItems(trailing:
-                NavigationLink(destination: AddUebungView(split: split)) {
-                    Image(systemName: "plus")
-                }
-            )
-        }
-    }
-}
-
 struct AddUebungView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
     @State private var name = ""
-    @State private var saetze = 0
+    @State private var saetze = 1
     var split: Split
     
     var body: some View {
@@ -46,7 +21,7 @@ struct AddUebungView: View {
             
             HStack {
                 Text("Sätze:")
-                Stepper(value: $saetze, in: 0...20) {
+                Stepper(value: $saetze, in: 1...20) {
                     Text("\(saetze)")
                 }
             }
@@ -61,7 +36,7 @@ struct AddUebungView: View {
                 
                 try? moc.save()
                 name = ""
-                saetze = 0
+                saetze = 1
                 presentationMode.wrappedValue.dismiss()
             }
             .padding()
@@ -73,7 +48,3 @@ struct AddUebungView: View {
         .navigationBarTitle("Übung hinzufügen")
     }
 }
-
-
-
-
