@@ -14,7 +14,7 @@ struct VideoCoreDataApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplitView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }

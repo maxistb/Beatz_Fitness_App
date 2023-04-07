@@ -8,12 +8,11 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct SplitView: View {
     
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var splits: FetchedResults<Split>
     @State private var name = ""
-    @State private var showingAddSplitView = false
     
     var body: some View {
         NavigationView {
@@ -29,22 +28,14 @@ struct ContentView: View {
                 .padding()
                 .listStyle(InsetListStyle())
                 .navigationBarTitle("Trainingspläne")
-                .navigationBarItems(trailing: addButton)
+                .navigationBarItems(trailing:
+                                        NavigationLink(destination: AddSplitView(name: $name)) {
+                    Image(systemName: "plus")
+                }
+                )
             }
         }
-        .sheet(isPresented: $showingAddSplitView, content: {
-            AddSplitView(name: $name, moc: _moc, showingAddSplitView: $showingAddSplitView)
-        })
     }
-    
-    var addButton: some View {
-        Button(action: {
-            showingAddSplitView = true
-        }) {
-            Image(systemName: "plus")
-        }
-    }
-    
     
     func deleteItems(at offsets: IndexSet) {
         for offset in offsets {
@@ -57,10 +48,9 @@ struct ContentView: View {
 
 
 struct AddSplitView: View {
-    
     @Binding var name: String
     @Environment(\.managedObjectContext) var moc
-    @Binding var showingAddSplitView: Bool
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -74,7 +64,6 @@ struct AddSplitView: View {
                     
                     try? moc.save()
                     name = ""
-                    showingAddSplitView = false
                 }
                 .padding()
                 .frame(width: 170)
@@ -83,18 +72,25 @@ struct AddSplitView: View {
                 .cornerRadius(15.0)
                 .padding()
             }
-            .navigationBarTitle("Split hinzufügen")
-            .navigationBarItems(trailing: Button(action: {
-                showingAddSplitView = false
-            }) {
-                Text("Abbrechen")
-            })
+            
         }
+        .navigationBarTitle("Split hinzufügen")
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading:
+                                Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+                Image(systemName: "chevron.left")
+                Text("Trainingspläne")
+            }
+        }
+        )
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+       SplitView()
     }
 }

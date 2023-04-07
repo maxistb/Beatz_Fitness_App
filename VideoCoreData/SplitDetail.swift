@@ -11,7 +11,6 @@ struct SplitDetail: View {
     @Environment(\.managedObjectContext) var moc
     @StateObject var split: Split
     @State private var name = ""
-    @State private var showingAddUebungView = false
     
     var body: some View {
         VStack {
@@ -25,15 +24,10 @@ struct SplitDetail: View {
             }
             .navigationBarTitle(Text(split.name ?? "Error"))
             .navigationBarItems(trailing:
-                Button(action: {
-                    showingAddUebungView = true
-                }) {
+                NavigationLink(destination: AddUebungView(split: split)) {
                     Image(systemName: "plus")
                 }
             )
-        }
-        .sheet(isPresented: $showingAddUebungView) {
-            AddUebungView(split: split, showingAddUebungView: $showingAddUebungView)
         }
     }
 }
@@ -44,7 +38,6 @@ struct AddUebungView: View {
     @State private var name = ""
     @State private var saetze = 0
     var split: Split
-    @Binding var showingAddUebungView: Bool
     
     var body: some View {
         VStack {
@@ -69,7 +62,7 @@ struct AddUebungView: View {
                 try? moc.save()
                 name = ""
                 saetze = 0
-                showingAddUebungView = false
+                presentationMode.wrappedValue.dismiss()
             }
             .padding()
             .foregroundColor(.white)
@@ -78,13 +71,9 @@ struct AddUebungView: View {
             .padding()
         }
         .navigationBarTitle("Übung hinzufügen")
-        .navigationBarItems(trailing: Button(action: {
-            showingAddUebungView = false
-        }) {
-            Text("Abbrechen")
-        })
     }
 }
+
 
 
 
