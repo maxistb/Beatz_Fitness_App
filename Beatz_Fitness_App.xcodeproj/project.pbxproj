@@ -18,6 +18,11 @@
 		7AEC63CC29E0316500C8A8F3 /* Uebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63C829E0316500C8A8F3 /* Uebung+CoreDataProperties.swift */; };
 		7AEC63CD29E0316500C8A8F3 /* Split+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63C929E0316500C8A8F3 /* Split+CoreDataClass.swift */; };
 		7AEC63CE29E0316500C8A8F3 /* Split+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63CA29E0316500C8A8F3 /* Split+CoreDataProperties.swift */; };
+		7AEE657B29E05B330064ED8A /* Hauptbildschirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE657A29E05B330064ED8A /* Hauptbildschirm.swift */; };
+		7AEE657D29E05BB00064ED8A /* Kursplan_Daten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE657C29E05BB00064ED8A /* Kursplan_Daten.swift */; };
+		7AEE657F29E05BBC0064ED8A /* Kursplan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE657E29E05BBC0064ED8A /* Kursplan.swift */; };
+		7AEE658129E05BE10064ED8A /* Trainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE658029E05BE10064ED8A /* Trainer.swift */; };
+		7AEE658329E05BEE0064ED8A /* Diagramme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE658229E05BEE0064ED8A /* Diagramme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +38,11 @@
 		7AEC63C829E0316500C8A8F3 /* Uebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7AEC63C929E0316500C8A8F3 /* Split+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7AEC63CA29E0316500C8A8F3 /* Split+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7AEE657A29E05B330064ED8A /* Hauptbildschirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hauptbildschirm.swift; sourceTree = "<group>"; };
+		7AEE657C29E05BB00064ED8A /* Kursplan_Daten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kursplan_Daten.swift; sourceTree = "<group>"; };
+		7AEE657E29E05BBC0064ED8A /* Kursplan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kursplan.swift; sourceTree = "<group>"; };
+		7AEE658029E05BE10064ED8A /* Trainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trainer.swift; sourceTree = "<group>"; };
+		7AEE658229E05BEE0064ED8A /* Diagramme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagramme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +59,11 @@
 		7AEC637829DD81DE00C8A8F3 = {
 			isa = PBXGroup;
 			children = (
+				7AEE658229E05BEE0064ED8A /* Diagramme.swift */,
+				7AEE658029E05BE10064ED8A /* Trainer.swift */,
+				7AEE657E29E05BBC0064ED8A /* Kursplan.swift */,
+				7AEE657C29E05BB00064ED8A /* Kursplan_Daten.swift */,
+				7AEE657A29E05B330064ED8A /* Hauptbildschirm.swift */,
 				7AEC638429DD81DE00C8A8F3 /* VideoCoreDataApp.swift */,
 				7AEC638329DD81DE00C8A8F3 /* VideoCoreData */,
 				7AEC638229DD81DE00C8A8F3 /* Products */,
@@ -131,7 +146,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7AEC637C29DD81DE00C8A8F3 /* Build configuration list for PBXProject "VideoCoreData" */;
+			buildConfigurationList = 7AEC637C29DD81DE00C8A8F3 /* Build configuration list for PBXProject "Beatz_Fitness_App" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -167,14 +182,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AEC63CC29E0316500C8A8F3 /* Uebung+CoreDataProperties.swift in Sources */,
+				7AEE657F29E05BBC0064ED8A /* Kursplan.swift in Sources */,
 				7AEC638729DD81DE00C8A8F3 /* SplitView.swift in Sources */,
+				7AEE657D29E05BB00064ED8A /* Kursplan_Daten.swift in Sources */,
 				7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */,
+				7AEE658129E05BE10064ED8A /* Trainer.swift in Sources */,
 				7AEC638529DD81DE00C8A8F3 /* VideoCoreDataApp.swift in Sources */,
 				7AEC63CD29E0316500C8A8F3 /* Split+CoreDataClass.swift in Sources */,
 				7AEC63CE29E0316500C8A8F3 /* Split+CoreDataProperties.swift in Sources */,
 				7AEC63CB29E0316500C8A8F3 /* Uebung+CoreDataClass.swift in Sources */,
 				7AEC639429DD820E00C8A8F3 /* Model.xcdatamodeld in Sources */,
 				7AEC63B229E014BE00C8A8F3 /* SplitDetail.swift in Sources */,
+				7AEE657B29E05B330064ED8A /* Hauptbildschirm.swift in Sources */,
+				7AEE658329E05BEE0064ED8A /* Diagramme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +331,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,6 +361,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,7 +378,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7AEC637C29DD81DE00C8A8F3 /* Build configuration list for PBXProject "VideoCoreData" */ = {
+		7AEC637C29DD81DE00C8A8F3 /* Build configuration list for PBXProject "Beatz_Fitness_App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7AEC638D29DD81E000C8A8F3 /* Debug */,
