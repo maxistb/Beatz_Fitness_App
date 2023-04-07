@@ -13,6 +13,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var splits: FetchedResults<Split>
     @State private var name = ""
+    @State private var showingAddSplitView = false
     
     var body: some View {
         NavigationView {
@@ -25,22 +26,26 @@ struct ContentView: View {
                     }
                     .onDelete(perform: deleteItems)
                 }
-                HStack {
-                    TextField("Add Split", text: $name)
-                        .padding(.leading)
-                    Button("Add") {
-                        let neuerSplit = Split(context: moc)
-                        neuerSplit.id = UUID()
-                        neuerSplit.name = name
-                        
-                        try? moc.save()
-                        name = ""
-                    }
-                }
+                .padding()
+                .listStyle(InsetListStyle())
+                .navigationBarTitle("Trainingspläne")
+                .navigationBarItems(trailing: addButton)
             }
-            .padding()
+        }
+        .sheet(isPresented: $showingAddSplitView, content: {
+            AddSplitView(name: $name, moc: _moc, showingAddSplitView: $showingAddSplitView)
+        })
+    }
+    
+    var addButton: some View {
+        Button(action: {
+            showingAddSplitView = true
+        }) {
+            Image(systemName: "plus")
         }
     }
+    
+    
     func deleteItems(at offsets: IndexSet) {
         for offset in offsets {
             let split = splits[offset]
@@ -50,34 +55,40 @@ struct ContentView: View {
     }
 }
 
-struct SplitDetail: View {
+
+struct AddSplitView: View {
+    
+    @Binding var name: String
     @Environment(\.managedObjectContext) var moc
-    @StateObject var split: Split
-    @State private var name = ""
+    @Binding var showingAddSplitView: Bool
     
     var body: some View {
-        VStack {
-            List(split.getUebungen) {uebungen in
-                HStack {
-                    Text(uebungen.name ?? "Error")
-                }
-            }
-            
-            HStack {
-                TextField("Add Uebung", text: $name)
-                    .padding(.leading)
-                Button("Add") {
-                    let neueUebung = Uebung(context: moc)
-                    neueUebung.id = UUID()
-                    neueUebung.name = name
-                    split.addToUebung(neueUebung)
+        NavigationView {
+            VStack {
+                TextField("Split Name", text: $name)
+                    .padding()
+                Button("Speichern") {
+                    let neuerSplit = Split(context: moc)
+                    neuerSplit.id = UUID()
+                    neuerSplit.name = name
                     
                     try? moc.save()
                     name = ""
+                    showingAddSplitView = false
                 }
-                .padding(.trailing)
+                .padding()
+                .frame(width: 170)
+                .foregroundColor(.white)
+                .background(Color.blue)
+                .cornerRadius(15.0)
+                .padding()
             }
-            .padding()
+            .navigationBarTitle("Split hinzufügen")
+            .navigationBarItems(trailing: Button(action: {
+                showingAddSplitView = false
+            }) {
+                Text("Abbrechen")
+            })
         }
     }
 }

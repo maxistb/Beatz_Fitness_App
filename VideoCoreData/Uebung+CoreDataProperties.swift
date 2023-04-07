@@ -18,6 +18,7 @@ extension Uebung {
 
     @NSManaged public var name: String?
     @NSManaged public var id: UUID?
+    @NSManaged public var saetze: Int64
     @NSManaged public var origin: Split?
 
 }
