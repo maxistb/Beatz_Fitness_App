@@ -13,9 +13,6 @@
 		7AEC638C29DD81E000C8A8F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC638B29DD81E000C8A8F3 /* Preview Assets.xcassets */; };
 		7AEC639429DD820E00C8A8F3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC639229DD820E00C8A8F3 /* Model.xcdatamodeld */; };
 		7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC639529DD824B00C8A8F3 /* DataController.swift */; };
-		7AEC63A429DE03FF00C8A8F3 /* SplitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63A329DE03FF00C8A8F3 /* SplitViewModel.swift */; };
-		7AEC63A629DE04B400C8A8F3 /* ÜbungsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63A529DE04B400C8A8F3 /* ÜbungsViewModel.swift */; };
-		7AEC63A829DE08A100C8A8F3 /* ÜbungsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63A729DE08A100C8A8F3 /* ÜbungsView.swift */; };
 		7AEC63AD29E00B6800C8A8F3 /* Uebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63A929E00B6800C8A8F3 /* Uebung+CoreDataClass.swift */; };
 		7AEC63AE29E00B6800C8A8F3 /* Uebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63AA29E00B6800C8A8F3 /* Uebung+CoreDataProperties.swift */; };
 		7AEC63AF29E00B6800C8A8F3 /* Split+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63AB29E00B6800C8A8F3 /* Split+CoreDataClass.swift */; };
@@ -30,9 +27,6 @@
 		7AEC638B29DD81E000C8A8F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AEC639329DD820E00C8A8F3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7AEC639529DD824B00C8A8F3 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		7AEC63A329DE03FF00C8A8F3 /* SplitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewModel.swift; sourceTree = "<group>"; };
-		7AEC63A529DE04B400C8A8F3 /* ÜbungsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ÜbungsViewModel.swift"; sourceTree = "<group>"; };
-		7AEC63A729DE08A100C8A8F3 /* ÜbungsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ÜbungsView.swift"; sourceTree = "<group>"; };
 		7AEC63A929E00B6800C8A8F3 /* Uebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7AEC63AA29E00B6800C8A8F3 /* Uebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7AEC63AB29E00B6800C8A8F3 /* Split+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -73,10 +67,7 @@
 				7AEC63AA29E00B6800C8A8F3 /* Uebung+CoreDataProperties.swift */,
 				7AEC63AB29E00B6800C8A8F3 /* Split+CoreDataClass.swift */,
 				7AEC63AC29E00B6800C8A8F3 /* Split+CoreDataProperties.swift */,
-				7AEC63A329DE03FF00C8A8F3 /* SplitViewModel.swift */,
-				7AEC63A529DE04B400C8A8F3 /* ÜbungsViewModel.swift */,
 				7AEC638629DD81DE00C8A8F3 /* ContentView.swift */,
-				7AEC63A729DE08A100C8A8F3 /* ÜbungsView.swift */,
 				7AEC639529DD824B00C8A8F3 /* DataController.swift */,
 				7AEC638429DD81DE00C8A8F3 /* VideoCoreDataApp.swift */,
 				7AEC639229DD820E00C8A8F3 /* Model.xcdatamodeld */,
@@ -164,7 +155,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AEC63A429DE03FF00C8A8F3 /* SplitViewModel.swift in Sources */,
 				7AEC638729DD81DE00C8A8F3 /* ContentView.swift in Sources */,
 				7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */,
 				7AEC638529DD81DE00C8A8F3 /* VideoCoreDataApp.swift in Sources */,
@@ -172,8 +162,6 @@
 				7AEC63B029E00B6800C8A8F3 /* Split+CoreDataProperties.swift in Sources */,
 				7AEC63AE29E00B6800C8A8F3 /* Uebung+CoreDataProperties.swift in Sources */,
 				7AEC63AF29E00B6800C8A8F3 /* Split+CoreDataClass.swift in Sources */,
-				7AEC63A829DE08A100C8A8F3 /* ÜbungsView.swift in Sources */,
-				7AEC63A629DE04B400C8A8F3 /* ÜbungsViewModel.swift in Sources */,
 				7AEC63AD29E00B6800C8A8F3 /* Uebung+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

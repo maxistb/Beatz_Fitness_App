@@ -3,7 +3,7 @@
     <entity name="Split" representedClassName="Split" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="uebung" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Uebung" inverseName="origin" inverseEntity="Uebung"/>
+        <relationship name="uebung" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Uebung" inverseName="origin" inverseEntity="Uebung"/>
     </entity>
     <entity name="Uebung" representedClassName="Uebung" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
