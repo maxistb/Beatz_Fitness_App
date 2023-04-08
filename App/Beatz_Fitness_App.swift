@@ -8,13 +8,13 @@
 import SwiftUI
 
 @main
-struct VideoCoreDataApp: App {
+struct Beatz_Fitness_App: App {
     
     @StateObject private var dataController = DataController(name: "Model")
     
     var body: some Scene {
         WindowGroup {
-            SplitView()
+            Hauptbildschirm()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }

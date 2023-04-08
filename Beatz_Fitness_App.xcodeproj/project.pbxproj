@@ -7,32 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7AEC638529DD81DE00C8A8F3 /* VideoCoreDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC638429DD81DE00C8A8F3 /* VideoCoreDataApp.swift */; };
+		7A746B9D29E0863400EF54C7 /* AddSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746B9C29E0863400EF54C7 /* AddSplitView.swift */; };
+		7A746B9F29E0878400EF54C7 /* AddUebung.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746B9E29E0878400EF54C7 /* AddUebung.swift */; };
+		7A746BA429E0886400EF54C7 /* Split+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA029E0886400EF54C7 /* Split+CoreDataClass.swift */; };
+		7A746BA529E0886400EF54C7 /* Split+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA129E0886400EF54C7 /* Split+CoreDataProperties.swift */; };
+		7A746BA629E0886400EF54C7 /* Uebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA229E0886400EF54C7 /* Uebung+CoreDataClass.swift */; };
+		7A746BA729E0886400EF54C7 /* Uebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA329E0886400EF54C7 /* Uebung+CoreDataProperties.swift */; };
+		7A746BA929E09CEA00EF54C7 /* Startbildschirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA829E09CEA00EF54C7 /* Startbildschirm.swift */; };
+		7A746BAC29E17B7C00EF54C7 /* UebungListBeatz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BAB29E17B7C00EF54C7 /* UebungListBeatz.swift */; };
+		7AEC638529DD81DE00C8A8F3 /* Beatz_Fitness_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC638429DD81DE00C8A8F3 /* Beatz_Fitness_App.swift */; };
 		7AEC638729DD81DE00C8A8F3 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC638629DD81DE00C8A8F3 /* SplitView.swift */; };
 		7AEC638929DD81E000C8A8F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC638829DD81E000C8A8F3 /* Assets.xcassets */; };
 		7AEC638C29DD81E000C8A8F3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC638B29DD81E000C8A8F3 /* Preview Assets.xcassets */; };
 		7AEC639429DD820E00C8A8F3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC639229DD820E00C8A8F3 /* Model.xcdatamodeld */; };
 		7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC639529DD824B00C8A8F3 /* DataController.swift */; };
-		7AEC63B229E014BE00C8A8F3 /* SplitDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63B129E014BE00C8A8F3 /* SplitDetail.swift */; };
-		7AEC63CB29E0316500C8A8F3 /* Uebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63C729E0316500C8A8F3 /* Uebung+CoreDataClass.swift */; };
-		7AEC63CC29E0316500C8A8F3 /* Uebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63C829E0316500C8A8F3 /* Uebung+CoreDataProperties.swift */; };
-		7AEC63CD29E0316500C8A8F3 /* Split+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63C929E0316500C8A8F3 /* Split+CoreDataClass.swift */; };
-		7AEC63CE29E0316500C8A8F3 /* Split+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63CA29E0316500C8A8F3 /* Split+CoreDataProperties.swift */; };
+		7AEC63B229E014BE00C8A8F3 /* UebungView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63B129E014BE00C8A8F3 /* UebungView.swift */; };
+		7AEE657B29E05B330064ED8A /* Hauptbildschirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE657A29E05B330064ED8A /* Hauptbildschirm.swift */; };
+		7AEE657D29E05BB00064ED8A /* Kursplan_Daten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE657C29E05BB00064ED8A /* Kursplan_Daten.swift */; };
+		7AEE657F29E05BBC0064ED8A /* Kursplan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE657E29E05BBC0064ED8A /* Kursplan.swift */; };
+		7AEE658129E05BE10064ED8A /* Trainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE658029E05BE10064ED8A /* Trainer.swift */; };
+		7AEE658329E05BEE0064ED8A /* Diagramme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE658229E05BEE0064ED8A /* Diagramme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A746B9C29E0863400EF54C7 /* AddSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSplitView.swift; sourceTree = "<group>"; };
+		7A746B9E29E0878400EF54C7 /* AddUebung.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUebung.swift; sourceTree = "<group>"; };
+		7A746BA029E0886400EF54C7 /* Split+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A746BA129E0886400EF54C7 /* Split+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A746BA229E0886400EF54C7 /* Uebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A746BA329E0886400EF54C7 /* Uebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A746BA829E09CEA00EF54C7 /* Startbildschirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Startbildschirm.swift; sourceTree = "<group>"; };
+		7A746BAB29E17B7C00EF54C7 /* UebungListBeatz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UebungListBeatz.swift; sourceTree = "<group>"; };
 		7AEC638129DD81DE00C8A8F3 /* VideoCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AEC638429DD81DE00C8A8F3 /* VideoCoreDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCoreDataApp.swift; sourceTree = "<group>"; };
+		7AEC638429DD81DE00C8A8F3 /* Beatz_Fitness_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beatz_Fitness_App.swift; sourceTree = "<group>"; };
 		7AEC638629DD81DE00C8A8F3 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		7AEC638829DD81E000C8A8F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AEC638B29DD81E000C8A8F3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AEC639329DD820E00C8A8F3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		7AEC639529DD824B00C8A8F3 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		7AEC63B129E014BE00C8A8F3 /* SplitDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitDetail.swift; sourceTree = "<group>"; };
-		7AEC63C729E0316500C8A8F3 /* Uebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7AEC63C829E0316500C8A8F3 /* Uebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7AEC63C929E0316500C8A8F3 /* Split+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7AEC63CA29E0316500C8A8F3 /* Split+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7AEC63B129E014BE00C8A8F3 /* UebungView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UebungView.swift; sourceTree = "<group>"; };
+		7AEE657A29E05B330064ED8A /* Hauptbildschirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hauptbildschirm.swift; sourceTree = "<group>"; };
+		7AEE657C29E05BB00064ED8A /* Kursplan_Daten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kursplan_Daten.swift; sourceTree = "<group>"; };
+		7AEE657E29E05BBC0064ED8A /* Kursplan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kursplan.swift; sourceTree = "<group>"; };
+		7AEE658029E05BE10064ED8A /* Trainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trainer.swift; sourceTree = "<group>"; };
+		7AEE658229E05BEE0064ED8A /* Diagramme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagramme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,11 +64,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A746B9829E05DB000EF54C7 /* Kursplan */ = {
+			isa = PBXGroup;
+			children = (
+				7AEE657E29E05BBC0064ED8A /* Kursplan.swift */,
+				7AEE657C29E05BB00064ED8A /* Kursplan_Daten.swift */,
+			);
+			path = Kursplan;
+			sourceTree = "<group>";
+		};
+		7A746B9929E05DD600EF54C7 /* Split */ = {
+			isa = PBXGroup;
+			children = (
+				7AEC63BF29E02F3D00C8A8F3 /* ManuelleKlassen */,
+				7AEC638629DD81DE00C8A8F3 /* SplitView.swift */,
+				7A746B9C29E0863400EF54C7 /* AddSplitView.swift */,
+				7AEC63B129E014BE00C8A8F3 /* UebungView.swift */,
+				7A746B9E29E0878400EF54C7 /* AddUebung.swift */,
+				7A746BAB29E17B7C00EF54C7 /* UebungListBeatz.swift */,
+				7AEC639529DD824B00C8A8F3 /* DataController.swift */,
+				7AEC639229DD820E00C8A8F3 /* Model.xcdatamodeld */,
+			);
+			path = Split;
+			sourceTree = "<group>";
+		};
+		7A746BAA29E09D7600EF54C7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				7AEC638429DD81DE00C8A8F3 /* Beatz_Fitness_App.swift */,
+				7A746BA829E09CEA00EF54C7 /* Startbildschirm.swift */,
+				7AEE657A29E05B330064ED8A /* Hauptbildschirm.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		7AEC637829DD81DE00C8A8F3 = {
 			isa = PBXGroup;
 			children = (
-				7AEC638429DD81DE00C8A8F3 /* VideoCoreDataApp.swift */,
-				7AEC638329DD81DE00C8A8F3 /* VideoCoreData */,
+				7A746BAA29E09D7600EF54C7 /* App */,
+				7AEC638329DD81DE00C8A8F3 /* Beatz_Fitness_App */,
 				7AEC638229DD81DE00C8A8F3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,18 +115,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7AEC638329DD81DE00C8A8F3 /* VideoCoreData */ = {
+		7AEC638329DD81DE00C8A8F3 /* Beatz_Fitness_App */ = {
 			isa = PBXGroup;
 			children = (
-				7AEC63BF29E02F3D00C8A8F3 /* ManuelleKlassen */,
-				7AEC638629DD81DE00C8A8F3 /* SplitView.swift */,
-				7AEC63B129E014BE00C8A8F3 /* SplitDetail.swift */,
-				7AEC639529DD824B00C8A8F3 /* DataController.swift */,
-				7AEC639229DD820E00C8A8F3 /* Model.xcdatamodeld */,
+				7A746B9829E05DB000EF54C7 /* Kursplan */,
+				7A746B9929E05DD600EF54C7 /* Split */,
+				7AEE658229E05BEE0064ED8A /* Diagramme.swift */,
+				7AEE658029E05BE10064ED8A /* Trainer.swift */,
 				7AEC638829DD81E000C8A8F3 /* Assets.xcassets */,
 				7AEC638A29DD81E000C8A8F3 /* Preview Content */,
 			);
-			path = VideoCoreData;
+			path = Beatz_Fitness_App;
 			sourceTree = "<group>";
 		};
 		7AEC638A29DD81E000C8A8F3 /* Preview Content */ = {
@@ -88,10 +139,10 @@
 		7AEC63BF29E02F3D00C8A8F3 /* ManuelleKlassen */ = {
 			isa = PBXGroup;
 			children = (
-				7AEC63C729E0316500C8A8F3 /* Uebung+CoreDataClass.swift */,
-				7AEC63C829E0316500C8A8F3 /* Uebung+CoreDataProperties.swift */,
-				7AEC63C929E0316500C8A8F3 /* Split+CoreDataClass.swift */,
-				7AEC63CA29E0316500C8A8F3 /* Split+CoreDataProperties.swift */,
+				7A746BA029E0886400EF54C7 /* Split+CoreDataClass.swift */,
+				7A746BA129E0886400EF54C7 /* Split+CoreDataProperties.swift */,
+				7A746BA229E0886400EF54C7 /* Uebung+CoreDataClass.swift */,
+				7A746BA329E0886400EF54C7 /* Uebung+CoreDataProperties.swift */,
 			);
 			path = ManuelleKlassen;
 			sourceTree = "<group>";
@@ -131,7 +182,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7AEC637C29DD81DE00C8A8F3 /* Build configuration list for PBXProject "VideoCoreData" */;
+			buildConfigurationList = 7AEC637C29DD81DE00C8A8F3 /* Build configuration list for PBXProject "Beatz_Fitness_App" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -166,15 +217,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AEC63CC29E0316500C8A8F3 /* Uebung+CoreDataProperties.swift in Sources */,
+				7AEE657F29E05BBC0064ED8A /* Kursplan.swift in Sources */,
+				7A746BA929E09CEA00EF54C7 /* Startbildschirm.swift in Sources */,
 				7AEC638729DD81DE00C8A8F3 /* SplitView.swift in Sources */,
+				7AEE657D29E05BB00064ED8A /* Kursplan_Daten.swift in Sources */,
 				7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */,
-				7AEC638529DD81DE00C8A8F3 /* VideoCoreDataApp.swift in Sources */,
-				7AEC63CD29E0316500C8A8F3 /* Split+CoreDataClass.swift in Sources */,
-				7AEC63CE29E0316500C8A8F3 /* Split+CoreDataProperties.swift in Sources */,
-				7AEC63CB29E0316500C8A8F3 /* Uebung+CoreDataClass.swift in Sources */,
+				7AEE658129E05BE10064ED8A /* Trainer.swift in Sources */,
+				7A746BA729E0886400EF54C7 /* Uebung+CoreDataProperties.swift in Sources */,
+				7AEC638529DD81DE00C8A8F3 /* Beatz_Fitness_App.swift in Sources */,
 				7AEC639429DD820E00C8A8F3 /* Model.xcdatamodeld in Sources */,
-				7AEC63B229E014BE00C8A8F3 /* SplitDetail.swift in Sources */,
+				7A746B9F29E0878400EF54C7 /* AddUebung.swift in Sources */,
+				7A746BAC29E17B7C00EF54C7 /* UebungListBeatz.swift in Sources */,
+				7AEC63B229E014BE00C8A8F3 /* UebungView.swift in Sources */,
+				7A746B9D29E0863400EF54C7 /* AddSplitView.swift in Sources */,
+				7A746BA529E0886400EF54C7 /* Split+CoreDataProperties.swift in Sources */,
+				7AEE657B29E05B330064ED8A /* Hauptbildschirm.swift in Sources */,
+				7A746BA429E0886400EF54C7 /* Split+CoreDataClass.swift in Sources */,
+				7AEE658329E05BEE0064ED8A /* Diagramme.swift in Sources */,
+				7A746BA629E0886400EF54C7 /* Uebung+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +362,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"VideoCoreData/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Beatz_Fitness_App/Preview Content\"";
 				DEVELOPMENT_TEAM = 9RY44N87S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -311,6 +371,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -331,7 +392,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"VideoCoreData/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Beatz_Fitness_App/Preview Content\"";
 				DEVELOPMENT_TEAM = 9RY44N87S7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -340,6 +401,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,7 +418,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7AEC637C29DD81DE00C8A8F3 /* Build configuration list for PBXProject "VideoCoreData" */ = {
+		7AEC637C29DD81DE00C8A8F3 /* Build configuration list for PBXProject "Beatz_Fitness_App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7AEC638D29DD81E000C8A8F3 /* Debug */,
