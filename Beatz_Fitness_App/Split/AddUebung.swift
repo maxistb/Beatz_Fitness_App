@@ -48,3 +48,10 @@ struct AddUebungView: View {
         .navigationBarTitle("Übung hinzufügen")
     }
 }
+
+
+struct UebungPreview: PreviewProvider {
+    static var previews: some View {
+    SplitView()
+    }
+}

@@ -22,6 +22,7 @@ struct UebungView: View {
                         .font(.footnote)
                 }
             }
+            
             .navigationBarTitle(Text(split.name ?? "Error"))
             .navigationBarItems(trailing:
                 NavigationLink(destination: AddUebungView(split: split)) {

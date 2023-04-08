@@ -29,6 +29,7 @@ struct SplitView: View {
                 }
                 .padding()
                 .listStyle(InsetListStyle())
+
                 .navigationBarTitle("Trainingspläne")
                 .navigationBarItems(trailing:
                                         NavigationLink(destination:
@@ -55,12 +56,7 @@ struct SplitView: View {
     }
     
     func moveItems(from source: IndexSet, to destination: Int) {
-        var revisedSplits = splits.map { $0 }
-        revisedSplits.move(fromOffsets: source, toOffset: destination)
-        // Update the order attribute for each split after moving
-        for (index, split) in revisedSplits.enumerated() {
-            split.order = Int64(index)
-        }
+        @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Split.order, ascending: true)]) var splits: FetchedResults<Split>
         // Save changes to Core Data
         do {
             try moc.save()

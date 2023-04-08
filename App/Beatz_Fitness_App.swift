@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct VideoCoreDataApp: App {
+struct Beatz_Fitness_App: App {
     
     @StateObject private var dataController = DataController(name: "Model")
     

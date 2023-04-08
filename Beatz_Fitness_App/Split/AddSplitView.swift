@@ -14,9 +14,13 @@ struct AddSplitView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                TextField("Split Name", text: $name)
-                    .padding()
+            ZStack {
+                Form {
+                    Section(header: Text("Name des Trainingsplans")) {
+                        TextField("Name", text: $name)
+                    }
+                }
+                
                 Button("Speichern") {
                     let neuerSplit = Split(context: moc)
                     neuerSplit.id = UUID()
@@ -30,10 +34,9 @@ struct AddSplitView: View {
                 .foregroundColor(.white)
                 .background(Color.blue)
                 .cornerRadius(15.0)
-                .padding()
             }
-            
         }
+        
         .navigationBarTitle("Split hinzufügen")
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading:
@@ -48,3 +51,11 @@ struct AddSplitView: View {
         )
     }
 }
+
+struct AddSplitPreview: PreviewProvider {
+    static var previews: some View {
+        SplitView()
+    }
+}
+
+
