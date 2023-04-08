@@ -40,7 +40,7 @@
 		7A746BA829E09CEA00EF54C7 /* Startbildschirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Startbildschirm.swift; sourceTree = "<group>"; };
 		7A746BAB29E17B7C00EF54C7 /* UebungListBeatz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UebungListBeatz.swift; sourceTree = "<group>"; };
 		7A746BB929E1F5F600EF54C7 /* Einstellungen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Einstellungen.swift; sourceTree = "<group>"; };
-		7AEC638129DD81DE00C8A8F3 /* VideoCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AEC638129DD81DE00C8A8F3 /* Beatz_Fitness_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beatz_Fitness_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AEC638429DD81DE00C8A8F3 /* Beatz_Fitness_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beatz_Fitness_App.swift; sourceTree = "<group>"; };
 		7AEC638629DD81DE00C8A8F3 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
 		7AEC638829DD81E000C8A8F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		7AEC638229DD81DE00C8A8F3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7AEC638129DD81DE00C8A8F3 /* VideoCoreData.app */,
+				7AEC638129DD81DE00C8A8F3 /* Beatz_Fitness_App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,9 +161,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7AEC638029DD81DE00C8A8F3 /* VideoCoreData */ = {
+		7AEC638029DD81DE00C8A8F3 /* Beatz_Fitness_App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7AEC638F29DD81E000C8A8F3 /* Build configuration list for PBXNativeTarget "VideoCoreData" */;
+			buildConfigurationList = 7AEC638F29DD81E000C8A8F3 /* Build configuration list for PBXNativeTarget "Beatz_Fitness_App" */;
 			buildPhases = (
 				7AEC637D29DD81DE00C8A8F3 /* Sources */,
 				7AEC637E29DD81DE00C8A8F3 /* Frameworks */,
@@ -173,9 +173,9 @@
 			);
 			dependencies = (
 			);
-			name = VideoCoreData;
+			name = Beatz_Fitness_App;
 			productName = VideoCoreData;
-			productReference = 7AEC638129DD81DE00C8A8F3 /* VideoCoreData.app */;
+			productReference = 7AEC638129DD81DE00C8A8F3 /* Beatz_Fitness_App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +206,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7AEC638029DD81DE00C8A8F3 /* VideoCoreData */,
+				7AEC638029DD81DE00C8A8F3 /* Beatz_Fitness_App */,
 			);
 		};
 /* End PBXProject section */
@@ -439,7 +439,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7AEC638F29DD81E000C8A8F3 /* Build configuration list for PBXNativeTarget "VideoCoreData" */ = {
+		7AEC638F29DD81E000C8A8F3 /* Build configuration list for PBXNativeTarget "Beatz_Fitness_App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7AEC639029DD81E000C8A8F3 /* Debug */,
