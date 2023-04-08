@@ -46,7 +46,9 @@ struct UebungView: View {
                 }
             }
             .sheet(isPresented: $showAddUebungView) {
-                AddUebungView(split: split)
+                NavigationView {
+                    AddUebungView(split: split)
+                }
                     .navigationTitle("Übung hinzufügen")
             }
             .sheet(isPresented: $showUebungListBeatz) {

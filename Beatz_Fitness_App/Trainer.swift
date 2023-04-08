@@ -58,6 +58,6 @@ struct TrainerListe: View {
 
 struct Trainer_Preview: PreviewProvider {
    static var previews: some View {
-        Hauptbildschirm()
+        TrainerListe()
     }
 }
