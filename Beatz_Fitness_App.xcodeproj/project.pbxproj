@@ -11,11 +11,12 @@
 		7A746B9F29E0878400EF54C7 /* AddUebung.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746B9E29E0878400EF54C7 /* AddUebung.swift */; };
 		7A746BA429E0886400EF54C7 /* Split+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA029E0886400EF54C7 /* Split+CoreDataClass.swift */; };
 		7A746BA529E0886400EF54C7 /* Split+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA129E0886400EF54C7 /* Split+CoreDataProperties.swift */; };
-		7A746BA629E0886400EF54C7 /* Uebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA229E0886400EF54C7 /* Uebung+CoreDataClass.swift */; };
-		7A746BA729E0886400EF54C7 /* Uebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA329E0886400EF54C7 /* Uebung+CoreDataProperties.swift */; };
 		7A746BA929E09CEA00EF54C7 /* Startbildschirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA829E09CEA00EF54C7 /* Startbildschirm.swift */; };
 		7A746BAC29E17B7C00EF54C7 /* UebungListBeatz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BAB29E17B7C00EF54C7 /* UebungListBeatz.swift */; };
 		7A746BBA29E1F5F600EF54C7 /* Einstellungen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BB929E1F5F600EF54C7 /* Einstellungen.swift */; };
+		7A746BBD29E3246E00EF54C7 /* Trainingstagebuch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BBC29E3246E00EF54C7 /* Trainingstagebuch.swift */; };
+		7A746BC029E32DF200EF54C7 /* Uebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BBE29E32DF200EF54C7 /* Uebung+CoreDataClass.swift */; };
+		7A746BC129E32DF200EF54C7 /* Uebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BBF29E32DF200EF54C7 /* Uebung+CoreDataProperties.swift */; };
 		7AEC638529DD81DE00C8A8F3 /* Beatz_Fitness_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC638429DD81DE00C8A8F3 /* Beatz_Fitness_App.swift */; };
 		7AEC638729DD81DE00C8A8F3 /* SplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC638629DD81DE00C8A8F3 /* SplitView.swift */; };
 		7AEC638929DD81E000C8A8F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AEC638829DD81E000C8A8F3 /* Assets.xcassets */; };
@@ -35,11 +36,12 @@
 		7A746B9E29E0878400EF54C7 /* AddUebung.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUebung.swift; sourceTree = "<group>"; };
 		7A746BA029E0886400EF54C7 /* Split+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7A746BA129E0886400EF54C7 /* Split+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7A746BA229E0886400EF54C7 /* Uebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7A746BA329E0886400EF54C7 /* Uebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A746BA829E09CEA00EF54C7 /* Startbildschirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Startbildschirm.swift; sourceTree = "<group>"; };
 		7A746BAB29E17B7C00EF54C7 /* UebungListBeatz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UebungListBeatz.swift; sourceTree = "<group>"; };
 		7A746BB929E1F5F600EF54C7 /* Einstellungen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Einstellungen.swift; sourceTree = "<group>"; };
+		7A746BBC29E3246E00EF54C7 /* Trainingstagebuch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trainingstagebuch.swift; sourceTree = "<group>"; };
+		7A746BBE29E32DF200EF54C7 /* Uebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A746BBF29E32DF200EF54C7 /* Uebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7AEC638129DD81DE00C8A8F3 /* Beatz_Fitness_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beatz_Fitness_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AEC638429DD81DE00C8A8F3 /* Beatz_Fitness_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beatz_Fitness_App.swift; sourceTree = "<group>"; };
 		7AEC638629DD81DE00C8A8F3 /* SplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				7A746BBB29E1F60800EF54C7 /* Einstellungen */,
 				7AEE658029E05BE10064ED8A /* Trainer.swift */,
 				7AEE658229E05BEE0064ED8A /* Diagramme.swift */,
+				7A746BBC29E3246E00EF54C7 /* Trainingstagebuch.swift */,
 				7AEC638829DD81E000C8A8F3 /* Assets.xcassets */,
 				7AEC638A29DD81E000C8A8F3 /* Preview Content */,
 			);
@@ -150,10 +153,10 @@
 		7AEC63BF29E02F3D00C8A8F3 /* ManuelleKlassen */ = {
 			isa = PBXGroup;
 			children = (
+				7A746BBE29E32DF200EF54C7 /* Uebung+CoreDataClass.swift */,
+				7A746BBF29E32DF200EF54C7 /* Uebung+CoreDataProperties.swift */,
 				7A746BA029E0886400EF54C7 /* Split+CoreDataClass.swift */,
 				7A746BA129E0886400EF54C7 /* Split+CoreDataProperties.swift */,
-				7A746BA229E0886400EF54C7 /* Uebung+CoreDataClass.swift */,
-				7A746BA329E0886400EF54C7 /* Uebung+CoreDataProperties.swift */,
 			);
 			path = ManuelleKlassen;
 			sourceTree = "<group>";
@@ -230,11 +233,12 @@
 			files = (
 				7AEE657F29E05BBC0064ED8A /* Kursplan.swift in Sources */,
 				7A746BA929E09CEA00EF54C7 /* Startbildschirm.swift in Sources */,
+				7A746BC029E32DF200EF54C7 /* Uebung+CoreDataClass.swift in Sources */,
 				7AEC638729DD81DE00C8A8F3 /* SplitView.swift in Sources */,
 				7AEE657D29E05BB00064ED8A /* Kursplan_Daten.swift in Sources */,
 				7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */,
 				7AEE658129E05BE10064ED8A /* Trainer.swift in Sources */,
-				7A746BA729E0886400EF54C7 /* Uebung+CoreDataProperties.swift in Sources */,
+				7A746BC129E32DF200EF54C7 /* Uebung+CoreDataProperties.swift in Sources */,
 				7AEC638529DD81DE00C8A8F3 /* Beatz_Fitness_App.swift in Sources */,
 				7AEC639429DD820E00C8A8F3 /* Model.xcdatamodeld in Sources */,
 				7A746B9F29E0878400EF54C7 /* AddUebung.swift in Sources */,
@@ -244,9 +248,9 @@
 				7A746BA529E0886400EF54C7 /* Split+CoreDataProperties.swift in Sources */,
 				7AEE657B29E05B330064ED8A /* Hauptbildschirm.swift in Sources */,
 				7A746BA429E0886400EF54C7 /* Split+CoreDataClass.swift in Sources */,
+				7A746BBD29E3246E00EF54C7 /* Trainingstagebuch.swift in Sources */,
 				7A746BBA29E1F5F600EF54C7 /* Einstellungen.swift in Sources */,
 				7AEE658329E05BEE0064ED8A /* Diagramme.swift in Sources */,
-				7A746BA629E0886400EF54C7 /* Uebung+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

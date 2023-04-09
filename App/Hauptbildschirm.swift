@@ -15,12 +15,16 @@ struct Hauptbildschirm: View {
                 .tabItem {
                     Image(systemName: "list.clipboard.fill")
                     Text("Trainingspläne")
-                    
                 }
             Diagramme()
                 .tabItem {
                     Image(systemName: "chart.line.uptrend.xyaxis.circle.fill")
                     Text("Fortschritte")
+                }
+            Trainingstagebuch()
+                .tabItem {
+                    Image(systemName: "trophy")
+                    Text("Training")
                 }
             KursplanView()
                 .tabItem {
@@ -29,7 +33,7 @@ struct Hauptbildschirm: View {
                 }
             Einstellungen()
                 .tabItem {
-                    Image(systemName: "gearshape")
+                    Image(systemName: "info.bubble")
                     Text("Einstellungen")
                 }
         }
@@ -71,6 +75,11 @@ struct EinstellungenView: View {
     }
 }
 
+struct TrainingstagebuchView: View {
+    var body: some View {
+        Trainingstagebuch()
+    }
+}
 
 struct Hauptbildschirm_Previews: PreviewProvider {
     static var previews: some View {

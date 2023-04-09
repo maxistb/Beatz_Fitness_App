@@ -1,8 +1,8 @@
 //
 //  Uebung+CoreDataClass.swift
-//  VideoCoreData
+//  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 07.04.23.
+//  Created by Maximillian Stabe on 09.04.23.
 //
 //
 

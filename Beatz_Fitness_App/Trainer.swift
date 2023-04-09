@@ -49,15 +49,14 @@ struct TrainerListe: View {
                     }
                 }
             }
-            .navigationTitle("Trainer")
-         
+            .navigationTitle("Unsere Trainer")
         }
     }
 }
 
 
 struct Trainer_Preview: PreviewProvider {
-   static var previews: some View {
+    static var previews: some View {
         TrainerListe()
     }
 }

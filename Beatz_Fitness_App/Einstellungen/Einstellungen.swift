@@ -12,7 +12,7 @@ struct Einstellungen: View {
         NavigationView {
                 Form {
                     Section(header: Text("Trainer im Beatz")) {
-                        NavigationLink(destination: TrainerView()) {
+                        NavigationLink(destination: TrainerListe()) {
                             HStack {
                                 Image("Beatz_Dome")
                                     .resizable()
@@ -24,14 +24,26 @@ struct Einstellungen: View {
                         }
                     }
                     
-                    Section(header: Text("Folge uns auf Instagram!")) {
+                    Section(header: Text("Trainerzeiten")) {
+                        Text("Montag bis Freitag: 8 - 13 & 15 - 20 Uhr")
+                    }
+                    
+                    Section(header: Text("Kontaktiere uns!")) {
                         HStack {
                             Link(destination: URL(string: "https://www.instagram.com/beatzfitness_elmshorn/")!) {
                                 HStack {
-                                    Text("@BeatzFitness_Elmshorn")
+                                    Text("Instagram @beatzfitness_elmshorn")
                                     Spacer()
                                     Image(systemName: "arrow.up.right")
                                 }
+                            }
+                        }
+                        Link(destination: URL(string:
+                                                "https://beatz-fitness.de")!) {
+                            HStack {
+                                Text("Website beatz-fitness.de")
+                                Spacer()
+                                Image(systemName: "arrow.up.right")
                             }
                         }
                     }
@@ -39,7 +51,7 @@ struct Einstellungen: View {
                         Text("Maximillian Stabe")
                     }
                 }
-            .navigationTitle("Einstellungen")
+            .navigationTitle("Allgemeines")
         }
     }
 }
