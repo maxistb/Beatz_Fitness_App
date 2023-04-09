@@ -16,14 +16,19 @@ struct UebungView: View {
     
     var body: some View {
         VStack {
-            List(split.getUebungen) { uebung in
-                HStack {
-                    Text(uebung.name ?? "Error")
-                    Text("\(uebung.saetze) Sätze")
-                        .foregroundColor(.gray)
-                        .font(.footnote)
+            List {
+                ForEach(split.getUebungen) { uebung in
+                    HStack {
+                        Text(uebung.name ?? "Error")
+                        Text("\(uebung.saetze) Sätze")
+                            .foregroundColor(.gray)
+                            .font(.footnote)
+                    }
                 }
+                .onDelete(perform: deleteItems)
+                .onMove(perform: moveItems)
             }
+            
             .navigationBarTitle(Text(split.name ?? "Error"))
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -46,22 +51,30 @@ struct UebungView: View {
                 }
             }
             .sheet(isPresented: $showAddUebungView) {
-                AddUebungView(split: split)
+                NavigationView {
+                    AddUebungView(split: split)
+                }
                     .navigationTitle("Übung hinzufügen")
             }
             .sheet(isPresented: $showUebungListBeatz) {
-                UebungListBeatz()
+                UebungListBeatz(split: split)
             }
         }
     }
+    func deleteItems(at offsets: IndexSet) {
+        for index in offsets {
+            let uebung = split.getUebungen[index]
+            moc.delete(uebung)
+        }
+        try? moc.save()
+    }
+    func moveItems(from source: IndexSet, to destination: Int) {
+        @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Uebung.order, ascending: true)]) var uebungen: FetchedResults<Uebung>
+        // Save changes to Core Data
+        do {
+            try moc.save()
+        } catch {
+            print("Error saving managed object context: \(error.localizedDescription)")
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-

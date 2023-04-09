@@ -13,24 +13,28 @@ struct Hauptbildschirm: View {
         TabView {
             TrainingssplitView()
                 .tabItem {
-                    Image(systemName: "list.dash")
+                    Image(systemName: "list.clipboard.fill")
                     Text("Trainingspläne")
-                    
                 }
-            FortschritteView()
+            Diagramme()
                 .tabItem {
-                    Image(systemName: "chart.bar.xaxis")
+                    Image(systemName: "chart.line.uptrend.xyaxis.circle.fill")
                     Text("Fortschritte")
                 }
-            TrainerView()
+            Trainingstagebuch()
                 .tabItem {
-                    Image(systemName: "person.3.fill")
-                    Text("Trainer")
+                    Image(systemName: "trophy")
+                    Text("Training")
                 }
             KursplanView()
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("Kursplan")
+                }
+            Einstellungen()
+                .tabItem {
+                    Image(systemName: "info.bubble")
+                    Text("Einstellungen")
                 }
         }
         .navigationBarBackButtonHidden(true)
@@ -53,8 +57,6 @@ struct FortschritteView: View {
         }
     }
 
-
-
 struct TrainerView: View {
     var body: some View {
         TrainerListe()
@@ -67,7 +69,17 @@ struct KursplanView: View {
     }
 }
 
+struct EinstellungenView: View {
+    var body: some View {
+        Einstellungen()
+    }
+}
 
+struct TrainingstagebuchView: View {
+    var body: some View {
+        Trainingstagebuch()
+    }
+}
 
 struct Hauptbildschirm_Previews: PreviewProvider {
     static var previews: some View {
