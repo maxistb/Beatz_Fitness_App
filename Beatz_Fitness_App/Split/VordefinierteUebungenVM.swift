@@ -7,17 +7,18 @@
 
 import SwiftUI
 
-struct UebungListBeatz: View {
+struct VordefinierteUebungen: View {
     @State var uebungen = [
         UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
         UebungsItem(uebungName: "Squat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat"))
     ]
-    
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
     @State private var anzahlSaetze: [Int] = [1, 1]
     @State private var selectedUebungen: [UebungsItem] = []
     @ObservedObject var split: Split
+    @State private var selectedIndices: [Int] = []
+
     
     var body: some View {
         NavigationView {
@@ -42,29 +43,13 @@ struct UebungListBeatz: View {
                                         .foregroundColor(.secondary)
                                     
                                     Stepper("Sätze: \(anzahlSaetze[index])", value: $anzahlSaetze[index], in: 1...10) // Stepper
+                                    Button("Add") {
+                                        selectedUebungen.append(uebungen[index])
+                                    }
                                 }
                             }
-                            Checkbox(isChecked: $uebungen[index].isChecked)
                                 .padding(.vertical)
                                 .padding(.horizontal)
-                                .onTapGesture {
-                                    uebungen[index].isChecked.toggle()
-                                    if uebungen[index].isChecked {
-                                        selectedUebungen.append(uebungen[index])
-                                    } else {
-                                        selectedUebungen.removeAll(where: { $0.id == uebungen[index].id })
-                                    }
-                                    
-                                }
-                                .onLongPressGesture {
-                                    uebungen[index].isChecked.toggle()
-                                    if uebungen[index].isChecked {
-                                        selectedUebungen.append(uebungen[index])
-                                    } else {
-                                        selectedUebungen.removeAll(where: { $0.id == uebungen[index].id })
-                                    }
-                                    
-                                }
                         }
                     }
                 }
@@ -79,7 +64,7 @@ struct UebungListBeatz: View {
         }
     }
     
-    private func addSelectedUebungen() {
+    func addSelectedUebungen() {
         for uebung in selectedUebungen {
             let neueUebung = Uebung(context: moc)
             neueUebung.id = UUID()
@@ -90,31 +75,5 @@ struct UebungListBeatz: View {
         try? moc.save()
         presentationMode.wrappedValue.dismiss()
     }
-}
-
-
-
-struct Checkbox: View {
-    @Binding var isChecked: Bool
-    
-    var body: some View {
-        Image(systemName: isChecked ? "checkmark.square.fill" : "square")
-            .resizable()
-            .scaledToFit()
-            .frame(width: 22, height: 22)
-            .foregroundColor(.accentColor)
-            .onTapGesture {
-                isChecked.toggle()
-            }
-    }
-}
-
-struct UebungsItem: Identifiable {
-    var id = UUID()
-    let uebungName: String
-    let uebungBeschreibung: String
-    var anzahlSaetze: Int
-    let bild: Image
-    var isChecked: Bool = false
 }
 
