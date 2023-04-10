@@ -27,7 +27,6 @@ struct TrainerListe: View {
     let trainers = [Dome, Vivi, Finja, Larissa, Birte, Ranjid, Anny]
     
     var body: some View {
-        NavigationView {
             VStack {
                 List(trainers) { trainer in
                     HStack {
@@ -52,7 +51,6 @@ struct TrainerListe: View {
             .navigationTitle("Unsere Trainer")
         }
     }
-}
 
 
 struct Trainer_Preview: PreviewProvider {

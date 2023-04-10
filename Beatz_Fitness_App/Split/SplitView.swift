@@ -16,6 +16,7 @@ struct SplitView: View {
     @State private var isEditMode = false
     
     var body: some View {
+ 
         NavigationView {
             VStack {
                 List {

@@ -36,13 +36,13 @@ struct UebungView: View {
                         Button(action: {
                             showAddUebungView = true
                         }) {
-                            Label("Eigene Übung", systemImage: "pencil")
+                            Label("Eigene Übung", systemImage: "square.and.pencil")
                         }
                         
                         Button(action: {
                             showUebungListBeatz = true
                         }) {
-                            Label("Vordefinierte Übungen", systemImage: "pencil")
+                            Label("Vordefinierte Übungen", systemImage: "dumbbell.fill")
                         }
                         
                     }) {
@@ -57,7 +57,7 @@ struct UebungView: View {
                     .navigationTitle("Übung hinzufügen")
             }
             .sheet(isPresented: $showUebungListBeatz) {
-                UebungListBeatz(split: split)
+                VordefinierteUebungen(split: split)
             }
         }
     }

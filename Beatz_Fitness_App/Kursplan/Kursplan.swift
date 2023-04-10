@@ -12,7 +12,7 @@ struct Kursplan: View {
     let days = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"]
     
     var body: some View {
-        VStack(alignment: .center) {
+        VStack {
             HeaderView()
             
             ScrollView(.horizontal, showsIndicators: false) {

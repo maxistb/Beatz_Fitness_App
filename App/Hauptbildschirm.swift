@@ -26,15 +26,10 @@ struct Hauptbildschirm: View {
                     Image(systemName: "trophy")
                     Text("Training")
                 }
-            KursplanView()
-                .tabItem {
-                    Image(systemName: "calendar")
-                    Text("Kursplan")
-                }
-            Einstellungen()
+            Allgemeines()
                 .tabItem {
                     Image(systemName: "info.bubble")
-                    Text("Einstellungen")
+                    Text("Allgemeines")
                 }
         }
         .navigationBarBackButtonHidden(true)
@@ -57,21 +52,9 @@ struct FortschritteView: View {
         }
     }
 
-struct TrainerView: View {
-    var body: some View {
-        TrainerListe()
-    }
-}
-
-struct KursplanView: View {
-    var body: some View {
-        Kursplan()
-    }
-}
-
 struct EinstellungenView: View {
     var body: some View {
-        Einstellungen()
+        Allgemeines()
     }
 }
 
