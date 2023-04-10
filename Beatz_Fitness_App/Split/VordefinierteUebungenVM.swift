@@ -10,11 +10,17 @@ import SwiftUI
 struct VordefinierteUebungen: View {
     @State var uebungen = [
         UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
-        UebungsItem(uebungName: "Squat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat"))
+        UebungsItem(uebungName: "Squat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
+        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
+        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
+        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
+        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
+        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat"))
     ]
+    
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
-    @State private var anzahlSaetze: [Int] = [1, 1]
+    @State private var anzahlSaetze: [Int] = [1, 1, 1, 1, 1, 1, 1]
     @State private var selectedUebungen: [UebungsItem] = []
     @ObservedObject var split: Split
     @State private var selectedIndices: [Int] = []
@@ -43,29 +49,30 @@ struct VordefinierteUebungen: View {
                                         .foregroundColor(.secondary)
                                     
                                     Stepper("Sätze: \(anzahlSaetze[index])", value: $anzahlSaetze[index], in: 1...10)
-                                    
-                                    Toggle("Zur Übung hinzufügen", isOn: Binding(
-                                        get: {
-                                            self.selectedIndices.contains(index)
-                                        },
-                                        set: {
-                                            if $0 {
-                                                self.selectedIndices.append(index)
-                                                self.selectedUebungen.append(uebungen[index])
-                                            } else {
-                                                if let selectedIndex = self.selectedIndices.firstIndex(of: index) {
-                                                    self.selectedIndices.remove(at: selectedIndex)
-                                                    self.selectedUebungen.remove(at: selectedIndex)
-                                                }
-                                            }
-                                        }
-                                    ))
-                                    .toggleStyle(iOSCheckboxToggleStyle())
                                 }
+                                
                             }
                             .padding(.vertical)
                             .padding(.horizontal)
+                            Toggle("Zur Übung hinzufügen", isOn: Binding(
+                                get: {
+                                    self.selectedIndices.contains(index)
+                                },
+                                set: {
+                                    if $0 {
+                                        self.selectedIndices.append(index)
+                                        self.selectedUebungen.append(uebungen[index])
+                                    } else {
+                                        if let selectedIndex = self.selectedIndices.firstIndex(of: index) {
+                                            self.selectedIndices.remove(at: selectedIndex)
+                                            self.selectedUebungen.remove(at: selectedIndex)
+                                        }
+                                    }
+                                }
+                            ))
+                            .toggleStyle(iOSCheckboxToggleStyle())
                         }
+                        
                     }
                 }
             }
