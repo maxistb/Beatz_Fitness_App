@@ -13,7 +13,7 @@
 		7A746BA529E0886400EF54C7 /* Split+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA129E0886400EF54C7 /* Split+CoreDataProperties.swift */; };
 		7A746BA929E09CEA00EF54C7 /* Startbildschirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA829E09CEA00EF54C7 /* Startbildschirm.swift */; };
 		7A746BAC29E17B7C00EF54C7 /* UebungListBeatz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BAB29E17B7C00EF54C7 /* UebungListBeatz.swift */; };
-		7A746BBA29E1F5F600EF54C7 /* Einstellungen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BB929E1F5F600EF54C7 /* Einstellungen.swift */; };
+		7A746BBA29E1F5F600EF54C7 /* Allgemeines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BB929E1F5F600EF54C7 /* Allgemeines.swift */; };
 		7A746BBD29E3246E00EF54C7 /* Trainingstagebuch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BBC29E3246E00EF54C7 /* Trainingstagebuch.swift */; };
 		7A746BC029E32DF200EF54C7 /* Uebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BBE29E32DF200EF54C7 /* Uebung+CoreDataClass.swift */; };
 		7A746BC129E32DF200EF54C7 /* Uebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BBF29E32DF200EF54C7 /* Uebung+CoreDataProperties.swift */; };
@@ -38,7 +38,7 @@
 		7A746BA129E0886400EF54C7 /* Split+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A746BA829E09CEA00EF54C7 /* Startbildschirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Startbildschirm.swift; sourceTree = "<group>"; };
 		7A746BAB29E17B7C00EF54C7 /* UebungListBeatz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UebungListBeatz.swift; sourceTree = "<group>"; };
-		7A746BB929E1F5F600EF54C7 /* Einstellungen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Einstellungen.swift; sourceTree = "<group>"; };
+		7A746BB929E1F5F600EF54C7 /* Allgemeines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allgemeines.swift; sourceTree = "<group>"; };
 		7A746BBC29E3246E00EF54C7 /* Trainingstagebuch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trainingstagebuch.swift; sourceTree = "<group>"; };
 		7A746BBE29E32DF200EF54C7 /* Uebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7A746BBF29E32DF200EF54C7 /* Uebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -102,12 +102,12 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		7A746BBB29E1F60800EF54C7 /* Einstellungen */ = {
+		7A746BBB29E1F60800EF54C7 /* Allgemeines */ = {
 			isa = PBXGroup;
 			children = (
-				7A746BB929E1F5F600EF54C7 /* Einstellungen.swift */,
+				7A746BB929E1F5F600EF54C7 /* Allgemeines.swift */,
 			);
-			path = Einstellungen;
+			path = Allgemeines;
 			sourceTree = "<group>";
 		};
 		7AEC637829DD81DE00C8A8F3 = {
@@ -132,7 +132,7 @@
 			children = (
 				7A746B9829E05DB000EF54C7 /* Kursplan */,
 				7A746B9929E05DD600EF54C7 /* Split */,
-				7A746BBB29E1F60800EF54C7 /* Einstellungen */,
+				7A746BBB29E1F60800EF54C7 /* Allgemeines */,
 				7AEE658029E05BE10064ED8A /* Trainer.swift */,
 				7AEE658229E05BEE0064ED8A /* Diagramme.swift */,
 				7A746BBC29E3246E00EF54C7 /* Trainingstagebuch.swift */,
@@ -249,7 +249,7 @@
 				7AEE657B29E05B330064ED8A /* Hauptbildschirm.swift in Sources */,
 				7A746BA429E0886400EF54C7 /* Split+CoreDataClass.swift in Sources */,
 				7A746BBD29E3246E00EF54C7 /* Trainingstagebuch.swift in Sources */,
-				7A746BBA29E1F5F600EF54C7 /* Einstellungen.swift in Sources */,
+				7A746BBA29E1F5F600EF54C7 /* Allgemeines.swift in Sources */,
 				7AEE658329E05BEE0064ED8A /* Diagramme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

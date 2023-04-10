@@ -9,15 +9,15 @@ import SwiftUI
 
 struct UebungListBeatz: View {
     @State var uebungen = [
-        UebungListeBeatz(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
-        UebungListeBeatz(uebungName: "Squat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat"))
+        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
+        UebungsItem(uebungName: "Squat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat"))
     ]
     
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
     @State private var anzahlSaetze: [Int] = [1, 1]
-    @State private var selectedUebungen: [UebungListeBeatz] = []
-    var split: Split
+    @State private var selectedUebungen: [UebungsItem] = []
+    @ObservedObject var split: Split
     
     var body: some View {
         NavigationView {
@@ -71,6 +71,7 @@ struct UebungListBeatz: View {
             }
             .navigationTitle("Übungen")
             .navigationBarItems(trailing: Button(action: {
+                print(selectedUebungen)
                 addSelectedUebungen()
             }, label: {
                 Text("Add")
@@ -79,17 +80,18 @@ struct UebungListBeatz: View {
     }
     
     private func addSelectedUebungen() {
-        for (index, uebung) in selectedUebungen.enumerated() {
+        for uebung in selectedUebungen {
             let neueUebung = Uebung(context: moc)
             neueUebung.id = UUID()
             neueUebung.name = uebung.uebungName
-            neueUebung.saetze = Int64(anzahlSaetze[index])
+            neueUebung.saetze = Int64(anzahlSaetze[uebungen.firstIndex(where: { $0.id == uebung.id })!])
             split.addToUebung(neueUebung)
         }
         try? moc.save()
         presentationMode.wrappedValue.dismiss()
     }
 }
+
 
 
 struct Checkbox: View {
@@ -107,7 +109,7 @@ struct Checkbox: View {
     }
 }
 
-struct UebungListeBeatz: Identifiable {
+struct UebungsItem: Identifiable {
     var id = UUID()
     let uebungName: String
     let uebungBeschreibung: String
@@ -115,3 +117,4 @@ struct UebungListeBeatz: Identifiable {
     let bild: Image
     var isChecked: Bool = false
 }
+
