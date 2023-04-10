@@ -13,7 +13,6 @@ struct UebungsItem: Identifiable {
     let uebungBeschreibung: String
     var anzahlSaetze: Int
     let bild: Image
-    var isChecked: Bool = false
 }
 
 

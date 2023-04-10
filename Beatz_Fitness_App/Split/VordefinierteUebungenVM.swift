@@ -18,7 +18,7 @@ struct VordefinierteUebungen: View {
     @State private var selectedUebungen: [UebungsItem] = []
     @ObservedObject var split: Split
     @State private var selectedIndices: [Int] = []
-
+    
     
     var body: some View {
         NavigationView {
@@ -42,24 +42,38 @@ struct VordefinierteUebungen: View {
                                         .frame(width: 250)
                                         .foregroundColor(.secondary)
                                     
-                                    Stepper("Sätze: \(anzahlSaetze[index])", value: $anzahlSaetze[index], in: 1...10) // Stepper
-                                    Button("Add") {
-                                        selectedUebungen.append(uebungen[index])
-                                    }
+                                    Stepper("Sätze: \(anzahlSaetze[index])", value: $anzahlSaetze[index], in: 1...10)
+                                    
+                                    Toggle("Zur Übung hinzufügen", isOn: Binding(
+                                        get: {
+                                            self.selectedIndices.contains(index)
+                                        },
+                                        set: {
+                                            if $0 {
+                                                self.selectedIndices.append(index)
+                                                self.selectedUebungen.append(uebungen[index])
+                                            } else {
+                                                if let selectedIndex = self.selectedIndices.firstIndex(of: index) {
+                                                    self.selectedIndices.remove(at: selectedIndex)
+                                                    self.selectedUebungen.remove(at: selectedIndex)
+                                                }
+                                            }
+                                        }
+                                    ))
+                                    .toggleStyle(iOSCheckboxToggleStyle())
                                 }
                             }
-                                .padding(.vertical)
-                                .padding(.horizontal)
+                            .padding(.vertical)
+                            .padding(.horizontal)
                         }
                     }
                 }
             }
             .navigationTitle("Übungen")
             .navigationBarItems(trailing: Button(action: {
-                print(selectedUebungen)
                 addSelectedUebungen()
             }, label: {
-                Text("Add")
+                Text("Hinzufügen")
             }))
         }
     }
@@ -74,6 +88,19 @@ struct VordefinierteUebungen: View {
         }
         try? moc.save()
         presentationMode.wrappedValue.dismiss()
+    }
+}
+
+struct iOSCheckboxToggleStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Button(action: {
+            configuration.isOn.toggle()
+        }, label: {
+            HStack {
+                Image(systemName: configuration.isOn ? "checkmark.square" : "square")
+                configuration.label
+            }
+        })
     }
 }
 
