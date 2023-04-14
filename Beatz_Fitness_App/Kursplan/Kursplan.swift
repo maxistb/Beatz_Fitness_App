@@ -160,13 +160,7 @@ struct Kursplan: View {
                 Text("Heute")
                     .font(.largeTitle.bold())
             }
-            
             Spacer()
-            
-            Image("BeatzLogoDark")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 150, height: 45)
         }
         .padding()
     }

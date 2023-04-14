@@ -12,7 +12,7 @@ struct VordefinierteUebungen: View {
         UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
         UebungsItem(uebungName: "Squat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
         UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
-        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
+        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("BeatzLogo")),
         UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
         UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
         UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat"))
@@ -24,7 +24,7 @@ struct VordefinierteUebungen: View {
     @State private var selectedUebungen: [UebungsItem] = []
     @ObservedObject var split: Split
     @State private var selectedIndices: [Int] = []
-    
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var body: some View {
         NavigationView {
@@ -37,15 +37,14 @@ struct VordefinierteUebungen: View {
                                     .resizable()
                                     .scaledToFit()
                                     .cornerRadius(10)
+                                    .frame(width: horizontalSizeClass == .compact ? 100 : 130, height: horizontalSizeClass == .compact ? 100 : 130)
                                 
-                                VStack(alignment: .trailing) {
-                                    
+                                VStack(alignment: .leading) {
                                     Text(uebungen[index].uebungName)
-                                        .frame(width: 250)
-                                        .font(.title3)
+                                        .font(.headline)
                                     
                                     Text(uebungen[index].uebungBeschreibung)
-                                        .frame(width: 250)
+                                        .font(.subheadline)
                                         .foregroundColor(.secondary)
                                     
                                     Stepper("Sätze: \(anzahlSaetze[index])", value: $anzahlSaetze[index], in: 1...10)
@@ -54,25 +53,26 @@ struct VordefinierteUebungen: View {
                             }
                             .padding(.vertical)
                             .padding(.horizontal)
-                            Toggle("Zur Übung hinzufügen", isOn: Binding(
-                                get: {
-                                    self.selectedIndices.contains(index)
-                                },
-                                set: {
-                                    if $0 {
-                                        self.selectedIndices.append(index)
-                                        self.selectedUebungen.append(uebungen[index])
-                                    } else {
-                                        if let selectedIndex = self.selectedIndices.firstIndex(of: index) {
-                                            self.selectedIndices.remove(at: selectedIndex)
-                                            self.selectedUebungen.remove(at: selectedIndex)
+                            HStack {
+                                Toggle("Zur Übung hinzufügen", isOn: Binding(
+                                    get: {
+                                        self.selectedIndices.contains(index)
+                                    },
+                                    set: {
+                                        if $0 {
+                                            self.selectedIndices.append(index)
+                                            self.selectedUebungen.append(uebungen[index])
+                                        } else {
+                                            if let selectedIndex = self.selectedIndices.firstIndex(of: index) {
+                                                self.selectedIndices.remove(at: selectedIndex)
+                                                self.selectedUebungen.remove(at: selectedIndex)
+                                            }
                                         }
                                     }
-                                }
-                            ))
-                            .toggleStyle(iOSCheckboxToggleStyle())
+                                ))
+                            }
+                                .toggleStyle(iOSCheckboxToggleStyle())
                         }
-                        
                     }
                 }
             }
