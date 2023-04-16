@@ -12,7 +12,7 @@ struct Trainingstagebuch: View {
     @FetchRequest(entity: Split.entity(), sortDescriptors: [])
     var splits: FetchedResults<Split>
     @State private var selectedSplit: Split?
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -36,15 +36,12 @@ struct Trainingstagebuch: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        Button(action: {
-                            
-                        }) {
-                            Text("Training starten")
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(Color.blue)
-                                .cornerRadius(10)
+                        if let split = selectedSplit {
+                            NavigationLink(destination: Training()) {
+                                Label("Training starten", systemImage: "")
+                            }
                         }
+
                         Spacer()
                     }
                     Spacer()
