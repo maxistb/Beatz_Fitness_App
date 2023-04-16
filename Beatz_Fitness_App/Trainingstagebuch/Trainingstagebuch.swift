@@ -37,7 +37,7 @@ struct Trainingstagebuch: View {
                     HStack {
                         Spacer()
                         if let split = selectedSplit {
-                            NavigationLink(destination: Training()) {
+                            NavigationLink(destination: Training(selectedSplit: split)) {
                                 Label("Training starten", systemImage: "")
                             }
                         }
