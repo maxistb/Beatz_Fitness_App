@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A473E8329E9E2C700C75436 /* Satz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A473E7F29E9E2C700C75436 /* Satz+CoreDataClass.swift */; };
+		7A473E8429E9E2C700C75436 /* Satz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A473E8029E9E2C700C75436 /* Satz+CoreDataProperties.swift */; };
+		7A473E8729E9E4CB00C75436 /* Trainingseintrag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A473E8529E9E4CA00C75436 /* Trainingseintrag+CoreDataClass.swift */; };
+		7A473E8829E9E4CB00C75436 /* Trainingseintrag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A473E8629E9E4CA00C75436 /* Trainingseintrag+CoreDataProperties.swift */; };
 		7A746B9D29E0863400EF54C7 /* AddSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746B9C29E0863400EF54C7 /* AddSplitView.swift */; };
 		7A746B9F29E0878400EF54C7 /* AddUebung.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746B9E29E0878400EF54C7 /* AddUebung.swift */; };
 		7A746BA429E0886400EF54C7 /* Split+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA029E0886400EF54C7 /* Split+CoreDataClass.swift */; };
@@ -34,6 +38,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A473E7F29E9E2C700C75436 /* Satz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Satz+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A473E8029E9E2C700C75436 /* Satz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Satz+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A473E8529E9E4CA00C75436 /* Trainingseintrag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trainingseintrag+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A473E8629E9E4CA00C75436 /* Trainingseintrag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trainingseintrag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A746B9C29E0863400EF54C7 /* AddSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSplitView.swift; sourceTree = "<group>"; };
 		7A746B9E29E0878400EF54C7 /* AddUebung.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUebung.swift; sourceTree = "<group>"; };
 		7A746BA029E0886400EF54C7 /* Split+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -167,6 +175,10 @@
 		7AEC63BF29E02F3D00C8A8F3 /* ManuelleKlassen */ = {
 			isa = PBXGroup;
 			children = (
+				7A473E8529E9E4CA00C75436 /* Trainingseintrag+CoreDataClass.swift */,
+				7A473E8629E9E4CA00C75436 /* Trainingseintrag+CoreDataProperties.swift */,
+				7A473E7F29E9E2C700C75436 /* Satz+CoreDataClass.swift */,
+				7A473E8029E9E2C700C75436 /* Satz+CoreDataProperties.swift */,
 				7A746BBE29E32DF200EF54C7 /* Uebung+CoreDataClass.swift */,
 				7A746BBF29E32DF200EF54C7 /* Uebung+CoreDataProperties.swift */,
 				7A746BA029E0886400EF54C7 /* Split+CoreDataClass.swift */,
@@ -248,7 +260,9 @@
 				7AEE657F29E05BBC0064ED8A /* Kursplan.swift in Sources */,
 				7A746BA929E09CEA00EF54C7 /* Startbildschirm.swift in Sources */,
 				7A746BC029E32DF200EF54C7 /* Uebung+CoreDataClass.swift in Sources */,
+				7A473E8329E9E2C700C75436 /* Satz+CoreDataClass.swift in Sources */,
 				7AEC638729DD81DE00C8A8F3 /* SplitView.swift in Sources */,
+				7A473E8429E9E2C700C75436 /* Satz+CoreDataProperties.swift in Sources */,
 				7AEE657D29E05BB00064ED8A /* Kursplan_Daten.swift in Sources */,
 				7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */,
 				7AEE658129E05BE10064ED8A /* Trainer.swift in Sources */,
@@ -261,7 +275,9 @@
 				7A746BC329E3F2EB00EF54C7 /* VordefinierteUebungen.swift in Sources */,
 				7A746B9D29E0863400EF54C7 /* AddSplitView.swift in Sources */,
 				7A746BA529E0886400EF54C7 /* Split+CoreDataProperties.swift in Sources */,
+				7A473E8729E9E4CB00C75436 /* Trainingseintrag+CoreDataClass.swift in Sources */,
 				7A746BC629E416B400EF54C7 /* TrainingstagebuchÜbungen.swift in Sources */,
+				7A473E8829E9E4CB00C75436 /* Trainingseintrag+CoreDataProperties.swift in Sources */,
 				7AEE657B29E05B330064ED8A /* Hauptbildschirm.swift in Sources */,
 				7A746BA429E0886400EF54C7 /* Split+CoreDataClass.swift in Sources */,
 				7A746BBD29E3246E00EF54C7 /* Trainingstagebuch.swift in Sources */,
