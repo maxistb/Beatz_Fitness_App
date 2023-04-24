@@ -14,7 +14,7 @@ struct Allgemeines: View {
                 
                 
                 Section(header: Text("Kursplan & Unsere Trainer")) {
-                    NavigationLink(destination: Kursplan()) {
+                    NavigationLink(destination: Kursplan(viewModel: KursplanViewModel())) {
                         HStack {
                             Image("BeatzKursplan")
                                 .resizable()

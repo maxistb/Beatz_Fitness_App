@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A18D47F29F66C4D00EF6171 /* KursplanVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D47E29F66C4D00EF6171 /* KursplanVM.swift */; };
 		7A263CF029EDD74B001CAEB4 /* TrainingHistorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A263CEF29EDD74B001CAEB4 /* TrainingHistorie.swift */; };
 		7A473E8329E9E2C700C75436 /* Satz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A473E7F29E9E2C700C75436 /* Satz+CoreDataClass.swift */; };
 		7A473E8429E9E2C700C75436 /* Satz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A473E8029E9E2C700C75436 /* Satz+CoreDataProperties.swift */; };
@@ -30,8 +31,7 @@
 		7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC639529DD824B00C8A8F3 /* DataController.swift */; };
 		7AEC63B229E014BE00C8A8F3 /* UebungView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC63B129E014BE00C8A8F3 /* UebungView.swift */; };
 		7AEE657B29E05B330064ED8A /* Hauptbildschirm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE657A29E05B330064ED8A /* Hauptbildschirm.swift */; };
-		7AEE657D29E05BB00064ED8A /* Kursplan_Daten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE657C29E05BB00064ED8A /* Kursplan_Daten.swift */; };
-		7AEE657F29E05BBC0064ED8A /* Kursplan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE657E29E05BBC0064ED8A /* Kursplan.swift */; };
+		7AEE657F29E05BBC0064ED8A /* KursplanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE657E29E05BBC0064ED8A /* KursplanView.swift */; };
 		7AEE658129E05BE10064ED8A /* Trainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE658029E05BE10064ED8A /* Trainer.swift */; };
 		7AEE658329E05BEE0064ED8A /* Diagramme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE658229E05BEE0064ED8A /* Diagramme.swift */; };
 		7AF6D87A29F56A570050E758 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 7AF6D87929F56A570050E758 /* SwiftKeychainWrapper */; };
@@ -47,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A18D47E29F66C4D00EF6171 /* KursplanVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KursplanVM.swift; sourceTree = "<group>"; };
 		7A263CEF29EDD74B001CAEB4 /* TrainingHistorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHistorie.swift; sourceTree = "<group>"; };
 		7A473E7F29E9E2C700C75436 /* Satz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Satz+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7A473E8029E9E2C700C75436 /* Satz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Satz+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -71,8 +72,7 @@
 		7AEC639529DD824B00C8A8F3 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		7AEC63B129E014BE00C8A8F3 /* UebungView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UebungView.swift; sourceTree = "<group>"; };
 		7AEE657A29E05B330064ED8A /* Hauptbildschirm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hauptbildschirm.swift; sourceTree = "<group>"; };
-		7AEE657C29E05BB00064ED8A /* Kursplan_Daten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kursplan_Daten.swift; sourceTree = "<group>"; };
-		7AEE657E29E05BBC0064ED8A /* Kursplan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kursplan.swift; sourceTree = "<group>"; };
+		7AEE657E29E05BBC0064ED8A /* KursplanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KursplanView.swift; sourceTree = "<group>"; };
 		7AEE658029E05BE10064ED8A /* Trainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trainer.swift; sourceTree = "<group>"; };
 		7AEE658229E05BEE0064ED8A /* Diagramme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagramme.swift; sourceTree = "<group>"; };
 		7AF6D87C29F56B330050E758 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -101,8 +101,8 @@
 		7A746B9829E05DB000EF54C7 /* Kursplan */ = {
 			isa = PBXGroup;
 			children = (
-				7AEE657E29E05BBC0064ED8A /* Kursplan.swift */,
-				7AEE657C29E05BB00064ED8A /* Kursplan_Daten.swift */,
+				7AEE657E29E05BBC0064ED8A /* KursplanView.swift */,
+				7A18D47E29F66C4D00EF6171 /* KursplanVM.swift */,
 			);
 			path = Kursplan;
 			sourceTree = "<group>";
@@ -309,14 +309,14 @@
 				7AF6D8A829F5A1700050E758 /* Uebung+CoreDataClass.swift in Sources */,
 				7A263CF029EDD74B001CAEB4 /* TrainingHistorie.swift in Sources */,
 				7AF6D88429F56B330050E758 /* LoginView.swift in Sources */,
-				7AEE657F29E05BBC0064ED8A /* Kursplan.swift in Sources */,
+				7AEE657F29E05BBC0064ED8A /* KursplanView.swift in Sources */,
 				7A746BA929E09CEA00EF54C7 /* Startbildschirm.swift in Sources */,
 				7AF6D8A929F5A1700050E758 /* Uebung+CoreDataProperties.swift in Sources */,
+				7A18D47F29F66C4D00EF6171 /* KursplanVM.swift in Sources */,
 				7A473E8329E9E2C700C75436 /* Satz+CoreDataClass.swift in Sources */,
 				7AEC638729DD81DE00C8A8F3 /* SplitView.swift in Sources */,
 				7AF6D88829F56B330050E758 /* BiometricAuthentication.swift in Sources */,
 				7A473E8429E9E2C700C75436 /* Satz+CoreDataProperties.swift in Sources */,
-				7AEE657D29E05BB00064ED8A /* Kursplan_Daten.swift in Sources */,
 				7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */,
 				7AF6D88729F56B330050E758 /* AppState.swift in Sources */,
 				7AEE658129E05BE10064ED8A /* Trainer.swift in Sources */,

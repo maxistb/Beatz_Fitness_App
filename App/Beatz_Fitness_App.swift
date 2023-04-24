@@ -14,13 +14,13 @@ struct Beatz_Fitness_App: App {
     
     var body: some Scene {
         WindowGroup {
-            if !appState.isLoggedId {
-                LoginView()
-                    .environmentObject(appState)
-            } else {
+//            if !appState.isLoggedId {
+//                LoginView()
+//                    .environmentObject(appState)
+//            } else {
                 Hauptbildschirm()
                     .environment(\.managedObjectContext, dataController.container.viewContext)
             }
         }
     }
-}
+//}
