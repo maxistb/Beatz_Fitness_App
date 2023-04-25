@@ -47,7 +47,6 @@ struct SplitView: View {
             }
         }
     }
-    
     func deleteItems(at offsets: IndexSet) {
         for offset in offsets {
             let split = splits[offset]
@@ -56,9 +55,10 @@ struct SplitView: View {
         try? moc.save()
     }
     
+    
     func moveItems(from source: IndexSet, to destination: Int) {
         @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Split.order, ascending: true)]) var splits: FetchedResults<Split>
-        // Save changes to Core Data
+
         do {
             try moc.save()
         } catch {
@@ -66,9 +66,6 @@ struct SplitView: View {
         }
     }
 }
-
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
