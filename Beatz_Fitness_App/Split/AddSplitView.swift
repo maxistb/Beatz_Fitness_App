@@ -28,6 +28,8 @@ struct AddSplitView: View {
                     
                     try? moc.save()
                     name = ""
+                    
+                    presentationMode.wrappedValue.dismiss()
                 }
                 .padding()
                 .frame(width: 170)

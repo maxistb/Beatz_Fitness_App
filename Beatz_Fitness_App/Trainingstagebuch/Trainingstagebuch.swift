@@ -12,7 +12,7 @@ struct Trainingstagebuch: View {
     @FetchRequest(entity: Split.entity(), sortDescriptors: [])
     var splits: FetchedResults<Split>
     @State private var selectedSplit: Split?
-    
+
     var body: some View {
         NavigationView {
             List {

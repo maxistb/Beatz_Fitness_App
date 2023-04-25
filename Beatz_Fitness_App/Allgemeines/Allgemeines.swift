@@ -14,7 +14,7 @@ struct Allgemeines: View {
                 
                 
                 Section(header: Text("Kursplan & Unsere Trainer")) {
-                    NavigationLink(destination: Kursplan()) {
+                    NavigationLink(destination: Kursplan(viewModel: KursplanViewModel())) {
                         HStack {
                             Image("BeatzKursplan")
                                 .resizable()
@@ -37,7 +37,19 @@ struct Allgemeines: View {
                     }
                 }
                 
-                
+                Section(header: Text("Videotutorials")) {
+                    NavigationLink(destination: VideoErklärung()) {
+                        HStack {
+                            Image("BeatzLogo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
+                                .cornerRadius(40)
+                            Text("Tutorials zu allen Übungen")
+                        }
+                    }
+                }
+                    
                 Section(header: Text("Trainerzeiten")) {
                     Text("Montag bis Freitag: 8 - 13 & 15 - 20 Uhr")
                    
