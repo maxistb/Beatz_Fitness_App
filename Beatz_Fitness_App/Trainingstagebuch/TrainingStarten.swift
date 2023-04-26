@@ -7,16 +7,6 @@
 
 import SwiftUI
 
-//
-//  TrainingstagebuchÜbungen.swift
-//  Beatz_Fitness_App
-//
-//  Created by Maximillian Stabe on 10.04.23.
-//
-
-
-import SwiftUI
-
 struct Training: View {
     @ObservedObject var selectedSplit: Split
     @Environment(\.managedObjectContext) var moc
@@ -60,6 +50,7 @@ struct Training: View {
         let newTrainingseintrag = Trainingseintrag(context: moc)
         newTrainingseintrag.id = UUID()
         newTrainingseintrag.datum = Date()
+        newTrainingseintrag.split = selectedSplit
         
         for textField in textFields {
             let newSatz = Satz(context: moc)
