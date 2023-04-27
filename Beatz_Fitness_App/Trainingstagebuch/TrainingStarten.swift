@@ -1,54 +1,53 @@
 //
-//  TrainingstagebuchÜbungen.swift
+//  Trainingstagebuch.swift
 //  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 10.04.23.
+//  Created by Maximillian Stabe on 09.04.23.
 //
 
 import SwiftUI
 
-struct Training: View {
-    @State private var gewichte: [String] = Array(repeating: "", count: 10)
-    @State private var wiederholungen: [String] = Array(repeating: "", count: 10)
-    @ObservedObject var selectedSplit: Split
-    @Environment(\.managedObjectContext) var moc
-    @Environment(\.presentationMode) var presentationMode
+struct Trainingstagebuch: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: Split.entity(), sortDescriptors: [])
+    var splits: FetchedResults<Split>
+    @State private var selectedSplit: Split?
 
     var body: some View {
-        VStack {
-            ForEach(selectedSplit.getUebungen) { uebung in
-                Section(header: Text(uebung.name ?? "")) {
-                    ForEach(0..<Int(uebung.saetze)) { saetzeIndex in
+        NavigationView {
+            List {
+                ForEach(splits, id: \.self) { split in
+                    Button(action: {
+                        selectedSplit = split
+                    }) {
                         HStack {
-                            TextField("Gewicht", text: $gewichte[saetzeIndex])
-                            TextField("Wiederholungen", text: $wiederholungen[saetzeIndex])
+                            Text(split.name ?? "")
+                            Spacer()
+                            if split == selectedSplit {
+                                Image(systemName: "checkmark")
+                            }
                         }
                     }
                 }
             }
-            Button(action: saveTraining) {
-                Text("Training abschließen")
-            }
-        }
-    }
+            .navigationTitle("Splits")
+            .overlay(
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        if let split = selectedSplit {
+                            NavigationLink(destination: Training(selectedSplit: selectedSplit!)) {
+                                Label("Training starten", systemImage: "play.circle")
+                            }
+                        }
 
-    func saveTraining() {
-        for index in 0..<gewichte.count {
-            if let gewicht = Double(gewichte[index]), let wiederholungen = Int(wiederholungen[index]) {
-                let trainingseintrag = Trainingseintrag(context: moc)
-                trainingseintrag.datum = Date()
-                trainingseintrag.gewicht = gewicht
-                trainingseintrag.wiederholungen = Int64(wiederholungen)
-                trainingseintrag.id = UUID()
-            }
+                        Spacer()
+                    }
+                    Spacer()
+                }
+            )
         }
-
-        do {
-            try moc.save()
-        } catch {
-            print("Error saving trainingseinheit: \(error.localizedDescription)")
-        }
-
-        presentationMode.wrappedValue.dismiss()
     }
 }
+

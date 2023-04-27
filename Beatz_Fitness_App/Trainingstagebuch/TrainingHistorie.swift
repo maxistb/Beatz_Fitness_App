@@ -9,26 +9,34 @@ import SwiftUI
 import CoreData
 
 struct TrainingHistorie: View {
-    @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: Trainingseintrag.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Trainingseintrag.datum, ascending: false)]) var trainingseinträge: FetchedResults<Trainingseintrag>
+    @FetchRequest(entity: Trainingseintrag.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Trainingseintrag.datum, ascending: false)])
+    var trainingseintraege: FetchedResults<Trainingseintrag>
 
     var body: some View {
         NavigationView {
-            List(trainingseinträge, id: \.self) { trainingseintrag in
-                VStack(alignment: .leading) {
-                    Text("\(trainingseintrag.datum!, formatter: dateFormatter)")
-                    Text("Gewicht: \(trainingseintrag.gewicht) kg, Wiederholungen: \(trainingseintrag.wiederholungen)")
+            List {
+                ForEach(trainingseintraege, id: \.id) { trainingseintrag in
+                    NavigationLink(destination: TrainingseintragDetail(trainingseintrag: trainingseintrag)) {
+                        VStack(alignment: .leading) {
+                            Text("Datum Trainingseintrag")
+                                .font(.headline)
+                            Text("Übungname Training")
+                                .font(.subheadline)
+                        }
+                    }
                 }
             }
             .navigationBarTitle("Trainingseinträge")
         }
     }
-
+    
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .short
+        formatter.dateStyle = .long
         return formatter
     }()
 }
+
+
+
 
