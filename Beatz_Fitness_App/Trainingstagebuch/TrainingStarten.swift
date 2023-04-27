@@ -8,79 +8,47 @@
 import SwiftUI
 
 struct Training: View {
+    @State private var gewichte: [String] = Array(repeating: "", count: 10)
+    @State private var wiederholungen: [String] = Array(repeating: "", count: 10)
     @ObservedObject var selectedSplit: Split
     @Environment(\.managedObjectContext) var moc
-    @State private var textFields: [CustomTextField] = [] // array of custom textfields
-    @State private var currentUebung: Uebung? // current exercise
-    
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
-        List {
+        VStack {
             ForEach(selectedSplit.getUebungen) { uebung in
                 Section(header: Text(uebung.name ?? "")) {
                     ForEach(0..<Int(uebung.saetze)) { saetzeIndex in
-                            CustomTextField(satzIndex: saetzeIndex, uebung: uebung)
-                        
+                        HStack {
+                            TextField("Gewicht", text: $gewichte[saetzeIndex])
+                            TextField("Wiederholungen", text: $wiederholungen[saetzeIndex])
+                        }
                     }
-                    Button(action: {
-                        currentUebung = uebung
-                        let newIndex = textFields.count
-                        textFields.append(CustomTextField(satzIndex: newIndex, uebung: uebung))
-                    }, label: {
-                        Label("Satz Hinzufügen", systemImage: "plus")
-                    })
                 }
             }
-        }
-        .navigationTitle("Trainingstagebuch")
-        .onAppear {
-            for uebung in selectedSplit.getUebungen {
-                for satzIndex in 0..<Int(uebung.saetze) {
-                    textFields.append(CustomTextField(satzIndex: satzIndex, uebung: uebung))
-                }
+            Button(action: saveTraining) {
+                Text("Training abschließen")
             }
-        }
-        Button(action: {
-            saveWorkout()
-        })  {
-            Text("Speichern")
         }
     }
 
-    func saveWorkout() {
-        let newTrainingseintrag = Trainingseintrag(context: moc)
-        newTrainingseintrag.id = UUID()
-        newTrainingseintrag.datum = Date()
-        newTrainingseintrag.split = selectedSplit
-        
-        for textField in textFields {
-            let newSatz = Satz(context: moc)
-            newSatz.gewicht = Int64(textField.gewicht) ?? 0
-            newSatz.wiederholungen = Int64(textField.wiederholungen) ?? 0
-            newSatz.uebung = textField.uebung
+    func saveTraining() {
+        for index in 0..<gewichte.count {
+            if let gewicht = Double(gewichte[index]), let wiederholungen = Int(wiederholungen[index]) {
+                let trainingseintrag = Trainingseintrag(context: moc)
+                trainingseintrag.datum = Date()
+                trainingseintrag.gewicht = gewicht
+                trainingseintrag.wiederholungen = Int64(wiederholungen)
+                trainingseintrag.id = UUID()
+            }
         }
+
         do {
             try moc.save()
         } catch {
-            print("Error saving workout: \(error)")
+            print("Error saving trainingseinheit: \(error.localizedDescription)")
         }
+
+        presentationMode.wrappedValue.dismiss()
     }
 }
-
-
-struct CustomTextField: View {
-    @State public var gewicht: String = ""
-    @State public var wiederholungen: String = ""
-    let satzIndex: Int
-    let uebung: Uebung
-    
-    var body: some View {
-        HStack {
-            TextField("Gewicht", text: $gewicht)
-            TextField("Wiederholungen", text: $wiederholungen)
-        }
-    }
-}
-
-
-
-

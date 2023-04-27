@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		7A18D47F29F66C4D00EF6171 /* KursplanVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D47E29F66C4D00EF6171 /* KursplanVM.swift */; };
 		7A263CF029EDD74B001CAEB4 /* TrainingHistorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A263CEF29EDD74B001CAEB4 /* TrainingHistorie.swift */; };
-		7A473E8329E9E2C700C75436 /* Satz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A473E7F29E9E2C700C75436 /* Satz+CoreDataClass.swift */; };
-		7A473E8429E9E2C700C75436 /* Satz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A473E8029E9E2C700C75436 /* Satz+CoreDataProperties.swift */; };
-		7A473E8729E9E4CB00C75436 /* Trainingseintrag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A473E8529E9E4CA00C75436 /* Trainingseintrag+CoreDataClass.swift */; };
-		7A473E8829E9E4CB00C75436 /* Trainingseintrag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A473E8629E9E4CA00C75436 /* Trainingseintrag+CoreDataProperties.swift */; };
+		7A724ABA29FAC5A8001D82C4 /* Trainingseintrag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A724AB629FAC5A8001D82C4 /* Trainingseintrag+CoreDataClass.swift */; };
+		7A724ABB29FAC5A8001D82C4 /* Trainingseintrag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A724AB729FAC5A8001D82C4 /* Trainingseintrag+CoreDataProperties.swift */; };
+		7A724ABC29FAC5A8001D82C4 /* Uebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A724AB829FAC5A8001D82C4 /* Uebung+CoreDataClass.swift */; };
+		7A724ABD29FAC5A8001D82C4 /* Uebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A724AB929FAC5A8001D82C4 /* Uebung+CoreDataProperties.swift */; };
+		7A724AC229FAC62D001D82C4 /* Satz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A724ABE29FAC62D001D82C4 /* Satz+CoreDataClass.swift */; };
+		7A724AC329FAC62D001D82C4 /* Satz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A724ABF29FAC62D001D82C4 /* Satz+CoreDataProperties.swift */; };
+		7A724AC429FAC62E001D82C4 /* AusgefuehreUebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A724AC029FAC62D001D82C4 /* AusgefuehreUebung+CoreDataClass.swift */; };
+		7A724AC529FAC62E001D82C4 /* AusgefuehreUebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A724AC129FAC62D001D82C4 /* AusgefuehreUebung+CoreDataProperties.swift */; };
 		7A746B9D29E0863400EF54C7 /* AddSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746B9C29E0863400EF54C7 /* AddSplitView.swift */; };
 		7A746B9F29E0878400EF54C7 /* AddUebungView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746B9E29E0878400EF54C7 /* AddUebungView.swift */; };
 		7A746BA429E0886400EF54C7 /* Split+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BA029E0886400EF54C7 /* Split+CoreDataClass.swift */; };
@@ -42,17 +46,19 @@
 		7AF6D88829F56B330050E758 /* BiometricAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6D88129F56B330050E758 /* BiometricAuthentication.swift */; };
 		7AF6D88929F56B330050E758 /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6D88229F56B330050E758 /* LoginHandler.swift */; };
 		7AF6D8A529F59FF50050E758 /* VideoErklärung.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6D8A429F59FF50050E758 /* VideoErklärung.swift */; };
-		7AF6D8A829F5A1700050E758 /* Uebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6D8A629F5A1700050E758 /* Uebung+CoreDataClass.swift */; };
-		7AF6D8A929F5A1700050E758 /* Uebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6D8A729F5A1700050E758 /* Uebung+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7A18D47E29F66C4D00EF6171 /* KursplanVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KursplanVM.swift; sourceTree = "<group>"; };
 		7A263CEF29EDD74B001CAEB4 /* TrainingHistorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHistorie.swift; sourceTree = "<group>"; };
-		7A473E7F29E9E2C700C75436 /* Satz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Satz+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7A473E8029E9E2C700C75436 /* Satz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Satz+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7A473E8529E9E4CA00C75436 /* Trainingseintrag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trainingseintrag+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7A473E8629E9E4CA00C75436 /* Trainingseintrag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trainingseintrag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A724AB629FAC5A8001D82C4 /* Trainingseintrag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trainingseintrag+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A724AB729FAC5A8001D82C4 /* Trainingseintrag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trainingseintrag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A724AB829FAC5A8001D82C4 /* Uebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A724AB929FAC5A8001D82C4 /* Uebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A724ABE29FAC62D001D82C4 /* Satz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Satz+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A724ABF29FAC62D001D82C4 /* Satz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Satz+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A724AC029FAC62D001D82C4 /* AusgefuehreUebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AusgefuehreUebung+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A724AC129FAC62D001D82C4 /* AusgefuehreUebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AusgefuehreUebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A746B9C29E0863400EF54C7 /* AddSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSplitView.swift; sourceTree = "<group>"; };
 		7A746B9E29E0878400EF54C7 /* AddUebungView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUebungView.swift; sourceTree = "<group>"; };
 		7A746BA029E0886400EF54C7 /* Split+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -82,8 +88,6 @@
 		7AF6D88129F56B330050E758 /* BiometricAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricAuthentication.swift; sourceTree = "<group>"; };
 		7AF6D88229F56B330050E758 /* LoginHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
 		7AF6D8A429F59FF50050E758 /* VideoErklärung.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoErklärung.swift"; sourceTree = "<group>"; };
-		7AF6D8A629F5A1700050E758 /* Uebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7AF6D8A729F5A1700050E758 /* Uebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,14 @@
 		7AEC637829DD81DE00C8A8F3 = {
 			isa = PBXGroup;
 			children = (
+				7A724ABE29FAC62D001D82C4 /* Satz+CoreDataClass.swift */,
+				7A724ABF29FAC62D001D82C4 /* Satz+CoreDataProperties.swift */,
+				7A724AC029FAC62D001D82C4 /* AusgefuehreUebung+CoreDataClass.swift */,
+				7A724AC129FAC62D001D82C4 /* AusgefuehreUebung+CoreDataProperties.swift */,
+				7A724AB629FAC5A8001D82C4 /* Trainingseintrag+CoreDataClass.swift */,
+				7A724AB729FAC5A8001D82C4 /* Trainingseintrag+CoreDataProperties.swift */,
+				7A724AB829FAC5A8001D82C4 /* Uebung+CoreDataClass.swift */,
+				7A724AB929FAC5A8001D82C4 /* Uebung+CoreDataProperties.swift */,
 				7A746BAA29E09D7600EF54C7 /* App */,
 				7AEC638329DD81DE00C8A8F3 /* Beatz_Fitness_App */,
 				7AEC638229DD81DE00C8A8F3 /* Products */,
@@ -196,12 +208,6 @@
 		7AEC63BF29E02F3D00C8A8F3 /* ManuelleKlassen */ = {
 			isa = PBXGroup;
 			children = (
-				7A473E8529E9E4CA00C75436 /* Trainingseintrag+CoreDataClass.swift */,
-				7A473E8629E9E4CA00C75436 /* Trainingseintrag+CoreDataProperties.swift */,
-				7A473E7F29E9E2C700C75436 /* Satz+CoreDataClass.swift */,
-				7A473E8029E9E2C700C75436 /* Satz+CoreDataProperties.swift */,
-				7AF6D8A629F5A1700050E758 /* Uebung+CoreDataClass.swift */,
-				7AF6D8A729F5A1700050E758 /* Uebung+CoreDataProperties.swift */,
 				7A746BA029E0886400EF54C7 /* Split+CoreDataClass.swift */,
 				7A746BA129E0886400EF54C7 /* Split+CoreDataProperties.swift */,
 			);
@@ -306,39 +312,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AF6D8A829F5A1700050E758 /* Uebung+CoreDataClass.swift in Sources */,
 				7A263CF029EDD74B001CAEB4 /* TrainingHistorie.swift in Sources */,
+				7A724AC329FAC62D001D82C4 /* Satz+CoreDataProperties.swift in Sources */,
+				7A724ABC29FAC5A8001D82C4 /* Uebung+CoreDataClass.swift in Sources */,
 				7AF6D88429F56B330050E758 /* LoginView.swift in Sources */,
 				7AEE657F29E05BBC0064ED8A /* KursplanView.swift in Sources */,
 				7A746BA929E09CEA00EF54C7 /* Startbildschirm.swift in Sources */,
-				7AF6D8A929F5A1700050E758 /* Uebung+CoreDataProperties.swift in Sources */,
 				7A18D47F29F66C4D00EF6171 /* KursplanVM.swift in Sources */,
-				7A473E8329E9E2C700C75436 /* Satz+CoreDataClass.swift in Sources */,
 				7AEC638729DD81DE00C8A8F3 /* SplitView.swift in Sources */,
 				7AF6D88829F56B330050E758 /* BiometricAuthentication.swift in Sources */,
-				7A473E8429E9E2C700C75436 /* Satz+CoreDataProperties.swift in Sources */,
 				7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */,
 				7AF6D88729F56B330050E758 /* AppState.swift in Sources */,
 				7AEE658129E05BE10064ED8A /* Trainer.swift in Sources */,
 				7AEC638529DD81DE00C8A8F3 /* Beatz_Fitness_App.swift in Sources */,
+				7A724AC229FAC62D001D82C4 /* Satz+CoreDataClass.swift in Sources */,
 				7AEC639429DD820E00C8A8F3 /* Model.xcdatamodeld in Sources */,
 				7A746B9F29E0878400EF54C7 /* AddUebungView.swift in Sources */,
 				7A746BAC29E17B7C00EF54C7 /* VordefinierteUebungen.swift in Sources */,
 				7AEC63B229E014BE00C8A8F3 /* UebungView.swift in Sources */,
+				7A724AC529FAC62E001D82C4 /* AusgefuehreUebung+CoreDataProperties.swift in Sources */,
 				7A746BC329E3F2EB00EF54C7 /* UebungsItemVM.swift in Sources */,
 				7A746B9D29E0863400EF54C7 /* AddSplitView.swift in Sources */,
 				7A746BA529E0886400EF54C7 /* Split+CoreDataProperties.swift in Sources */,
-				7A473E8729E9E4CB00C75436 /* Trainingseintrag+CoreDataClass.swift in Sources */,
 				7AF6D88329F56B330050E758 /* LoginViewModel.swift in Sources */,
 				7AF6D8A529F59FF50050E758 /* VideoErklärung.swift in Sources */,
+				7A724ABD29FAC5A8001D82C4 /* Uebung+CoreDataProperties.swift in Sources */,
 				7A746BC629E416B400EF54C7 /* TrainingStarten.swift in Sources */,
-				7A473E8829E9E4CB00C75436 /* Trainingseintrag+CoreDataProperties.swift in Sources */,
 				7AF6D88529F56B330050E758 /* ViewExtension.swift in Sources */,
 				7AF6D88929F56B330050E758 /* LoginHandler.swift in Sources */,
 				7AEE657B29E05B330064ED8A /* Hauptbildschirm.swift in Sources */,
 				7A746BA429E0886400EF54C7 /* Split+CoreDataClass.swift in Sources */,
+				7A724AC429FAC62E001D82C4 /* AusgefuehreUebung+CoreDataClass.swift in Sources */,
+				7A724ABB29FAC5A8001D82C4 /* Trainingseintrag+CoreDataProperties.swift in Sources */,
 				7A746BBD29E3246E00EF54C7 /* Trainingstagebuch.swift in Sources */,
 				7A746BBA29E1F5F600EF54C7 /* Allgemeines.swift in Sources */,
+				7A724ABA29FAC5A8001D82C4 /* Trainingseintrag+CoreDataClass.swift in Sources */,
 				7AEE658329E05BEE0064ED8A /* Diagramme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
