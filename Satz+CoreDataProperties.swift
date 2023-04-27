@@ -2,7 +2,7 @@
 //  Satz+CoreDataProperties.swift
 //  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 14.04.23.
+//  Created by Maximillian Stabe on 27.04.23.
 //
 //
 
@@ -18,7 +18,9 @@ extension Satz {
 
     @NSManaged public var gewicht: Int64
     @NSManaged public var wiederholungen: Int64
+    @NSManaged public var id: UUID?
     @NSManaged public var uebung: Uebung?
+    @NSManaged public var ausgefuehrteuebung: AusgefuehreUebung?
 
 }
 

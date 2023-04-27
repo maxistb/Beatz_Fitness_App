@@ -21,9 +21,5 @@ extension Split {
         return split
     }
     
-    func addToTrainingseintraege(_ trainingseintrag: Trainingseintrag) {
-        let trainingseintraegeSet = trainingseintraege?.mutableCopy() as? NSMutableSet ?? NSMutableSet()
-        trainingseintraegeSet.add(trainingseintrag)
-        trainingseintraege = trainingseintraegeSet.copy() as? NSSet
-    }
+
 }

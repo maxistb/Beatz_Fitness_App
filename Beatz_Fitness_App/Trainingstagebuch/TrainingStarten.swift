@@ -1,86 +1,53 @@
 //
-//  TrainingstagebuchÜbungen.swift
+//  Trainingstagebuch.swift
 //  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 10.04.23.
+//  Created by Maximillian Stabe on 09.04.23.
 //
 
 import SwiftUI
 
-struct Training: View {
-    @ObservedObject var selectedSplit: Split
-    @Environment(\.managedObjectContext) var moc
-    @State private var textFields: [CustomTextField] = [] // array of custom textfields
-    @State private var currentUebung: Uebung? // current exercise
-    
+struct Trainingstagebuch: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(entity: Split.entity(), sortDescriptors: [])
+    var splits: FetchedResults<Split>
+    @State private var selectedSplit: Split?
+
     var body: some View {
-        List {
-            ForEach(selectedSplit.getUebungen) { uebung in
-                Section(header: Text(uebung.name ?? "")) {
-                    ForEach(0..<Int(uebung.saetze)) { saetzeIndex in
-                            CustomTextField(satzIndex: saetzeIndex, uebung: uebung)
-                        
-                    }
+        NavigationView {
+            List {
+                ForEach(splits, id: \.self) { split in
                     Button(action: {
-                        currentUebung = uebung
-                        let newIndex = textFields.count
-                        textFields.append(CustomTextField(satzIndex: newIndex, uebung: uebung))
-                    }, label: {
-                        Label("Satz Hinzufügen", systemImage: "plus")
-                    })
+                        selectedSplit = split
+                    }) {
+                        HStack {
+                            Text(split.name ?? "")
+                            Spacer()
+                            if split == selectedSplit {
+                                Image(systemName: "checkmark")
+                            }
+                        }
+                    }
                 }
             }
-        }
-        .navigationTitle("Trainingstagebuch")
-        .onAppear {
-            for uebung in selectedSplit.getUebungen {
-                for satzIndex in 0..<Int(uebung.saetze) {
-                    textFields.append(CustomTextField(satzIndex: satzIndex, uebung: uebung))
-                }
-            }
-        }
-        Button(action: {
-            saveWorkout()
-        })  {
-            Text("Speichern")
-        }
-    }
+            .navigationTitle("Splits")
+            .overlay(
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        if let split = selectedSplit {
+                            NavigationLink(destination: Training(selectedSplit: selectedSplit!)) {
+                                Label("Training starten", systemImage: "play.circle")
+                            }
+                        }
 
-    func saveWorkout() {
-        let newTrainingseintrag = Trainingseintrag(context: moc)
-        newTrainingseintrag.id = UUID()
-        newTrainingseintrag.datum = Date()
-        newTrainingseintrag.split = selectedSplit
-        
-        for textField in textFields {
-            let newSatz = Satz(context: moc)
-            newSatz.gewicht = Int64(textField.gewicht) ?? 0
-            newSatz.wiederholungen = Int64(textField.wiederholungen) ?? 0
-            newSatz.uebung = textField.uebung
-        }
-        do {
-            try moc.save()
-        } catch {
-            print("Error saving workout: \(error)")
+                        Spacer()
+                    }
+                    Spacer()
+                }
+            )
         }
     }
 }
-
-
-struct CustomTextField: View {
-    @State public var gewicht: String = ""
-    @State public var wiederholungen: String = ""
-    let satzIndex: Int
-    let uebung: Uebung
-    
-    var body: some View {
-        HStack {
-            TextField("Gewicht", text: $gewicht)
-            TextField("Wiederholungen", text: $wiederholungen)
-        }
-    }
-}
-
-
-
 
