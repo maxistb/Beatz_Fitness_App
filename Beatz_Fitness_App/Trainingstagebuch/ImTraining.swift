@@ -49,6 +49,7 @@ struct Training: View {
         let trainingseintrag = Trainingseintrag(context: moc)
         trainingseintrag.datum = Date()
         trainingseintrag.id = UUID()
+        trainingseintrag.split = selectedSplit
 
         for (index, uebung) in selectedSplit.getUebungen.enumerated() {
             let uebungsname = uebung.name ?? ""

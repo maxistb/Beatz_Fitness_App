@@ -27,7 +27,19 @@ struct TrainingseintragDetail: View {
                 }
             }
         }
+        .navigationBarTitle("")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    VStack(alignment: .center) {
+                        Text(trainingseintrag.split?.name ?? "")
+                            .font(.headline)
+                        Text(dateFormatter.string(from: trainingseintrag.datum!))
+                            .font(.subheadline)
+                    }
+                }
+            }
     }
+        
 
 
  
