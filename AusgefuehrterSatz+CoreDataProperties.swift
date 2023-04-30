@@ -19,6 +19,7 @@ extension AusgefuehrterSatz {
     @NSManaged public var id: UUID?
     @NSManaged public var gewicht: Double
     @NSManaged public var wiederholungen: Int64
+    @NSManaged public var uebungname: String?
     @NSManaged public var saetze: NSOrderedSet?
     @NSManaged public var trainingseintrag: NSSet?
     @NSManaged public var uebung: Uebung?

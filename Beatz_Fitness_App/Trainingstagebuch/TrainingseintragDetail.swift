@@ -13,23 +13,28 @@ struct TrainingseintragDetail: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(entity: Trainingseintrag.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Trainingseintrag.datum, ascending: false)]) var trainingseinträge: FetchedResults<Trainingseintrag>
 
+    var ausgefuehrteSätzeNachUebung: [String: [AusgefuehrterSatz]] {
+        Dictionary(grouping: trainingseintrag.ausgefuehrteSätzeArray) { $0.uebungname ?? "Fehler" }
+    }
+
     var body: some View {
-        List(trainingseinträge, id: \.self) { trainingseintrag in
-            VStack(alignment: .leading) {
-                Text(dateFormatter.string(from: trainingseintrag.datum!))
-                    .font(.headline)
-                ForEach(trainingseintrag.ausgefuehrteSätzeArray, id: \.self) { ausgefuehrterSatz in
-                    Text(String(format: "Gewicht: %.2f kg, Wiederholungen: %d", ausgefuehrterSatz.gewicht, ausgefuehrterSatz.wiederholungen))
+        List {
+            ForEach(Array(ausgefuehrteSätzeNachUebung.keys.sorted()), id: \.self) { uebungname in
+                Section(header: Text(uebungname)) {
+                    ForEach(ausgefuehrteSätzeNachUebung[uebungname]!, id: \.self) { ausgefuehrterSatz in
+                        Text(String(format: "Gewicht: %.2f kg, Wiederholungen: %d", ausgefuehrterSatz.gewicht, ausgefuehrterSatz.wiederholungen))
+                    }
                 }
             }
         }
+    }
 
-     }
+
  
-
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         return formatter
     }()
 }
+

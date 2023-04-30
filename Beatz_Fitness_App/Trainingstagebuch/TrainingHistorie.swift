@@ -20,7 +20,7 @@ struct TrainingHistorie: View {
                         VStack(alignment: .leading) {
                             Text(dateFormatter.string(from: trainingseintrag.datum!))
                                 .font(.headline)
-                            Text(trainingseintrag.split?.name ?? "Unbekannter Übungsname")
+                            Text(trainingseintrag.split?.name ?? "")
                                 .font(.subheadline)
                         }
                     }
@@ -36,8 +36,3 @@ struct TrainingHistorie: View {
         return formatter
     }()
 }
-
-
-
-
-

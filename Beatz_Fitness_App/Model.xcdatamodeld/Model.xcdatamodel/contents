@@ -3,10 +3,11 @@
     <entity name="AusgefuehrterSatz" representedClassName="AusgefuehrterSatz" syncable="YES">
         <attribute name="gewicht" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="uebungname" optional="YES" attributeType="String"/>
         <attribute name="wiederholungen" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="saetze" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Satz" inverseName="ausgefuehrteuebung" inverseEntity="Satz"/>
         <relationship name="trainingseintrag" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trainingseintrag" inverseName="ausgefuehrteUebungen" inverseEntity="Trainingseintrag"/>
-        <relationship name="uebung" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Uebung" inverseName="ausgefuehrteuebung" inverseEntity="Uebung"/>
+        <relationship name="uebung" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Uebung" inverseName="ausgefuehrteuebung" inverseEntity="Uebung"/>
     </entity>
     <entity name="Satz" representedClassName="Satz" syncable="YES">
         <attribute name="gewicht" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -29,7 +30,7 @@
         <attribute name="wiederholungen" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="ausgefuehrteUebungen" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AusgefuehrterSatz" inverseName="trainingseintrag" inverseEntity="AusgefuehrterSatz"/>
         <relationship name="split" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Split" inverseName="trainingseintrag" inverseEntity="Split"/>
-        <relationship name="uebung" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Uebung" inverseName="trainingseintrag" inverseEntity="Uebung"/>
+        <relationship name="uebung" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Uebung" inverseName="trainingseintrag" inverseEntity="Uebung"/>
     </entity>
     <entity name="Uebung" representedClassName="Uebung" syncable="YES">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
