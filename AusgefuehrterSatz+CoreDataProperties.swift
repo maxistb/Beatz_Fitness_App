@@ -1,8 +1,8 @@
 //
-//  AusgefuehreUebung+CoreDataProperties.swift
+//  AusgefuehrterSatz+CoreDataProperties.swift
 //  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 27.04.23.
+//  Created by Maximillian Stabe on 30.04.23.
 //
 //
 
@@ -10,21 +10,23 @@ import Foundation
 import CoreData
 
 
-extension AusgefuehreUebung {
+extension AusgefuehrterSatz {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<AusgefuehreUebung> {
-        return NSFetchRequest<AusgefuehreUebung>(entityName: "AusgefuehreUebung")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<AusgefuehrterSatz> {
+        return NSFetchRequest<AusgefuehrterSatz>(entityName: "AusgefuehrterSatz")
     }
 
     @NSManaged public var id: UUID?
-    @NSManaged public var uebung: Uebung?
+    @NSManaged public var gewicht: Double
+    @NSManaged public var wiederholungen: Int64
     @NSManaged public var saetze: NSOrderedSet?
-    @NSManaged public var trainingseintrag: Trainingseintrag?
+    @NSManaged public var trainingseintrag: NSSet?
+    @NSManaged public var uebung: Uebung?
 
 }
 
 // MARK: Generated accessors for saetze
-extension AusgefuehreUebung {
+extension AusgefuehrterSatz {
 
     @objc(insertObject:inSaetzeAtIndex:)
     @NSManaged public func insertIntoSaetze(_ value: Satz, at idx: Int)
@@ -58,6 +60,23 @@ extension AusgefuehreUebung {
 
 }
 
-extension AusgefuehreUebung : Identifiable {
+// MARK: Generated accessors for trainingseintrag
+extension AusgefuehrterSatz {
+
+    @objc(addTrainingseintragObject:)
+    @NSManaged public func addToTrainingseintrag(_ value: Trainingseintrag)
+
+    @objc(removeTrainingseintragObject:)
+    @NSManaged public func removeFromTrainingseintrag(_ value: Trainingseintrag)
+
+    @objc(addTrainingseintrag:)
+    @NSManaged public func addToTrainingseintrag(_ values: NSSet)
+
+    @objc(removeTrainingseintrag:)
+    @NSManaged public func removeFromTrainingseintrag(_ values: NSSet)
+
+}
+
+extension AusgefuehrterSatz : Identifiable {
 
 }

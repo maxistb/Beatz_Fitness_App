@@ -20,7 +20,7 @@ extension Satz {
     @NSManaged public var wiederholungen: Int64
     @NSManaged public var id: UUID?
     @NSManaged public var uebung: Uebung?
-    @NSManaged public var ausgefuehrteuebung: AusgefuehreUebung?
+    @NSManaged public var ausgefuehrteuebung: AusgefuehrterSatz?
 
 }
 

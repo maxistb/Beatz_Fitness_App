@@ -33,15 +33,25 @@ struct Training: View {
     }
 
     func saveTraining() {
+        guard gewichte.count == wiederholungen.count else {
+            return
+        }
+
+        let trainingseintrag = Trainingseintrag(context: moc)
+        trainingseintrag.datum = Date()
+        trainingseintrag.id = UUID()
+
         for index in 0..<gewichte.count {
             if let gewicht = Double(gewichte[index]), let wiederholungen = Int(wiederholungen[index]) {
-                let trainingseintrag = Trainingseintrag(context: moc)
-                trainingseintrag.datum = Date()
-                trainingseintrag.gewicht = gewicht
-                trainingseintrag.wiederholungen = Int64(wiederholungen)
-                trainingseintrag.id = UUID()
+                let ausgefuehrterSatz = AusgefuehrterSatz(context: moc)
+                ausgefuehrterSatz.gewicht = gewicht
+                ausgefuehrterSatz.wiederholungen = Int64(wiederholungen)
+                ausgefuehrterSatz.id = UUID()
+
+                trainingseintrag.addToAusgefuehrteUebungen(ausgefuehrterSatz)
             }
         }
+
 
         do {
             try moc.save()

@@ -2,7 +2,7 @@
 //  Trainingseintrag+CoreDataProperties.swift
 //  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 27.04.23.
+//  Created by Maximillian Stabe on 30.04.23.
 //
 //
 
@@ -17,11 +17,11 @@ extension Trainingseintrag {
     }
 
     @NSManaged public var datum: Date?
+    @NSManaged public var gewicht: Double
     @NSManaged public var id: UUID?
     @NSManaged public var wiederholungen: Int64
-    @NSManaged public var gewicht: Double
-    @NSManaged public var split: Split?
     @NSManaged public var ausgefuehrteUebungen: NSSet?
+    @NSManaged public var split: Split?
     @NSManaged public var uebung: Uebung?
 
 }
@@ -30,10 +30,10 @@ extension Trainingseintrag {
 extension Trainingseintrag {
 
     @objc(addAusgefuehrteUebungenObject:)
-    @NSManaged public func addToAusgefuehrteUebungen(_ value: AusgefuehreUebung)
+    @NSManaged public func addToAusgefuehrteUebungen(_ value: AusgefuehrterSatz)
 
     @objc(removeAusgefuehrteUebungenObject:)
-    @NSManaged public func removeFromAusgefuehrteUebungen(_ value: AusgefuehreUebung)
+    @NSManaged public func removeFromAusgefuehrteUebungen(_ value: AusgefuehrterSatz)
 
     @objc(addAusgefuehrteUebungen:)
     @NSManaged public func addToAusgefuehrteUebungen(_ values: NSSet)
@@ -46,3 +46,11 @@ extension Trainingseintrag {
 extension Trainingseintrag : Identifiable {
 
 }
+
+extension Trainingseintrag {
+    var ausgefuehrteSätzeArray: [AusgefuehrterSatz] {
+        let ausgefuehrteSätzeSet = ausgefuehrteUebungen as? Set<AusgefuehrterSatz> ?? []
+        return ausgefuehrteSätzeSet.sorted { $0.wiederholungen > $1.wiederholungen }
+    }
+}
+

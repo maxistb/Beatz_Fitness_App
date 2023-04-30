@@ -18,9 +18,9 @@ struct TrainingHistorie: View {
                 ForEach(trainingseintraege, id: \.id) { trainingseintrag in
                     NavigationLink(destination: TrainingseintragDetail(trainingseintrag: trainingseintrag)) {
                         VStack(alignment: .leading) {
-                            Text("Datum Trainingseintrag")
+                            Text(dateFormatter.string(from: trainingseintrag.datum!))
                                 .font(.headline)
-                            Text("Übungname Training")
+                            Text(trainingseintrag.split?.name ?? "Unbekannter Übungsname")
                                 .font(.subheadline)
                         }
                     }
@@ -29,13 +29,14 @@ struct TrainingHistorie: View {
             .navigationBarTitle("Trainingseinträge")
         }
     }
-    
+
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         return formatter
     }()
 }
+
 
 
 

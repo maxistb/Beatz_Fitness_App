@@ -14,20 +14,18 @@ struct TrainingseintragDetail: View {
     @FetchRequest(entity: Trainingseintrag.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Trainingseintrag.datum, ascending: false)]) var trainingseinträge: FetchedResults<Trainingseintrag>
 
     var body: some View {
-        VStack {
-            Text(dateFormatter.string(from: trainingseintrag.datum!))
-                .font(.headline)
-
-            Text("Split Name")
-                .font(.subheadline)
-
-            List(trainingseinträge, id: \.self) { trainingseintrag in
-                VStack(alignment: .leading) {
-                    Text(String(format: "Gewicht: %.2f kg, Wiederholungen: %d", trainingseintrag.gewicht, trainingseintrag.wiederholungen))
+        List(trainingseinträge, id: \.self) { trainingseintrag in
+            VStack(alignment: .leading) {
+                Text(dateFormatter.string(from: trainingseintrag.datum!))
+                    .font(.headline)
+                ForEach(trainingseintrag.ausgefuehrteSätzeArray, id: \.self) { ausgefuehrterSatz in
+                    Text(String(format: "Gewicht: %.2f kg, Wiederholungen: %d", ausgefuehrterSatz.gewicht, ausgefuehrterSatz.wiederholungen))
                 }
             }
         }
-    }
+
+     }
+ 
 
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
