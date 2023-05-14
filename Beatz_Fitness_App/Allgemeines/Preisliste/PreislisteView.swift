@@ -1,0 +1,39 @@
+//
+//  PreislisteView.swift
+//  Beatz_Fitness_App
+//
+//  Created by Maximillian Stabe on 14.05.23.
+//
+
+import SwiftUI
+
+struct Preisliste: View {
+    let angebote = [
+        Shaker, Handtuch, Shakes, ShakesHafermilch, RiegelGroß, Espresso, CafeCreme, Milchkaffee, DoppelterEspresso, LatteMacchiato, Tageskarte, PersonalTraining30, PersonalTraining60
+    ]
+
+    var body: some View {
+        VStack {
+            List(angebote) { angebot in
+                HStack {
+                    angebot.bild
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 80, height: 80)
+                        .cornerRadius(40)
+
+                    VStack(alignment: .trailing) {
+                        Text(angebot.name)
+                            .frame(width: 250)
+                            .font(.title3)
+
+                        Text(String(format: "%.2f", angebot.preis) + "€")
+                            .frame(width: 250)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+        }
+        .navigationTitle("Preisliste")
+    }
+}
