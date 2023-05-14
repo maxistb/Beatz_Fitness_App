@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct Training: View {
-    @State private var gewichte: [[String]] = Array(repeating: Array(repeating: "", count: 10), count: 10)
-    @State private var wiederholungen: [[String]] = Array(repeating: Array(repeating: "", count: 10), count: 10)
+    @State private var gewichte: [[String]] = Array(repeating: Array(repeating: "", count: 20), count: 20)
+    @State private var wiederholungen: [[String]] = Array(repeating: Array(repeating: "", count: 20), count: 20)
     @ObservedObject var selectedSplit: Split
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
@@ -24,8 +24,29 @@ struct Training: View {
                 Section(header: Text(uebung.name ?? "")) {
                     ForEach(0..<Int(uebung.saetze), id: \.self) { saetzeIndex in
                         HStack {
-                            TextField("Gewicht", text: $gewichte[uebungIndex][saetzeIndex])
-                            TextField("Wiederholungen", text: $wiederholungen[uebungIndex][saetzeIndex])
+                            TextField("Gewicht", text: Binding(
+                                get: { gewichte[uebungIndex][saetzeIndex] },
+                                set: { newValue in
+                                    var newValue = newValue
+                                    // Replace all commas with dots
+                                    newValue = newValue.replacingOccurrences(of: ",", with: ".")
+                                    if let value = Double(newValue), value > 0 {
+                                        gewichte[uebungIndex][saetzeIndex] = newValue
+                                    }
+                                }
+                            ))
+                            .keyboardType(.decimalPad)
+
+                            .keyboardType(.decimalPad)
+                            TextField("Wiederholungen", text: Binding(
+                                get: { wiederholungen[uebungIndex][saetzeIndex] },
+                                set: { newValue in
+                                    if let value = Int(newValue), value > 0 {
+                                        wiederholungen[uebungIndex][saetzeIndex] = newValue
+                                    }
+                                }
+                            ))
+                            .keyboardType(.numberPad)
                         }
                         .onChange(of: selectedUebung) { newValue in
                             if let newValue = newValue {
@@ -45,15 +66,15 @@ struct Training: View {
         guard gewichte.count == wiederholungen.count else {
             return
         }
-
+        
         let trainingseintrag = Trainingseintrag(context: moc)
         trainingseintrag.datum = Date()
         trainingseintrag.id = UUID()
         trainingseintrag.split = selectedSplit
-
+        
         for (index, uebung) in selectedSplit.getUebungen.enumerated() {
             let uebungsname = uebung.name ?? ""
-
+         
             for satzIndex in 0..<Int(uebung.saetze) {
                 let ausgefuehrterSatz = AusgefuehrterSatz(context: moc)
                 ausgefuehrterSatz.gewicht = Double(gewichte[index][satzIndex]) ?? 0.0

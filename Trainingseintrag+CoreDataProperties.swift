@@ -20,9 +20,10 @@ extension Trainingseintrag {
     @NSManaged public var gewicht: Double
     @NSManaged public var id: UUID?
     @NSManaged public var wiederholungen: Int64
+    @NSManaged public var satzReihenfolge: Int64
     @NSManaged public var ausgefuehrteUebungen: NSSet?
-    @NSManaged public var split: Split?
-    @NSManaged public var uebung: Uebung?
+    @NSManaged public var split: Split
+    @NSManaged public var uebung: NSSet?
 
 }
 
@@ -43,6 +44,23 @@ extension Trainingseintrag {
 
 }
 
+// MARK: Generated accessors for uebung
+extension Trainingseintrag {
+
+    @objc(addUebungObject:)
+    @NSManaged public func addToUebung(_ value: Uebung)
+
+    @objc(removeUebungObject:)
+    @NSManaged public func removeFromUebung(_ value: Uebung)
+
+    @objc(addUebung:)
+    @NSManaged public func addToUebung(_ values: NSSet)
+
+    @objc(removeUebung:)
+    @NSManaged public func removeFromUebung(_ values: NSSet)
+
+}
+
 extension Trainingseintrag : Identifiable {
 
 }
@@ -53,4 +71,3 @@ extension Trainingseintrag {
         return ausgefuehrteSätzeSet.sorted { $0.wiederholungen > $1.wiederholungen }
     }
 }
-

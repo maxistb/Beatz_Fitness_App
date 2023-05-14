@@ -9,18 +9,19 @@ import SwiftUI
 import CoreData
 
 struct TrainingHistorie: View {
-    @FetchRequest(entity: Trainingseintrag.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Trainingseintrag.datum, ascending: false)])
+    @FetchRequest(entity: Trainingseintrag.entity(),
+                  sortDescriptors: [NSSortDescriptor(keyPath: \Trainingseintrag.datum, ascending: false)]
+                )
     var trainingseintraege: FetchedResults<Trainingseintrag>
-
     var body: some View {
         NavigationView {
             List {
                 ForEach(trainingseintraege, id: \.id) { trainingseintrag in
-                    NavigationLink(destination: TrainingseintragDetail(trainingseintrag: trainingseintrag)) {
+                    NavigationLink(destination: TrainingseintragDetailView(trainingseintrag: trainingseintrag)) {
                         VStack(alignment: .leading) {
                             Text(dateFormatter.string(from: trainingseintrag.datum!))
                                 .font(.headline)
-                            Text(trainingseintrag.split?.name ?? "")
+                            Text(trainingseintrag.split.name ?? "")
                                 .font(.subheadline)
                         }
                     }
@@ -36,3 +37,4 @@ struct TrainingHistorie: View {
         return formatter
     }()
 }
+
