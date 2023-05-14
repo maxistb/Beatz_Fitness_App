@@ -8,22 +8,12 @@
 import SwiftUI
 
 struct VordefinierteUebungen: View {
-    var uebungen = [
-        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
-        UebungsItem(uebungName: "Squat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("TestBild")),
-        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
-        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("BeatzLogo")),
-        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
-        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
-        UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat"))
-    ]
-    
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
-    @State private var anzahlSaetze: [Int] = [1, 1, 1, 1, 1, 1, 1]
-    @State private var selectedUebungen: [UebungsItem] = []
+    @State public var anzahlSaetze: [Int] = [1, 1, 1, 1, 1, 1, 1]
+    @State public var selectedUebungen: [UebungsItem] = []
     @ObservedObject var split: Split
-    @State private var selectedIndices: [Int] = []
+    @State public var selectedIndices: [Int] = []
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var body: some View {
@@ -84,29 +74,6 @@ struct VordefinierteUebungen: View {
             }))
         }
     }
-    
-    func addSelectedUebungen() {
-        for uebung in selectedUebungen {
-            let neueUebung = Uebung(context: moc)
-            neueUebung.id = UUID()
-            neueUebung.name = uebung.uebungName
-            neueUebung.saetze = Int64(anzahlSaetze[uebungen.firstIndex(where: { $0.id == uebung.id })!])
-            split.addToUebung(neueUebung)
-        }
-        try? moc.save()
-        presentationMode.wrappedValue.dismiss()
-    }
 }
 
-struct iOSCheckboxToggleStyle: ToggleStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        Button(action: {
-            configuration.isOn.toggle()
-        }, label: {
-            HStack {
-                Image(systemName: configuration.isOn ? "checkmark.square" : "square")
-                configuration.label
-            }
-        })
-    }
-}
+

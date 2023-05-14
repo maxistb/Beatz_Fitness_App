@@ -15,8 +15,9 @@ struct TrainingseintragDetailView: View {
                   sortDescriptors: [NSSortDescriptor(keyPath: \Trainingseintrag.datum, ascending: true)])
     var trainingseinträge: FetchedResults<Trainingseintrag>
     var ausgefuehrteSätzeNachUebung: [String: [AusgefuehrterSatz]] {
-        Dictionary(grouping: trainingseintrag.ausgefuehrteSätzeArray) { $0.uebungname ?? "Fehler" }
+        Dictionary(grouping: trainingseintrag.ausgefuehrteSätzeArray.sorted(by: { $0.datum ?? Date() > $1.datum ?? Date() })) { $0.uebungname ?? "Fehler" }
     }
+
  
     
     
@@ -40,25 +41,24 @@ struct TrainingseintragDetailView: View {
                     .onMove(perform: move)
 
                     Button("Hinzufügen") {
-                        alertTF(title: "Split Hinzufügen", message: "Füge hier einen neuen Satz zur aktuellen Übung hinzu.", gewichtText: "Gewicht", wiederholungenText: "Wiederholungen", primaryTitle: "Hinzufügen", secondaryTitle: "Abbrechen") { gewicht, wiederholungen in
-                            if isValidInput(input: gewicht) {
-                                
-                                let newSatz = AusgefuehrterSatz(context: moc)
-                                newSatz.gewicht = Double(gewicht) ?? 0.0
-                                newSatz.wiederholungen = Int64(wiederholungen) ?? 0
-                                newSatz.id = UUID()
-                                newSatz.uebungname = uebungname
-                                trainingseintrag.addToAusgefuehrteUebungen(newSatz)
-                                try? moc.save()
-
-                            } else {
-                                print("Ungültige Eingabe")
-                            }
-                        } secondaryAction: {
-                            print("Abbrechen")
+                          alertTF(title: "Split Hinzufügen", message: "Füge hier einen neuen Satz zur aktuellen Übung hinzu.", gewichtText: "Gewicht", wiederholungenText: "Wiederholungen", primaryTitle: "Hinzufügen", secondaryTitle: "Abbrechen") { gewicht, wiederholungen in
+                              if let gewichtDouble = Double(gewicht), let wiederholungenInt = Int(wiederholungen) {
+                                  let newSatz = AusgefuehrterSatz(context: moc)
+                                  newSatz.gewicht = gewichtDouble
+                                  newSatz.wiederholungen = Int64(wiederholungenInt)
+                                  newSatz.id = UUID()
+                                  newSatz.uebungname = uebungname
+                                  trainingseintrag.addToAusgefuehrteUebungen(newSatz)
+                                  try? moc.save()
+                              } else {
+                                  let alert = UIAlertController(title: "Ungültige Eingabe", message: "Bitte geben Sie nur Zahlen ein", preferredStyle: .alert)
+                                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                                    UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
+                              }
+                          } secondaryAction: {
+                              print("Abbrechen")
                         }
                     }
-
                 }
             }
         }

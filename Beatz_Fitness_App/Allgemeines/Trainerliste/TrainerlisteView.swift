@@ -11,13 +11,14 @@ struct TrainerListeView: View {
     let trainers = [Dome, Vivi, Finja, Larissa, Birte, Ranjid, Anny]
     
     var body: some View {
+        ScrollView {
             VStack {
-                List(trainers) { trainer in
+                ForEach(trainers, id: \.name) { trainer in
                     HStack {
                         trainer.bild
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 80, height: 80)
+                            .frame(width: 70, height: 70)
                             .cornerRadius(40)
                         
                         VStack(alignment: .trailing) {
@@ -30,11 +31,14 @@ struct TrainerListeView: View {
                                 .foregroundColor(.secondary)
                         }
                     }
+                    Divider()
                 }
             }
-            .navigationTitle("Unsere Trainer")
         }
+        .navigationTitle("Unsere Trainer")
     }
+}
+
 
 
 struct Trainer_Preview: PreviewProvider {

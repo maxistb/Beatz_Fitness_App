@@ -13,27 +13,32 @@ struct Preisliste: View {
     ]
 
     var body: some View {
-        VStack {
-            List(angebote) { angebot in
-                HStack {
-                    angebot.bild
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 80, height: 80)
-                        .cornerRadius(40)
+            VStack {
+                List(angebote) { angebot in
+                    HStack {
+                        angebot.bild
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 80, height: 80)
+                            .cornerRadius(40)
 
-                    VStack(alignment: .trailing) {
-                        Text(angebot.name)
-                            .frame(width: 250)
-                            .font(.title3)
+                        VStack(alignment: .trailing) {
+                            Text(angebot.name)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .font(.title3)
 
-                        Text(String(format: "%.2f", angebot.preis) + "€")
+                            HStack(spacing: 0) {
+                                Text(String(format: "%.2f", angebot.preis) + "€")
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .foregroundColor(.secondary)
+
+                                Spacer()
+                            }
                             .frame(width: 250)
-                            .foregroundColor(.secondary)
+                        }
                     }
                 }
             }
-        }
         .navigationTitle("Preisliste")
     }
 }

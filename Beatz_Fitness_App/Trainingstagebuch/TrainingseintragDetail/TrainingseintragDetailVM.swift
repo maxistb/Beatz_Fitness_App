@@ -13,9 +13,11 @@ extension TrainingseintragDetailView {
         
         alert.addTextField {field in
             field.placeholder = gewichtText
+            field.keyboardType = .decimalPad
         }
         alert.addTextField {field in
             field.placeholder = wiederholungenText
+            field.keyboardType = .numberPad
         }
         
         alert.addAction(.init(title: secondaryTitle, style: .cancel, handler: { _ in
@@ -23,7 +25,7 @@ extension TrainingseintragDetailView {
         }))
         
         alert.addAction(.init(title: primaryTitle, style: .default, handler: { _ in
-            if let gewicht = alert.textFields?[0].text, let wiederholungen = alert.textFields?[1].text {
+            if let gewicht = alert.textFields?[0].text?.replacingOccurrences(of: ",", with: "."), let wiederholungen = alert.textFields?[1].text {
                 primaryAction(gewicht, wiederholungen)
             }
             else {
