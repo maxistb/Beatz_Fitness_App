@@ -2,7 +2,7 @@
 //  Uebung+CoreDataProperties.swift
 //  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 27.04.23.
+//  Created by Maximillian Stabe on 28.04.23.
 //
 //
 
@@ -21,10 +21,27 @@ extension Uebung {
     @NSManaged public var order: Int64
     @NSManaged public var saetze: Int64
     @NSManaged public var videoURL: String?
+    @NSManaged public var ausgefuehrteuebung: NSSet?
     @NSManaged public var origin: Split?
     @NSManaged public var satz: NSSet?
-    @NSManaged public var ausgefuehrteuebung: Uebung?
     @NSManaged public var trainingseintrag: Trainingseintrag?
+
+}
+
+// MARK: Generated accessors for ausgefuehrteuebung
+extension Uebung {
+
+    @objc(addAusgefuehrteuebungObject:)
+    @NSManaged public func addToAusgefuehrteuebung(_ value: AusgefuehrterSatz)
+
+    @objc(removeAusgefuehrteuebungObject:)
+    @NSManaged public func removeFromAusgefuehrteuebung(_ value: AusgefuehrterSatz)
+
+    @objc(addAusgefuehrteuebung:)
+    @NSManaged public func addToAusgefuehrteuebung(_ values: NSSet)
+
+    @objc(removeAusgefuehrteuebung:)
+    @NSManaged public func removeFromAusgefuehrteuebung(_ values: NSSet)
 
 }
 

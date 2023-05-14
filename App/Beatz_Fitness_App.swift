@@ -23,4 +23,4 @@ struct Beatz_Fitness_App: App {
             }
         }
     }
-//}
+// }

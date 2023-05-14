@@ -12,7 +12,6 @@ struct Allgemeines: View {
         NavigationView {
             Form {
                 
-                
                 Section(header: Text("Kursplan & Unsere Trainer")) {
                     NavigationLink(destination: Kursplan(viewModel: KursplanViewModel())) {
                         HStack {
@@ -25,7 +24,7 @@ struct Allgemeines: View {
                         }
                     }
                     
-                    NavigationLink(destination: TrainerListe()) {
+                    NavigationLink(destination: TrainerListeView()) {
                         HStack {
                             Image("Beatz_Dome")
                                 .resizable()
@@ -53,6 +52,19 @@ struct Allgemeines: View {
                 Section(header: Text("Trainerzeiten")) {
                     Text("Montag bis Freitag: 8 - 13 & 15 - 20 Uhr")
                    
+                }
+                
+                Section(header: Text("Preisliste")) {
+                    NavigationLink(destination: Preisliste()) {
+                        HStack {
+                            Image("BeatzLogo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
+                                .cornerRadius(40)
+                            Text("Preisliste")
+                        }
+                    }
                 }
                 
                 Section(header: Text("Kontaktiere uns!")) {

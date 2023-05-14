@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct Trainingstagebuch: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext) private var moc
     @FetchRequest(entity: Split.entity(), sortDescriptors: [])
     var splits: FetchedResults<Split>
-    @State private var selectedSplit: Split?
+    @State private var selectedSplit: Split? 
 
     var body: some View {
         NavigationView {
@@ -37,7 +37,7 @@ struct Trainingstagebuch: View {
                     HStack {
                         Spacer()
                         if let split = selectedSplit {
-                            NavigationLink(destination: Training(selectedSplit: selectedSplit!)) {
+                            NavigationLink(destination: TrainingView(viewModel: TrainingViewModel(selectedSplit: split, moc: moc))) {
                                 Label("Training starten", systemImage: "play.circle")
                             }
                         }
@@ -50,4 +50,3 @@ struct Trainingstagebuch: View {
         }
     }
 }
-
