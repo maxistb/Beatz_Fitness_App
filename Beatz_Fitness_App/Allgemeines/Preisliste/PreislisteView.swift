@@ -19,7 +19,7 @@ struct Preisliste: View {
                         angebot.bild
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 80, height: 80)
+                            .frame(width: 50, height: 50)
                             .cornerRadius(40)
 
                         VStack(alignment: .trailing) {
@@ -39,6 +39,7 @@ struct Preisliste: View {
                     }
                 }
             }
-        .navigationTitle("Preisliste")
+        .navigationTitle("👀 Preisliste")
     }
 }
+

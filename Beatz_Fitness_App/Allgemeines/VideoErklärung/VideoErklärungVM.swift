@@ -1,19 +1,12 @@
 //
-//  VideoErklärung.swift
+//  VideoErklärungVM.swift
 //  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 23.04.23.
+//  Created by Maximillian Stabe on 15.05.23.
 //
 
 import SwiftUI
-import AVKit
 
-struct VideoErklärung: View {
-    var body: some View {
-        VideoListe()
-        .navigationTitle("🏋🏻 Übungstutorials")
-    }
-}
 
 struct Video: Identifiable {
     var id = UUID()
@@ -23,10 +16,8 @@ struct Video: Identifiable {
     let beschreibung: String
 }
 
-let Bankdrücken = Video(bild: Image("TestBildGym"), name: "Bankdrücken", link: URL(string: "https://example.com")!, beschreibung: "von Dome")
-
 struct VideoListe: View {
-    let videos = [Bankdrücken]
+    let videos = [Bankdrücken, Squat]
     
     var body: some View {
         List(videos) { video in
@@ -36,7 +27,7 @@ struct VideoListe: View {
                     .scaledToFit()
                     .frame(width: 120, height: 90)
                     .cornerRadius(10)
-                
+
                 VStack(alignment: .leading) {
                     Text(video.name)
                         .font(.headline)
@@ -44,15 +35,12 @@ struct VideoListe: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
-                
-                Spacer()
             }
             .padding(.vertical, 12)
         }
-        .listStyle(InsetListStyle())
         .navigationTitle("🏋🏻 Übungstutorials")
     }
 }
 
-
-
+let Bankdrücken = Video(bild: Image("TestBildGym"), name: "Bankdrücken", link: URL(string: "https://example.com")!, beschreibung: "von Dome")
+let Squat = Video(bild: Image("TestBildGym"), name: "Squat", link: URL(string: "https://example.com")!, beschreibung: "von Vivi")

@@ -9,12 +9,12 @@ import SwiftUI
 
 struct TrainingView: View {
     @ObservedObject var viewModel: TrainingViewModel
-
+    @State private var showingAlert = false
+    
     var body: some View {
-        VStack {
+        Form {
             ForEach(viewModel.selectedSplit.getUebungen.indices, id: \.self) { uebungIndex in
                 let uebung = viewModel.selectedSplit.getUebungen[uebungIndex]
-                
                 Section(header: Text(uebung.name ?? "")) {
                     ForEach(0..<Int(uebung.saetze), id: \.self) { saetzeIndex in
                         HStack {
@@ -29,8 +29,7 @@ struct TrainingView: View {
                                 }
                             ))
                             .keyboardType(.decimalPad)
-
-                            .keyboardType(.decimalPad)
+                            
                             TextField("Wiederholungen", text: Binding(
                                 get: { viewModel.wiederholungen[uebungIndex][saetzeIndex] },
                                 set: { newValue in
@@ -41,17 +40,45 @@ struct TrainingView: View {
                             ))
                             .keyboardType(.numberPad)
                         }
-                        .onChange(of: viewModel.selectedUebung) { newValue in
-                            if let newValue = newValue {
-                                self.viewModel.selectedUebung = newValue
-                            }
+                    }
+                    .onDelete { indexSet in
+                          guard let firstIndex = indexSet.first else { return }
+                          uebung.saetze -= 1
+                          viewModel.gewichte[uebungIndex].remove(at: firstIndex)
+                          viewModel.wiederholungen[uebungIndex].remove(at: firstIndex)
+                      }
+                    
+                    Button(action: {
+                        uebung.saetze += 1
+                    }) {
+                        HStack {
+                            Image(systemName: "plus.circle.fill")
+                            Text("Hinzufügen")
                         }
                     }
                 }
             }
-            Button(action: viewModel.saveTraining) {
+        }
+            
+            Button(action: {
+                viewModel.saveTraining()
+                showingAlert = true
+            }) {
                 Text("Training abschließen")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(15.0)
             }
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Training abgeschlossen"), message: Text("Das Training wurde erfolgreich gespeichert."), dismissButton: .default(Text("OK")))
+            }
+            
+            .navigationBarTitle(viewModel.selectedSplit.name ?? "")
         }
     }
-}
+
+
+
+

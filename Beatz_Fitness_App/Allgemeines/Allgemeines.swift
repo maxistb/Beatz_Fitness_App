@@ -11,7 +11,6 @@ struct Allgemeines: View {
     var body: some View {
         NavigationView {
             Form {
-                
                 Section(header: Text("Kursplan & Unsere Trainer")) {
                     NavigationLink(destination: Kursplan(viewModel: KursplanViewModel())) {
                         HStack {
@@ -37,7 +36,7 @@ struct Allgemeines: View {
                 }
                 
                 Section(header: Text("Videotutorials")) {
-                    NavigationLink(destination: VideoErklärung()) {
+                    NavigationLink(destination: VideoErklärungView()) {
                         HStack {
                             Image("BeatzLogo")
                                 .resizable()
@@ -90,8 +89,12 @@ struct Allgemeines: View {
                     Text("Maximillian Stabe")
                 }
             }
-            .navigationTitle("Allgemeines")
-            .navigationBarItems(trailing: EmptyView())
+                .navigationTitle("Allgemeines")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Image(systemName: "gearshape.fill")
+                }
+            }
         }
     }
 }

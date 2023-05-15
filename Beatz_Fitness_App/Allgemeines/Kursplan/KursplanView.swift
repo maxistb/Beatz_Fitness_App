@@ -33,7 +33,7 @@ struct Kursplan: View {
                 }
                 .padding(.horizontal, 10)
             }
-            .navigationTitle("Kursplan")
+            .navigationBarTitle("🗓️Kursplan")
             
             VStack(alignment: .leading) {
                 Text(viewModel.courseTitles[viewModel.selectedDayIndex])

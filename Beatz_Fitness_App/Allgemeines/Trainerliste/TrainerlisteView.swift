@@ -35,7 +35,7 @@ struct TrainerListeView: View {
                 }
             }
         }
-        .navigationTitle("Unsere Trainer")
+        .navigationTitle("💪🏼 Unsere Trainer")
     }
 }
 
