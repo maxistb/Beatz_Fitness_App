@@ -42,42 +42,41 @@ struct TrainingView: View {
                         }
                     }
                     .onDelete { indexSet in
-                          guard let firstIndex = indexSet.first else { return }
-                          uebung.saetze -= 1
-                          viewModel.gewichte[uebungIndex].remove(at: firstIndex)
-                          viewModel.wiederholungen[uebungIndex].remove(at: firstIndex)
-                      }
+                        guard let firstIndex = indexSet.first else { return }
+                        uebung.saetze -= 1
+                        viewModel.gewichte[uebungIndex].remove(at: firstIndex)
+                        viewModel.wiederholungen[uebungIndex].remove(at: firstIndex)
+                    }
+
+
                     
                     Button(action: {
                         uebung.saetze += 1
                     }) {
-                        HStack {
-                            Image(systemName: "plus.circle.fill")
                             Text("Hinzufügen")
-                        }
                     }
                 }
             }
         }
-            
-            Button(action: {
-                viewModel.saveTraining()
-                showingAlert = true
-            }) {
-                Text("Training abschließen")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(15.0)
-            }
-            .alert(isPresented: $showingAlert) {
-                Alert(title: Text("Training abgeschlossen"), message: Text("Das Training wurde erfolgreich gespeichert."), dismissButton: .default(Text("OK")))
-            }
-            
-            .navigationBarTitle(viewModel.selectedSplit.name ?? "")
+        
+        Button(action: {
+            viewModel.saveTraining()
+            showingAlert = true
+        }) {
+            Text("Training abschließen")
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.blue)
+                .cornerRadius(15.0)
         }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text("Training abgeschlossen"), message: Text("Das Training wurde erfolgreich gespeichert."), dismissButton: .default(Text("OK")))
+        }
+        
+        .navigationBarTitle(viewModel.selectedSplit.name ?? "")
     }
+}
 
 
 

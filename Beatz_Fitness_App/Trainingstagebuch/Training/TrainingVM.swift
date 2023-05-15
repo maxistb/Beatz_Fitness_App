@@ -19,6 +19,11 @@ class TrainingViewModel: ObservableObject {
         self.selectedSplit = selectedSplit
         self.moc = moc
     }
+    
+    func delete(satzIndex: Int, uebungIndex: Int) {
+     
+    }
+
 
     func saveTraining() {
         guard gewichte.count == wiederholungen.count else {

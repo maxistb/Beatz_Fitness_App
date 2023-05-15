@@ -39,7 +39,7 @@ struct Preisliste: View {
                     }
                 }
             }
-        .navigationTitle("👀 Preisliste")
+        .navigationTitle(" Preisliste")
     }
 }
 
