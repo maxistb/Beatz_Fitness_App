@@ -18,16 +18,46 @@ struct TrainingseintragDetailView: View {
         Dictionary(grouping: trainingseintrag.ausgefuehrteSätzeArray.sorted(by: { $0.datum ?? Date() > $1.datum ?? Date() })) { $0.uebungname ?? "Fehler" }
     }
 
- 
-    
-    
     var body: some View {
         List {
             ForEach(Array(ausgefuehrteSätzeNachUebung.keys.sorted()), id: \.self) { uebungname in
                 Section(header: Text(uebungname)) {
                     ForEach(ausgefuehrteSätzeNachUebung[uebungname]!, id: \.self) { ausgefuehrterSatz in
                         HStack {
-                            Text(String(format: "Gewicht: %.2f kg, Wiederholungen: %d", arguments: [ausgefuehrterSatz.gewicht, ausgefuehrterSatz.wiederholungen]))
+                            TextField("Gewicht", text: Binding(
+                                get: {
+                                    if ausgefuehrterSatz.gewicht == 0.0 {
+                                        return ""
+                                    } else {
+                                        return String(ausgefuehrterSatz.gewicht)
+                                    }
+                                },
+                                set: { newValue in
+                                    if let value = Double(newValue) {
+                                        ausgefuehrterSatz.gewicht = value
+                                    }
+                                }
+                            ))
+                            .keyboardType(.decimalPad)
+
+
+                            TextField("Wiederholungen", text: Binding(
+                                get: {
+                                    if ausgefuehrterSatz.wiederholungen == 0 {
+                                        return ""
+
+                                    } else {
+                                        return String(ausgefuehrterSatz.wiederholungen)
+                                    }
+                                },
+                                set: { newValue in
+                                    if let value = Double(newValue) {
+                                        ausgefuehrterSatz.wiederholungen = Int64(value)
+                                    }
+                                }
+                            ))
+                            .keyboardType(.numberPad)
+
                             Spacer()
                         }
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
@@ -40,24 +70,15 @@ struct TrainingseintragDetailView: View {
                     }
                     .onMove(perform: move)
 
+                    
                     Button("Hinzufügen") {
-                          alertTF(title: "Split Hinzufügen", message: "Füge hier einen neuen Satz zur aktuellen Übung hinzu.", gewichtText: "Gewicht", wiederholungenText: "Wiederholungen", primaryTitle: "Hinzufügen", secondaryTitle: "Abbrechen") { gewicht, wiederholungen in
-                              if let gewichtDouble = Double(gewicht), let wiederholungenInt = Int(wiederholungen) {
-                                  let newSatz = AusgefuehrterSatz(context: moc)
-                                  newSatz.gewicht = gewichtDouble
-                                  newSatz.wiederholungen = Int64(wiederholungenInt)
-                                  newSatz.id = UUID()
-                                  newSatz.uebungname = uebungname
-                                  trainingseintrag.addToAusgefuehrteUebungen(newSatz)
-                                  try? moc.save()
-                              } else {
-                                  let alert = UIAlertController(title: "Ungültige Eingabe", message: "Bitte geben Sie nur Zahlen ein", preferredStyle: .alert)
-                                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                                    UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
-                              }
-                          } secondaryAction: {
-                              print("Abbrechen")
-                        }
+                        let newSatz = AusgefuehrterSatz(context: moc)
+                        newSatz.gewicht = 0.0
+                        newSatz.wiederholungen = 0
+                        newSatz.uebungname = uebungname
+                        newSatz.datum = Date()
+                        trainingseintrag.addToAusgefuehrteUebungen(newSatz)
+                        try? moc.save()
                     }
                 }
             }
