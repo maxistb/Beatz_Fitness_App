@@ -8,9 +8,11 @@
 import SwiftUI
 
 extension SplitView {
-    func deleteItems(at index: Int) {
-        let split = splits[index]
-        moc.delete(split)
+    func deleteItems(at offsets: IndexSet) {
+        for index in offsets {
+            let split = splits[index]
+            moc.delete(split)
+        }
         try? moc.save()
     }
 

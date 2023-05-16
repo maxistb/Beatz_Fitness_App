@@ -27,36 +27,42 @@ struct SplitView: View {
                         }
                         .swipeActions {
                             Button(action: {
-                                deleteItems(at: index)
+                                deleteItems(at: IndexSet([index]))
                             }, label: {
                                 Image(systemName: "trash")
                             })
                             .tint(.red)
                         }
                     }
-
+                    .onDelete(perform: deleteItems)
                     .onMove(perform: moveItems)
                 }
                 .padding()
                 .listStyle(InsetListStyle())
 
                 .navigationBarTitle("Trainingspläne")
+                .navigationBarItems(leading:
+                    Button(action: {
+                    withAnimation {
+                        isEditMode.toggle()
+
+                    }
+                    }) {
+                        Text(isEditMode ? "Fertig" : "Bearbeiten")
+                    }
+                )
+                .environment(\.editMode, isEditMode ? .constant(.active) : .constant(.inactive))
                 .navigationBarItems(trailing:
                                         NavigationLink(destination:
                                                         AddSplitView(name: $name)) {
                     Image(systemName: "plus")
                 }
                 )
-                .navigationBarItems(leading:
-                    EditButton()
-                        .onTapGesture {
-                            isEditMode.toggle()
-                        }
-                )
             }
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
