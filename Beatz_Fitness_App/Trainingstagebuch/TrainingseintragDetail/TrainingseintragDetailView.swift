@@ -23,40 +23,49 @@ struct TrainingseintragDetailView: View {
             ForEach(Array(ausgefuehrteSätzeNachUebung.keys.sorted()), id: \.self) { uebungname in
                 Section(header: Text(uebungname)) {
                     ForEach(ausgefuehrteSätzeNachUebung[uebungname]!, id: \.self) { ausgefuehrterSatz in
-                        HStack {
-                            TextField("Gewicht", text: Binding(
-                                get: {
-                                    if ausgefuehrterSatz.gewicht == 0.0 {
-                                        return ""
-                                    } else {
-                                        return String(ausgefuehrterSatz.gewicht)
-                                    }
-                                },
-                                set: { newValue in
-                                    if let value = Double(newValue) {
-                                        ausgefuehrterSatz.gewicht = value
-                                    }
-                                }
-                            ))
-                            .keyboardType(.decimalPad)
+                                    HStack {
+                                        TextField("Gewicht", text: Binding(
+                                            get: {
+                                                if ausgefuehrterSatz.gewicht == 0.0 {
+                                                    return ""
+                                                } else {
+                                                    let weightString = String(format: "%g", ausgefuehrterSatz.gewicht)
+                                                    return weightString.replacingOccurrences(of: ".0", with: "")
+                                                }
+                                            },
+                                            set: { newValue in
+                                                if newValue.isEmpty {
+                                                    ausgefuehrterSatz.gewicht = 0.0
+                                                } else if let value = Double(newValue.replacingOccurrences(of: ",", with: ".")) {
+                                                    ausgefuehrterSatz.gewicht = value
+                                                }
+                                                try? moc.save()
+                                            }
+                                        ))
+                                        .keyboardType(.decimalPad)
 
 
-                            TextField("Wiederholungen", text: Binding(
-                                get: {
-                                    if ausgefuehrterSatz.wiederholungen == 0 {
-                                        return ""
 
-                                    } else {
-                                        return String(ausgefuehrterSatz.wiederholungen)
-                                    }
-                                },
-                                set: { newValue in
-                                    if let value = Double(newValue) {
-                                        ausgefuehrterSatz.wiederholungen = Int64(value)
-                                    }
-                                }
-                            ))
-                            .keyboardType(.numberPad)
+
+
+                                        TextField("Wiederholungen", text: Binding(
+                                            get: {
+                                                if ausgefuehrterSatz.wiederholungen == 0 {
+                                                    return ""
+                                                } else {
+                                                    return String(ausgefuehrterSatz.wiederholungen)
+                                                }
+                                            },
+                                            set: { newValue in
+                                                if let value = Double(newValue) {
+                                                    ausgefuehrterSatz.wiederholungen = Int64(value)
+                                                } else {
+                                                    ausgefuehrterSatz.wiederholungen = 0
+                                                }
+                                                try? moc.save()
+                                            }
+                                        ))
+                                        .keyboardType(.numberPad)
 
                             Spacer()
                         }
