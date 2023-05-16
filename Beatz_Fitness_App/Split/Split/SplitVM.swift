@@ -8,14 +8,12 @@
 import SwiftUI
 
 extension SplitView {
-    func deleteItems(at offsets: IndexSet) {
-        for offset in offsets {
-            let split = splits[offset]
-            moc.delete(split)
-        }
+    func deleteItems(at index: Int) {
+        let split = splits[index]
+        moc.delete(split)
         try? moc.save()
     }
-    
+
     
     func moveItems(from source: IndexSet, to destination: Int) {
         @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Split.order, ascending: true)]) var splits: FetchedResults<Split>

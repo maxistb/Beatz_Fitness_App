@@ -20,12 +20,21 @@ struct SplitView: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(splits) {split in
+                    ForEach(splits.indices, id: \.self) { index in
+                        let split = splits[index]
                         NavigationLink(destination: UebungView(split: split)) {
                             Text(split.name ?? "Error")
                         }
+                        .swipeActions {
+                            Button(action: {
+                                deleteItems(at: index)
+                            }, label: {
+                                Image(systemName: "trash")
+                            })
+                            .tint(.red)
+                        }
                     }
-                    .onDelete(perform: deleteItems)
+
                     .onMove(perform: moveItems)
                 }
                 .padding()

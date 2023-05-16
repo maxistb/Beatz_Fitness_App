@@ -40,15 +40,17 @@ struct TrainingView: View {
                             ))
                             .keyboardType(.numberPad)
                         }
+                        .swipeActions {
+                            Button(action: {
+                                uebung.saetze -= 1
+                                viewModel.gewichte[uebungIndex].remove(at: saetzeIndex)
+                                viewModel.wiederholungen[uebungIndex].remove(at: saetzeIndex)
+                            }, label: {
+                                Image(systemName: "trash")
+                            })
+                            .tint(.red)
+                        }
                     }
-                    .onDelete { indexSet in
-                        guard let firstIndex = indexSet.first else { return }
-                        uebung.saetze -= 1
-                        viewModel.gewichte[uebungIndex].remove(at: firstIndex)
-                        viewModel.wiederholungen[uebungIndex].remove(at: firstIndex)
-                    }
-
-
                     
                     Button(action: {
                         uebung.saetze += 1
