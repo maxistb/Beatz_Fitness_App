@@ -13,7 +13,7 @@ struct Diagramme: View {
     @State private var gewichtEingabe = ""
     @State private var zeigtTextfeld = false
     
-        let viewMonths: [ViewMonth] = [
+        let gewichte: [ViewMonth] = [
             .init(datum: Date.from(year: 2023, month: 1, day: 1), nameÜbung: "Bankdrücken", gewicht: 10),
             .init(datum: Date.from(year: 2023, month: 2, day: 1), nameÜbung: "Bankdrücken", gewicht: 20),
             .init(datum: Date.from(year: 2023, month: 3, day: 1), nameÜbung: "Bankdrücken", gewicht: 30),
@@ -30,18 +30,11 @@ struct Diagramme: View {
   
     
     var body: some View {
-        let durchschnitt = viewMonths.reduce(0, { $0 + $1.gewicht / 12})
+        let durchschnitt = gewichte.reduce(0, { $0 + $1.gewicht / 12})
 
         VStack {
             
-            Button(action: {
-                
-            }, label: {
-                Text("Gewicht eingeben")
-                .padding()
-                .background(Color.blue.cornerRadius(10).shadow(radius: 10))
-                
-            })
+       
             
 
             
@@ -63,17 +56,17 @@ struct Diagramme: View {
                     }
 
                 
-                ForEach(viewMonths) { viewMonth in
+                ForEach(gewichte) { gewicht in
                     BarMark(
-                        x: .value("Month", viewMonth.datum, unit: .month),
-                        y: .value("Views", viewMonth.gewicht))
+                        x: .value("Month", gewicht.datum, unit: .month),
+                        y: .value("Views", gewicht.gewicht))
                             }
                 .foregroundStyle(Color.pink.gradient)
                 .cornerRadius(5)
                 }
             .frame(height: 180)
             .chartXAxis {
-                AxisMarks(values: viewMonths.map { $0.datum }) {datum in
+                AxisMarks(values: gewichte.map { $0.datum }) {datum in
                     AxisValueLabel(format: .dateTime.month(.narrow), centered: true)
                     AxisTick()
                     AxisGridLine()
@@ -116,11 +109,5 @@ extension Date {
         return Calendar.current.date(from: komponenten)!
         
     }
-}
-
-
-func überprüfeEingabe(_ string: String) -> Bool {
-        let regex = #"^[0-9]+$"#
-        return NSPredicate(format: "SELF MATCHES %@", regex).evaluate(with: string)
 }
 

@@ -2,7 +2,7 @@
 //  AusgefuehrterSatz+CoreDataClass.swift
 //  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 14.05.23.
+//  Created by Maximillian Stabe on 17.05.23.
 //
 //
 

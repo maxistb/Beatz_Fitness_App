@@ -11,8 +11,8 @@ struct Trainingstagebuch: View {
     @Environment(\.managedObjectContext) private var moc
     @FetchRequest(entity: Split.entity(), sortDescriptors: [])
     var splits: FetchedResults<Split>
-    @State private var selectedSplit: Split? 
-
+    @State private var selectedSplit: Split?
+    
     var body: some View {
         NavigationView {
             List {
@@ -29,24 +29,29 @@ struct Trainingstagebuch: View {
                         }
                     }
                 }
-            }
-            .navigationTitle("Splits")
-            .overlay(
-                VStack {
-                    Spacer()
+                
+                Section {
                     HStack {
                         Spacer()
                         if let split = selectedSplit {
                             NavigationLink(destination: TrainingView(viewModel: TrainingViewModel(selectedSplit: split, moc: moc))) {
-                                Label("Training starten", systemImage: "play.circle")
+                                Text("Training starten")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .frame(width: 200)
+                                    .frame(height: 50)
+                                    .background(Color.blue)
+                                    .cornerRadius(15.0)
                             }
                         }
-
-                        Spacer()
                     }
-                    Spacer()
                 }
-            )
+                .listRowBackground(Color.clear)
+            }
+            .navigationTitle("Splits")
         }
     }
 }
+
+
+

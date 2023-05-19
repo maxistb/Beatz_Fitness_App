@@ -29,22 +29,25 @@ struct TrainingseintragDetailView: View {
                                                 if ausgefuehrterSatz.gewicht == 0.0 {
                                                     return ""
                                                 } else {
-                                                    let weightString = String(format: "%g", ausgefuehrterSatz.gewicht)
-                                                    return weightString.replacingOccurrences(of: ".0", with: "")
+                                                    let weightString = String(format: "%.2f", ausgefuehrterSatz.gewicht)
+                                                    if weightString.hasSuffix(".00") {
+                                                        return String(Int(ausgefuehrterSatz.gewicht))
+                                                    } else {
+                                                        return weightString.replacingOccurrences(of: ",", with: ".")
+                                                    }
                                                 }
                                             },
                                             set: { newValue in
-                                                if newValue.isEmpty {
-                                                    ausgefuehrterSatz.gewicht = 0.0
-                                                } else if let value = Double(newValue.replacingOccurrences(of: ",", with: ".")) {
+                                                let filteredValue = newValue.replacingOccurrences(of: ",", with: ".")
+                                                if let value = Double(filteredValue) {
                                                     ausgefuehrterSatz.gewicht = value
+                                                } else {
+                                                    ausgefuehrterSatz.gewicht = 0.0
                                                 }
                                                 try? moc.save()
                                             }
                                         ))
                                         .keyboardType(.decimalPad)
-
-
 
 
 
@@ -72,6 +75,7 @@ struct TrainingseintragDetailView: View {
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                             Button(role: .destructive) {
                                 delete(ausgefuehrterSatz: ausgefuehrterSatz)
+                                saveGewichteUndWiederholungen()
                             } label: {
                                 Label("Löschen", systemImage: "trash")
                             }

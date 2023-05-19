@@ -9,14 +9,14 @@ import SwiftUI
 import CoreData
 
 struct SplitView: View {
-    
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: []) var splits: FetchedResults<Split>
     @State private var name = ""
     @State private var isEditMode = false
+    @State private var showAddSplitView = false
+    @State private var settingsDetent = PresentationDetent.medium
     
     var body: some View {
- 
         NavigationView {
             VStack {
                 List {
@@ -36,32 +36,46 @@ struct SplitView: View {
                     }
                     .onDelete(perform: deleteItems)
                     .onMove(perform: moveItems)
+                    
                 }
                 .padding()
                 .listStyle(InsetListStyle())
-
+                
                 .navigationBarTitle("Trainingspläne")
                 .navigationBarItems(leading:
-                    Button(action: {
+                                        Button(action: {
                     withAnimation {
                         isEditMode.toggle()
-
                     }
-                    }) {
-                        Text(isEditMode ? "Fertig" : "Bearbeiten")
-                    }
+                }) {
+                    Text(isEditMode ? "Fertig" : "Bearbeiten")
+                }
                 )
                 .environment(\.editMode, isEditMode ? .constant(.active) : .constant(.inactive))
                 .navigationBarItems(trailing:
-                                        NavigationLink(destination:
-                                                        AddSplitView(name: $name)) {
+                                        Button(action: {
+                    showAddSplitView = true
+                }) {
                     Image(systemName: "plus")
                 }
                 )
             }
+            .sheet(isPresented: $showAddSplitView) {
+                NavigationView {
+                    AddSplitView(name: $name)
+                        .navigationBarBackButtonHidden(true)
+                }
+                    .presentationDetents(
+                        [.medium, .large],
+                        selection: $settingsDetent
+                    )
+                    .navigationViewStyle(StackNavigationViewStyle())
+            }
+            .navigationTitle("Split hinzufügen")
         }
     }
 }
+
 
 
 struct ContentView_Previews: PreviewProvider {
@@ -69,3 +83,4 @@ struct ContentView_Previews: PreviewProvider {
         SplitView()
     }
 }
+

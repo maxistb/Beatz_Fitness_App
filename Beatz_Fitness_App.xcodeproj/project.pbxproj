@@ -26,12 +26,20 @@
 		7A746BBD29E3246E00EF54C7 /* TrainingStarten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BBC29E3246E00EF54C7 /* TrainingStarten.swift */; };
 		7A746BC329E3F2EB00EF54C7 /* VordefinierteUebungenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BC229E3F2EB00EF54C7 /* VordefinierteUebungenVM.swift */; };
 		7A746BC629E416B400EF54C7 /* TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BC529E416B400EF54C7 /* TrainingView.swift */; };
+		7AB3AFEE2A14C85500E5EBA8 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 7AB3AFED2A14C85500E5EBA8 /* SwiftUICharts */; };
+		7AB3AFF32A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFEF2A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataClass.swift */; };
+		7AB3AFF42A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFF02A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift */; };
+		7AB3AFF52A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFF12A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataClass.swift */; };
+		7AB3AFF62A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFF22A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataProperties.swift */; };
+		7AB3AFF92A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFF72A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataClass.swift */; };
+		7AB3AFFA2A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFF82A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataProperties.swift */; };
+		7AB3AFFC2A153E6D00E5EBA8 /* VordefinierteSplitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFFB2A153E6D00E5EBA8 /* VordefinierteSplitsView.swift */; };
+		7AB3AFFE2A153EEA00E5EBA8 /* VordefinierteSplitsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFFD2A153EEA00E5EBA8 /* VordefinierteSplitsVM.swift */; };
+		7AB60BFD2A14BCD700744FF0 /* StatistikView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB60BFC2A14BCD700744FF0 /* StatistikView.swift */; };
 		7AC541DE2A0FB6E400F3DE8B /* TrainingseintragDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC541DD2A0FB6E300F3DE8B /* TrainingseintragDetailVM.swift */; };
 		7AC541E02A10F0B100F3DE8B /* PreislisteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC541DF2A10F0B100F3DE8B /* PreislisteView.swift */; };
 		7AC541E22A10F5D500F3DE8B /* PreislisteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC541E12A10F5D500F3DE8B /* PreislisteVM.swift */; };
 		7AC541E52A10F62A00F3DE8B /* TrainerlisteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC541E42A10F62A00F3DE8B /* TrainerlisteVM.swift */; };
-		7AC541E92A113DBB00F3DE8B /* AusgefuehrterSatz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC541E72A113DBB00F3DE8B /* AusgefuehrterSatz+CoreDataClass.swift */; };
-		7AC541EA2A113DBB00F3DE8B /* AusgefuehrterSatz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC541E82A113DBB00F3DE8B /* AusgefuehrterSatz+CoreDataProperties.swift */; };
 		7AC541EC2A11476F00F3DE8B /* SplitVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC541EB2A11476F00F3DE8B /* SplitVM.swift */; };
 		7AC541EE2A1147FE00F3DE8B /* UebungVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC541ED2A1147FE00F3DE8B /* UebungVM.swift */; };
 		7AC541F42A11499C00F3DE8B /* TrainingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC541F32A11499C00F3DE8B /* TrainingVM.swift */; };
@@ -77,12 +85,19 @@
 		7A746BBC29E3246E00EF54C7 /* TrainingStarten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingStarten.swift; sourceTree = "<group>"; };
 		7A746BC229E3F2EB00EF54C7 /* VordefinierteUebungenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VordefinierteUebungenVM.swift; sourceTree = "<group>"; };
 		7A746BC529E416B400EF54C7 /* TrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingView.swift; sourceTree = "<group>"; };
+		7AB3AFEF2A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GewichteNachUebung+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7AB3AFF02A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GewichteNachUebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7AB3AFF12A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WiederholungenNachUebung+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7AB3AFF22A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WiederholungenNachUebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7AB3AFF72A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AusgefuehrterSatz+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7AB3AFF82A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AusgefuehrterSatz+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7AB3AFFB2A153E6D00E5EBA8 /* VordefinierteSplitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VordefinierteSplitsView.swift; sourceTree = "<group>"; };
+		7AB3AFFD2A153EEA00E5EBA8 /* VordefinierteSplitsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VordefinierteSplitsVM.swift; sourceTree = "<group>"; };
+		7AB60BFC2A14BCD700744FF0 /* StatistikView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatistikView.swift; sourceTree = "<group>"; };
 		7AC541DD2A0FB6E300F3DE8B /* TrainingseintragDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingseintragDetailVM.swift; sourceTree = "<group>"; };
 		7AC541DF2A10F0B100F3DE8B /* PreislisteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreislisteView.swift; sourceTree = "<group>"; };
 		7AC541E12A10F5D500F3DE8B /* PreislisteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreislisteVM.swift; sourceTree = "<group>"; };
 		7AC541E42A10F62A00F3DE8B /* TrainerlisteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerlisteVM.swift; sourceTree = "<group>"; };
-		7AC541E72A113DBB00F3DE8B /* AusgefuehrterSatz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AusgefuehrterSatz+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7AC541E82A113DBB00F3DE8B /* AusgefuehrterSatz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AusgefuehrterSatz+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7AC541EB2A11476F00F3DE8B /* SplitVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitVM.swift; sourceTree = "<group>"; };
 		7AC541ED2A1147FE00F3DE8B /* UebungVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UebungVM.swift; sourceTree = "<group>"; };
 		7AC541F32A11499C00F3DE8B /* TrainingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVM.swift; sourceTree = "<group>"; };
@@ -114,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AF6D87A29F56A570050E758 /* SwiftKeychainWrapper in Frameworks */,
+				7AB3AFEE2A14C85500E5EBA8 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				7A746B9C29E0863400EF54C7 /* AddSplitView.swift */,
+				7AB3AFFB2A153E6D00E5EBA8 /* VordefinierteSplitsView.swift */,
+				7AB3AFFD2A153EEA00E5EBA8 /* VordefinierteSplitsVM.swift */,
 				7AEC638629DD81DE00C8A8F3 /* SplitView.swift */,
 				7AC541EB2A11476F00F3DE8B /* SplitVM.swift */,
 			);
@@ -265,6 +283,7 @@
 				7AF6D87B29F56AA50050E758 /* LoginScreen */,
 				7AEC638829DD81E000C8A8F3 /* Assets.xcassets */,
 				7AEE658229E05BEE0064ED8A /* Diagramme.swift */,
+				7AB60BFC2A14BCD700744FF0 /* StatistikView.swift */,
 				7AEC639229DD820E00C8A8F3 /* Model.xcdatamodeld */,
 				7AEC638A29DD81E000C8A8F3 /* Preview Content */,
 			);
@@ -282,8 +301,12 @@
 		7AEC63BF29E02F3D00C8A8F3 /* ManuelleKlassen */ = {
 			isa = PBXGroup;
 			children = (
-				7AC541E72A113DBB00F3DE8B /* AusgefuehrterSatz+CoreDataClass.swift */,
-				7AC541E82A113DBB00F3DE8B /* AusgefuehrterSatz+CoreDataProperties.swift */,
+				7AB3AFF72A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataClass.swift */,
+				7AB3AFF82A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataProperties.swift */,
+				7AB3AFEF2A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataClass.swift */,
+				7AB3AFF02A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift */,
+				7AB3AFF12A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataClass.swift */,
+				7AB3AFF22A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataProperties.swift */,
 				7A36FE2A29FEAEE300988F7E /* Trainingseintrag+CoreDataClass.swift */,
 				7A36FE2B29FEAEE300988F7E /* Trainingseintrag+CoreDataProperties.swift */,
 				7A724AD229FC59D1001D82C4 /* Uebung+CoreDataClass.swift */,
@@ -337,6 +360,7 @@
 			name = Beatz_Fitness_App;
 			packageProductDependencies = (
 				7AF6D87929F56A570050E758 /* SwiftKeychainWrapper */,
+				7AB3AFED2A14C85500E5EBA8 /* SwiftUICharts */,
 			);
 			productName = VideoCoreData;
 			productReference = 7AEC638129DD81DE00C8A8F3 /* Beatz_Fitness_App.app */;
@@ -368,6 +392,7 @@
 			mainGroup = 7AEC637829DD81DE00C8A8F3;
 			packageReferences = (
 				7AF6D87829F56A570050E758 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+				7AB3AFEC2A14C85500E5EBA8 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 7AEC638229DD81DE00C8A8F3 /* Products */;
 			projectDirPath = "";
@@ -410,35 +435,42 @@
 				7A724AC729FACABB001D82C4 /* TrainingseintragDetailView.swift in Sources */,
 				7AEC638729DD81DE00C8A8F3 /* SplitView.swift in Sources */,
 				7AF6D88829F56B330050E758 /* BiometricAuthentication.swift in Sources */,
+				7AB60BFD2A14BCD700744FF0 /* StatistikView.swift in Sources */,
 				7AC541EC2A11476F00F3DE8B /* SplitVM.swift in Sources */,
 				7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */,
 				7A724AD729FC59D1001D82C4 /* Uebung+CoreDataProperties.swift in Sources */,
 				7AF6D88729F56B330050E758 /* AppState.swift in Sources */,
 				7AC541DE2A0FB6E400F3DE8B /* TrainingseintragDetailVM.swift in Sources */,
 				7AEE658129E05BE10064ED8A /* TrainerlisteView.swift in Sources */,
+				7AB3AFFE2A153EEA00E5EBA8 /* VordefinierteSplitsVM.swift in Sources */,
 				7A36FE2C29FEAEE300988F7E /* Trainingseintrag+CoreDataClass.swift in Sources */,
 				7AEC638529DD81DE00C8A8F3 /* Beatz_Fitness_App.swift in Sources */,
 				7AC541EE2A1147FE00F3DE8B /* UebungVM.swift in Sources */,
 				7A724AC229FAC62D001D82C4 /* Satz+CoreDataClass.swift in Sources */,
 				7AEC639429DD820E00C8A8F3 /* Model.xcdatamodeld in Sources */,
+				7AB3AFF52A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataClass.swift in Sources */,
 				7A746B9F29E0878400EF54C7 /* AddUebungView.swift in Sources */,
 				7AC541E02A10F0B100F3DE8B /* PreislisteView.swift in Sources */,
 				7A746BAC29E17B7C00EF54C7 /* VordefinierteUebungenView.swift in Sources */,
 				7AEC63B229E014BE00C8A8F3 /* UebungView.swift in Sources */,
 				7A746BC329E3F2EB00EF54C7 /* VordefinierteUebungenVM.swift in Sources */,
 				7A746B9D29E0863400EF54C7 /* AddSplitView.swift in Sources */,
+				7AB3AFF42A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift in Sources */,
 				7A746BA529E0886400EF54C7 /* Split+CoreDataProperties.swift in Sources */,
+				7AB3AFFC2A153E6D00E5EBA8 /* VordefinierteSplitsView.swift in Sources */,
 				7AF6D88329F56B330050E758 /* LoginViewModel.swift in Sources */,
 				7AF6D8A529F59FF50050E758 /* VideoErklärungView.swift in Sources */,
 				7A746BC629E416B400EF54C7 /* TrainingView.swift in Sources */,
-				7AC541E92A113DBB00F3DE8B /* AusgefuehrterSatz+CoreDataClass.swift in Sources */,
+				7AB3AFF32A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataClass.swift in Sources */,
+				7AB3AFFA2A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataProperties.swift in Sources */,
 				7AF6D88529F56B330050E758 /* ViewExtension.swift in Sources */,
 				7AF6D88929F56B330050E758 /* LoginHandler.swift in Sources */,
 				7AEE657B29E05B330064ED8A /* Hauptbildschirm.swift in Sources */,
 				7A746BA429E0886400EF54C7 /* Split+CoreDataClass.swift in Sources */,
+				7AB3AFF62A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataProperties.swift in Sources */,
 				7A746BBD29E3246E00EF54C7 /* TrainingStarten.swift in Sources */,
 				7A746BBA29E1F5F600EF54C7 /* Allgemeines.swift in Sources */,
-				7AC541EA2A113DBB00F3DE8B /* AusgefuehrterSatz+CoreDataProperties.swift in Sources */,
+				7AB3AFF92A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataClass.swift in Sources */,
 				7AEE658329E05BEE0064ED8A /* Diagramme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,6 +678,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7AB3AFEC2A14C85500E5EBA8 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		7AF6D87829F56A570050E758 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper.git";
@@ -657,6 +697,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7AB3AFED2A14C85500E5EBA8 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7AB3AFEC2A14C85500E5EBA8 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
 		7AF6D87929F56A570050E758 /* SwiftKeychainWrapper */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7AF6D87829F56A570050E758 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;

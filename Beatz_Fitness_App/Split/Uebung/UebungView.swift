@@ -13,6 +13,7 @@ struct UebungView: View {
     @State private var name = ""
     @State private var showAddUebungView = false
     @State private var showUebungListBeatz = false
+    @State private var settingsDetent = PresentationDetent.medium
     
     var body: some View {
         VStack {
@@ -54,7 +55,11 @@ struct UebungView: View {
                 NavigationView {
                     AddUebungView(split: split)
                 }
-                    .navigationTitle("Übung hinzufügen")
+                .presentationDetents(
+                    [.medium, .large],
+                    selection: $settingsDetent
+                )
+                .navigationTitle("Übung hinzufügen")
             }
             .sheet(isPresented: $showUebungListBeatz) {
                 VordefinierteUebungen(split: split)

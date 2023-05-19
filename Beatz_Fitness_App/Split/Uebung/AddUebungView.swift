@@ -15,35 +15,49 @@ struct AddUebungView: View {
     var split: Split
     
     var body: some View {
-            VStack {
+        VStack {
+            List {
                 TextField("Übungsname", text: $name)
-                    .padding()
                 
-                HStack {
-                    Text("Sätze:")
-                    Stepper(value: $saetze, in: 1...20) {
-                        Text("\(saetze)")
+                Section {
+                    HStack {
+                        Text("Sätze:")
+
+                        Stepper(value: $saetze, in: 1...20) {
+                            Text("\(saetze)")
+                        }
                     }
                 }
                 .padding(.horizontal)
                 
-                Button("Speichern") {
-                    let neueUebung = Uebung(context: moc)
-                    neueUebung.id = UUID()
-                    neueUebung.name = name
-                    neueUebung.saetze = Int64(saetze)
-                    split.addToUebung(neueUebung)
-                    
-                    try? moc.save()
-                    name = ""
-                    saetze = 1
-                    presentationMode.wrappedValue.dismiss()
+                Section {
+                    HStack(alignment: .center) {
+                        Spacer()
+                        
+                        Button("Speichern") {
+                            let neueUebung = Uebung(context: moc)
+                            neueUebung.id = UUID()
+                            neueUebung.name = name
+                            neueUebung.saetze = Int64(saetze)
+                            split.addToUebung(neueUebung)
+                            
+                            try? moc.save()
+                            name = ""
+                            saetze = 1
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                        .font(.headline)
+                           .foregroundColor(.white)
+                           .frame(height: 50)
+                           .frame(width: 200)
+                           .background(Color.blue)
+                           .cornerRadius(15.0)
+                           
+                           Spacer()
+                    }
                 }
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.blue)
-                .cornerRadius(10.0)
-                .padding()
+                .listRowBackground(Color.clear)
+            }
         }
         .navigationBarTitle("Übung hinzufügen")
     }
