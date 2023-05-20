@@ -20,27 +20,39 @@ struct SplitView: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(splits.indices, id: \.self) { index in
-                        let split = splits[index]
-                        NavigationLink(destination: UebungView(split: split)) {
-                            Text(split.name ?? "Error")
+                    Section(header: Text("Eigene Splits")) {
+                        ForEach(splits.indices, id: \.self) { index in
+                            let split = splits[index]
+                            NavigationLink(destination: UebungView(split: split)) {
+                                if isEditMode {
+                                    TextField("Split Name", text: Binding(
+                                        get: {
+                                            split.name ?? ""
+                                        },
+                                        set: { newName in
+                                            updateSplitName(split: split, newName: newName)
+                                        }
+                                    ))
+                                } else {
+                                    Text(split.name ?? "Error")
+                                }
+                            }
+                            .swipeActions {
+                                Button(action: {
+                                    deleteItems(at: IndexSet([index]))
+                                }, label: {
+                                    Image(systemName: "trash")
+                                })
+                                .tint(.red)
+                            }
                         }
-                        .swipeActions {
-                            Button(action: {
-                                deleteItems(at: IndexSet([index]))
-                            }, label: {
-                                Image(systemName: "trash")
-                            })
-                            .tint(.red)
-                        }
+                        .onDelete(perform: deleteItems)
+                        .onMove(perform: moveItems)
                     }
-                    .onDelete(perform: deleteItems)
-                    .onMove(perform: moveItems)
-                    
+                    Section(header: Text("Vordefinierte Splits")) {
+                        // Add predefined splits here
+                    }
                 }
-                .padding()
-                .listStyle(InsetListStyle())
-                
                 .navigationBarTitle("Trainingspläne")
                 .navigationBarItems(leading:
                                         Button(action: {
@@ -75,6 +87,7 @@ struct SplitView: View {
         }
     }
 }
+
 
 
 

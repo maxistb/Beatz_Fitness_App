@@ -1,8 +1,8 @@
 //
 //  Split+CoreDataProperties.swift
-//  VideoCoreData
+//  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 07.04.23.
+//  Created by Maximillian Stabe on 19.05.23.
 //
 //
 
@@ -19,6 +19,7 @@ extension Split {
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var order: Int64
+    @NSManaged public var notizen: String?
     @NSManaged public var uebung: NSSet?
 
     var getUebungen: [Uebung] {

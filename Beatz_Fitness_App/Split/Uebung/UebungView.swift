@@ -9,25 +9,65 @@ import SwiftUI
 
 struct UebungView: View {
     @Environment(\.managedObjectContext) var moc
-    @StateObject var split: Split
-    @State private var name = ""
-    @State private var showAddUebungView = false
-    @State private var showUebungListBeatz = false
-    @State private var settingsDetent = PresentationDetent.medium
+    @FetchRequest(
+           entity: Uebung.entity(),
+           sortDescriptors: [
+               NSSortDescriptor(keyPath: \Uebung.name, ascending: true)
+           ]
+       ) var uebungen: FetchedResults<Uebung>
+       
+       var split: Split
+       @State private var name = ""
+       @State private var showAddUebungView = false
+       @State private var showUebungListBeatz = false
+       @State private var settingsDetent = PresentationDetent.medium
+       @State private var notizenSplit = ""
     
     var body: some View {
         VStack {
             List {
-                ForEach(split.getUebungen) { uebung in
-                    HStack {
-                        Text(uebung.name ?? "Error")
-                        Text("\(uebung.saetze) Sätze")
-                            .foregroundColor(.gray)
-                            .font(.footnote)
+                Section(header: Text("Übungen")) {
+                    ForEach(uebungen.filter({ $0.origin == split }), id: \.self) { uebung in
+                        NavigationLink(
+                            destination: EditUebungView(uebung: uebung),
+                            label: {
+                                VStack(alignment: .leading, spacing: 8) {
+                                    HStack {
+                                        Text(uebung.name ?? "Error")
+                                        Text("\(uebung.saetze) Sätze")
+                                            .foregroundColor(.gray)
+                                            .font(.subheadline)
+                                        Spacer()
+                                    }
+                                    TextField("Notizen", text: Binding(
+                                        get: {
+                                            uebung.notizen ?? ""
+                                        },
+                                        set: { newValue in
+                                            uebung.notizen = newValue
+                                            try? moc.save()
+                                        }
+                                    ))
+                                }
+                            }
+                        )
+                        
+                        .swipeActions {
+                            Button(action: {
+                                deleteItems(at: IndexSet([split.getUebungen.firstIndex(of: uebung)].compactMap { $0 }))
+                            }, label: {
+                                Image(systemName: "trash")
+                            })
+                            .tint(.red)
+                        }
                     }
-                }
-                .onDelete(perform: deleteItems)
                 .onMove(perform: moveItems)
+            
+                }
+                Section(header: Text("Notizen")) {
+                    TextEditor(text: $notizenSplit)
+                        .frame(height: 150)
+                }
             }
             
             .navigationBarTitle(Text(split.name ?? "Error"))

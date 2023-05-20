@@ -16,7 +16,6 @@ extension SplitView {
         try? moc.save()
     }
 
-    
     func moveItems(from source: IndexSet, to destination: Int) {
         @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Split.order, ascending: true)]) var splits: FetchedResults<Split>
         
@@ -24,6 +23,13 @@ extension SplitView {
             try moc.save()
         } catch {
             print("Error saving managed object context: \(error.localizedDescription)")
+        }
+    }
+    
+    func updateSplitName(split: Split, newName: String) {
+        moc.performAndWait {
+            split.name = newName
+            try? moc.save()
         }
     }
 }

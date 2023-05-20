@@ -1,37 +1,56 @@
 //
-//  AddUebung.swift
-//  VideoCoreData
+//  EditUebungView.swift
+//  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 07.04.23.
+//  Created by Maximillian Stabe on 19.05.23.
 //
 
 import SwiftUI
 
-struct AddUebungView: View {
+struct EditUebungView: View {
+    
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
-    @State private var name = ""
-    @State private var saetze = 1
-    var split: Split
+    var uebung: Uebung
     @State private var notizenUebung = ""
+    @State private var saetze: Int64
+    
+    init(uebung: Uebung) {
+        self.uebung = uebung
+        self._saetze = State(initialValue: uebung.saetze)
+    }
     
     var body: some View {
         VStack {
             List {
-                TextField("Übungsname", text: $name)
-                
-                Section {
+                TextField("Übungsname", text: Binding(
+                    get: {
+                        uebung.name ?? ""
+                    },
+                    set: { newValue in
+                        uebung.name = newValue
+                        try? moc.save()
+                    }
+                ))
+                .onChange(of: uebung.name) { _ in
+                    try? moc.save()
+                }
+
+                Section(header: Text("Notizen")) {
                     TextField("Notizen", text: Binding(
                         get: {
-                            notizenUebung
+                            uebung.notizen ?? ""
                         },
                         set: { newValue in
-                            notizenUebung = newValue
+                            uebung.notizen = newValue
                             try? moc.save()
                         }
                     ))
+                    .onChange(of: uebung.notizen) { _ in
+                        try? moc.save()
+                    }
                 }
-                
+
                 Section {
                     HStack {
                         Text("Sätze:")
@@ -41,23 +60,16 @@ struct AddUebungView: View {
                         }
                     }
                 }
-                .padding(.horizontal)
                 
                 Section {
                     HStack(alignment: .center) {
                         Spacer()
                         
                         Button("Speichern") {
-                            let neueUebung = Uebung(context: moc)
-                            neueUebung.id = UUID()
-                            neueUebung.name = name
-                            neueUebung.saetze = Int64(saetze)
-                            neueUebung.notizen = notizenUebung
-                            split.addToUebung(neueUebung)
+                            uebung.name = uebung.name
+                            uebung.saetze = Int64(saetze)
                             
                             try? moc.save()
-                            name = ""
-                            saetze = 1
                             presentationMode.wrappedValue.dismiss()
                         }
                         .font(.headline)
@@ -72,14 +84,12 @@ struct AddUebungView: View {
                 }
                 .listRowBackground(Color.clear)
             }
+            .navigationBarTitle("Übung bearbeiten")
+            .onDisappear {
+                          // Aktualisiere die UebungView, wenn die EditUebungView ausgeblendet wird
+                          presentationMode.wrappedValue.dismiss()
+                      }
         }
-        .navigationBarTitle("Übung hinzufügen")
     }
 }
 
-
-struct UebungPreview: PreviewProvider {
-    static var previews: some View {
-    SplitView()
-    }
-}
