@@ -14,11 +14,62 @@ class TrainingViewModel: ObservableObject {
     let selectedSplit: Split
     let moc: NSManagedObjectContext
     var selectedUebung: Uebung?
-
+    @Published var isAufwärmsatz: [[Bool]] = Array(repeating: Array(repeating: false, count: 20), count: 20)
+    @Published var isDropsatz: [[Bool]] = Array(repeating: Array(repeating: false, count: 20), count: 20)
+    
     init(selectedSplit: Split, moc: NSManagedObjectContext) {
-        self.selectedSplit = selectedSplit
-        self.moc = moc
+            self.selectedSplit = selectedSplit
+            self.moc = moc
+            initializeArrays()
+        }
+    
+    func gewichtTextField(value: Binding<String>) -> some View {
+        TextField("Gewicht", text: value)
+            .keyboardType(.decimalPad)
+            .overlay(
+                Text("kg"),
+                alignment: .trailing
+            )
     }
+    
+    private func initializeArrays() {
+           for index in selectedSplit.getUebungen.indices {
+               let uebung = selectedSplit.getUebungen[index]
+               isAufwärmsatz[index] = Array(repeating: false, count: Int(uebung.saetze))
+               isDropsatz[index] = Array(repeating: false, count: Int(uebung.saetze))
+           }
+       }
+    
+    func wiederholungenTextField(value: Binding<String>) -> some View {
+        TextField("Wdh.", text: value)
+            .keyboardType(.decimalPad)
+            .overlay(
+                Text("Wdh."),
+                alignment: .trailing
+            )
+    }
+    
+    func createButton(showingAlert: Binding<Bool>) -> some View {
+           Section {
+               HStack {
+                   Spacer()
+                   Button(action: {
+                       self.saveTraining()
+                       showingAlert.wrappedValue = true
+                   }) {
+                       Text("Training abschließen")
+                           .font(.headline)
+                           .foregroundColor(.white)
+                           .frame(height: 50)
+                           .frame(width: 200)
+                           .background(Color.blue)
+                           .cornerRadius(15.0)
+                   }
+                   .padding(.vertical)
+                   Spacer()
+               }
+           }
+       }
     
     func saveTraining() {
         guard gewichte.count == wiederholungen.count else {

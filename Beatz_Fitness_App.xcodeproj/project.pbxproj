@@ -86,7 +86,7 @@
 		7A746BB929E1F5F600EF54C7 /* Allgemeines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Allgemeines.swift; sourceTree = "<group>"; };
 		7A746BBC29E3246E00EF54C7 /* TrainingStarten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingStarten.swift; sourceTree = "<group>"; };
 		7A746BC229E3F2EB00EF54C7 /* VordefinierteUebungenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VordefinierteUebungenVM.swift; sourceTree = "<group>"; };
-		7A746BC529E416B400EF54C7 /* TrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingView.swift; sourceTree = "<group>"; };
+		7A746BC529E416B400EF54C7 /* TrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TrainingView.swift; sourceTree = "<group>"; usesTabs = 1; wrapsLines = 1; };
 		7AB3AFEF2A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GewichteNachUebung+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7AB3AFF02A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GewichteNachUebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7AB3AFF12A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WiederholungenNachUebung+CoreDataClass.swift"; sourceTree = "<group>"; };
