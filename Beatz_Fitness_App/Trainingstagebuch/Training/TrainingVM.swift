@@ -91,6 +91,10 @@ class TrainingViewModel: ObservableObject {
                 ausgefuehrterSatz.id = UUID()
                 ausgefuehrterSatz.uebungname = uebungsname
 
+                // Setze die Werte von isDropsatz und isAufwärmsatz basierend auf den Arrays
+                ausgefuehrterSatz.isDropsatz = isDropsatz[index][satzIndex]
+                ausgefuehrterSatz.isAufwaermsatz = isAufwärmsatz[index][satzIndex]
+
                 trainingseintrag.addToAusgefuehrteUebungen(ausgefuehrterSatz)
             }
         }
@@ -101,4 +105,5 @@ class TrainingViewModel: ObservableObject {
             print("Error saving trainingseinheit: \(error.localizedDescription)")
         }
     }
+
 }

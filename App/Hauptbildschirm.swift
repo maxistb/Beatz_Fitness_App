@@ -16,7 +16,7 @@ struct Hauptbildschirm: View {
                     Image(systemName: "list.clipboard.fill")
                     Text("Trainingspläne")
                 }
-            TrainingHistorie()
+            TrainingHistorieView()
                 .tabItem {
                     Image(systemName: "chart.line.uptrend.xyaxis.circle.fill")
                     Text("Historie")

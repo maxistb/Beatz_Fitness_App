@@ -2,7 +2,7 @@
 //  AusgefuehrterSatz+CoreDataProperties.swift
 //  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 17.05.23.
+//  Created by Maximillian Stabe on 20.05.23.
 //
 //
 
@@ -21,11 +21,30 @@ extension AusgefuehrterSatz {
     @NSManaged public var id: UUID?
     @NSManaged public var uebungname: String?
     @NSManaged public var wiederholungen: Int64
+    @NSManaged public var isAufwaermsatz: Bool
+    @NSManaged public var isDropsatz: Bool
+    @NSManaged public var gewichteNachUebung: NSSet?
     @NSManaged public var saetze: NSOrderedSet?
     @NSManaged public var trainingseintrag: NSSet?
     @NSManaged public var uebung: NSOrderedSet?
-    @NSManaged public var gewichteNachUebung: NSSet?
     @NSManaged public var wiederholungenNachUebung: NSSet?
+
+}
+
+// MARK: Generated accessors for gewichteNachUebung
+extension AusgefuehrterSatz {
+
+    @objc(addGewichteNachUebungObject:)
+    @NSManaged public func addToGewichteNachUebung(_ value: GewichteNachUebung)
+
+    @objc(removeGewichteNachUebungObject:)
+    @NSManaged public func removeFromGewichteNachUebung(_ value: GewichteNachUebung)
+
+    @objc(addGewichteNachUebung:)
+    @NSManaged public func addToGewichteNachUebung(_ values: NSSet)
+
+    @objc(removeGewichteNachUebung:)
+    @NSManaged public func removeFromGewichteNachUebung(_ values: NSSet)
 
 }
 
@@ -113,23 +132,6 @@ extension AusgefuehrterSatz {
 
     @objc(removeUebung:)
     @NSManaged public func removeFromUebung(_ values: NSOrderedSet)
-
-}
-
-// MARK: Generated accessors for gewichteNachUebung
-extension AusgefuehrterSatz {
-
-    @objc(addGewichteNachUebungObject:)
-    @NSManaged public func addToGewichteNachUebung(_ value: GewichteNachUebung)
-
-    @objc(removeGewichteNachUebungObject:)
-    @NSManaged public func removeFromGewichteNachUebung(_ value: GewichteNachUebung)
-
-    @objc(addGewichteNachUebung:)
-    @NSManaged public func addToGewichteNachUebung(_ values: NSSet)
-
-    @objc(removeGewichteNachUebung:)
-    @NSManaged public func removeFromGewichteNachUebung(_ values: NSSet)
 
 }
 

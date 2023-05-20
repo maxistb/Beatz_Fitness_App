@@ -12,6 +12,8 @@
 		7A0C1E712A17D476000B350E /* EditUebungView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E702A17D476000B350E /* EditUebungView.swift */; };
 		7A0C1E742A1923BE000B350E /* Uebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E722A1923BE000B350E /* Uebung+CoreDataClass.swift */; };
 		7A0C1E752A1923BE000B350E /* Uebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E732A1923BE000B350E /* Uebung+CoreDataProperties.swift */; };
+		7A0C1E7A2A196230000B350E /* AusgefuehrterSatz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E782A196230000B350E /* AusgefuehrterSatz+CoreDataClass.swift */; };
+		7A0C1E7B2A196230000B350E /* AusgefuehrterSatz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E792A196230000B350E /* AusgefuehrterSatz+CoreDataProperties.swift */; };
 		7A18D47F29F66C4D00EF6171 /* KursplanVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D47E29F66C4D00EF6171 /* KursplanVM.swift */; };
 		7A263CF029EDD74B001CAEB4 /* TrainingHistorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A263CEF29EDD74B001CAEB4 /* TrainingHistorie.swift */; };
 		7A36FE2C29FEAEE300988F7E /* Trainingseintrag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A36FE2A29FEAEE300988F7E /* Trainingseintrag+CoreDataClass.swift */; };
@@ -32,8 +34,6 @@
 		7AB3AFF42A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFF02A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift */; };
 		7AB3AFF52A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFF12A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataClass.swift */; };
 		7AB3AFF62A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFF22A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataProperties.swift */; };
-		7AB3AFF92A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFF72A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataClass.swift */; };
-		7AB3AFFA2A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFF82A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataProperties.swift */; };
 		7AB3AFFC2A153E6D00E5EBA8 /* VordefinierteSplitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFFB2A153E6D00E5EBA8 /* VordefinierteSplitsView.swift */; };
 		7AB3AFFE2A153EEA00E5EBA8 /* VordefinierteSplitsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFFD2A153EEA00E5EBA8 /* VordefinierteSplitsVM.swift */; };
 		7AB60BFD2A14BCD700744FF0 /* StatistikView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB60BFC2A14BCD700744FF0 /* StatistikView.swift */; };
@@ -72,6 +72,8 @@
 		7A0C1E702A17D476000B350E /* EditUebungView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUebungView.swift; sourceTree = "<group>"; };
 		7A0C1E722A1923BE000B350E /* Uebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7A0C1E732A1923BE000B350E /* Uebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7A0C1E782A196230000B350E /* AusgefuehrterSatz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AusgefuehrterSatz+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A0C1E792A196230000B350E /* AusgefuehrterSatz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AusgefuehrterSatz+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A18D47E29F66C4D00EF6171 /* KursplanVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KursplanVM.swift; sourceTree = "<group>"; };
 		7A263CEF29EDD74B001CAEB4 /* TrainingHistorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHistorie.swift; sourceTree = "<group>"; };
 		7A36FE2A29FEAEE300988F7E /* Trainingseintrag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trainingseintrag+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -91,8 +93,6 @@
 		7AB3AFF02A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GewichteNachUebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7AB3AFF12A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WiederholungenNachUebung+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7AB3AFF22A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WiederholungenNachUebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7AB3AFF72A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AusgefuehrterSatz+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7AB3AFF82A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AusgefuehrterSatz+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7AB3AFFB2A153E6D00E5EBA8 /* VordefinierteSplitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VordefinierteSplitsView.swift; sourceTree = "<group>"; };
 		7AB3AFFD2A153EEA00E5EBA8 /* VordefinierteSplitsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VordefinierteSplitsVM.swift; sourceTree = "<group>"; };
 		7AB60BFC2A14BCD700744FF0 /* StatistikView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatistikView.swift; sourceTree = "<group>"; };
@@ -304,12 +304,12 @@
 		7AEC63BF29E02F3D00C8A8F3 /* ManuelleKlassen */ = {
 			isa = PBXGroup;
 			children = (
+				7A0C1E782A196230000B350E /* AusgefuehrterSatz+CoreDataClass.swift */,
+				7A0C1E792A196230000B350E /* AusgefuehrterSatz+CoreDataProperties.swift */,
 				7A0C1E722A1923BE000B350E /* Uebung+CoreDataClass.swift */,
 				7A0C1E732A1923BE000B350E /* Uebung+CoreDataProperties.swift */,
 				7A0C1E682A17BF5B000B350E /* Split+CoreDataClass.swift */,
 				7A0C1E692A17BF5B000B350E /* Split+CoreDataProperties.swift */,
-				7AB3AFF72A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataClass.swift */,
-				7AB3AFF82A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataProperties.swift */,
 				7AB3AFEF2A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataClass.swift */,
 				7AB3AFF02A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift */,
 				7AB3AFF12A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataClass.swift */,
@@ -440,9 +440,11 @@
 				7AEC638729DD81DE00C8A8F3 /* SplitView.swift in Sources */,
 				7AF6D88829F56B330050E758 /* BiometricAuthentication.swift in Sources */,
 				7AB60BFD2A14BCD700744FF0 /* StatistikView.swift in Sources */,
+				7A0C1E7B2A196230000B350E /* AusgefuehrterSatz+CoreDataProperties.swift in Sources */,
 				7AC541EC2A11476F00F3DE8B /* SplitVM.swift in Sources */,
 				7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */,
 				7AF6D88729F56B330050E758 /* AppState.swift in Sources */,
+				7A0C1E7A2A196230000B350E /* AusgefuehrterSatz+CoreDataClass.swift in Sources */,
 				7AC541DE2A0FB6E400F3DE8B /* TrainingseintragDetailVM.swift in Sources */,
 				7AEE658129E05BE10064ED8A /* TrainerlisteView.swift in Sources */,
 				7AB3AFFE2A153EEA00E5EBA8 /* VordefinierteSplitsVM.swift in Sources */,
@@ -466,14 +468,12 @@
 				7AF6D8A529F59FF50050E758 /* VideoErklärungView.swift in Sources */,
 				7A746BC629E416B400EF54C7 /* TrainingView.swift in Sources */,
 				7AB3AFF32A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataClass.swift in Sources */,
-				7AB3AFFA2A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataProperties.swift in Sources */,
 				7AF6D88529F56B330050E758 /* ViewExtension.swift in Sources */,
 				7AF6D88929F56B330050E758 /* LoginHandler.swift in Sources */,
 				7AEE657B29E05B330064ED8A /* Hauptbildschirm.swift in Sources */,
 				7AB3AFF62A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataProperties.swift in Sources */,
 				7A746BBD29E3246E00EF54C7 /* TrainingStarten.swift in Sources */,
 				7A746BBA29E1F5F600EF54C7 /* Allgemeines.swift in Sources */,
-				7AB3AFF92A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataClass.swift in Sources */,
 				7A0C1E752A1923BE000B350E /* Uebung+CoreDataProperties.swift in Sources */,
 				7AEE658329E05BEE0064ED8A /* Diagramme.swift in Sources */,
 			);

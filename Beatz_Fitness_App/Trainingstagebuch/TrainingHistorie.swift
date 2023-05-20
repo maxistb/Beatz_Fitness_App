@@ -8,11 +8,14 @@
 import SwiftUI
 import CoreData
 
-struct TrainingHistorie: View {
+struct TrainingHistorieView: View {
     @FetchRequest(entity: Trainingseintrag.entity(),
                   sortDescriptors: [NSSortDescriptor(keyPath: \Trainingseintrag.datum, ascending: false)]
-                )
+    )
     var trainingseintraege: FetchedResults<Trainingseintrag>
+    @Environment(\.managedObjectContext) var moc
+    
+    
     var body: some View {
         NavigationView {
             List {
@@ -26,11 +29,21 @@ struct TrainingHistorie: View {
                         }
                     }
                 }
+                .onDelete { indexSet in
+                    deleteTrainingseintraege(at: indexSet)
+                }
             }
             .navigationBarTitle("Trainingseinträge")
         }
     }
-
+    func deleteTrainingseintraege(at offsets: IndexSet) {
+        for index in offsets {
+            let trainingseintrag = trainingseintraege[index]
+            moc.delete(trainingseintrag)
+        }
+        try? moc.save()
+    }
+    
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long

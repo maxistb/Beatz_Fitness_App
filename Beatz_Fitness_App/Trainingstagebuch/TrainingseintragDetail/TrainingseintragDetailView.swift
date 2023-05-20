@@ -24,51 +24,20 @@ struct TrainingseintragDetailView: View {
                 Section(header: Text(uebungname)) {
                     ForEach(ausgefuehrteSätzeNachUebung[uebungname]!, id: \.self) { ausgefuehrterSatz in
                                     HStack {
-                                        TextField("Gewicht", text: Binding(
-                                            get: {
-                                                if ausgefuehrterSatz.gewicht == 0.0 {
-                                                    return ""
-                                                } else {
-                                                    let weightString = String(format: "%.2f", ausgefuehrterSatz.gewicht)
-                                                    if weightString.hasSuffix(".00") {
-                                                        return String(Int(ausgefuehrterSatz.gewicht))
-                                                    } else {
-                                                        return weightString.replacingOccurrences(of: ",", with: ".")
-                                                    }
-                                                }
-                                            },
-                                            set: { newValue in
-                                                let filteredValue = newValue.replacingOccurrences(of: ",", with: ".")
-                                                if let value = Double(filteredValue) {
-                                                    ausgefuehrterSatz.gewicht = value
-                                                } else {
-                                                    ausgefuehrterSatz.gewicht = 0.0
-                                                }
-                                                try? moc.save()
+                                        if ausgefuehrterSatz.isDropsatz {
+                                            Section(header: Text("Dropsatz")) {
+                                                createGewichtTextField(for: ausgefuehrterSatz)
                                             }
-                                        ))
-                                        .keyboardType(.decimalPad)
-
-
-
-                                        TextField("Wiederholungen", text: Binding(
-                                            get: {
-                                                if ausgefuehrterSatz.wiederholungen == 0 {
-                                                    return ""
-                                                } else {
-                                                    return String(ausgefuehrterSatz.wiederholungen)
-                                                }
-                                            },
-                                            set: { newValue in
-                                                if let value = Double(newValue) {
-                                                    ausgefuehrterSatz.wiederholungen = Int64(value)
-                                                } else {
-                                                    ausgefuehrterSatz.wiederholungen = 0
-                                                }
-                                                try? moc.save()
+                                        }
+                                        else if ausgefuehrterSatz.isDropsatz {
+                                            Section(header: Text("Aufwärm.")) {
+                                                createGewichtTextField(for: ausgefuehrterSatz)
                                             }
-                                        ))
-                                        .keyboardType(.numberPad)
+                                        }
+                                        else {
+                                            createGewichtTextField(for: ausgefuehrterSatz)
+                                        }
+                                        createWiederholungenTextField(for: ausgefuehrterSatz)
 
                             Spacer()
                         }
@@ -82,7 +51,6 @@ struct TrainingseintragDetailView: View {
                         }
                     }
                     .onMove(perform: move)
-
                     
                     Button("Hinzufügen") {
                         let newSatz = AusgefuehrterSatz(context: moc)

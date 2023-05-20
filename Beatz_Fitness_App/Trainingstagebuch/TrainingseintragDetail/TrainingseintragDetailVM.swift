@@ -39,6 +39,63 @@ extension TrainingseintragDetailView {
          }
          try? moc.save()
      }
+    
+    func createGewichtTextField(for ausgefuehrterSatz: AusgefuehrterSatz) -> some View {
+           TextField("Gewicht", text: Binding(
+               get: {
+                   if ausgefuehrterSatz.gewicht == 0.0 {
+                       return ""
+                   } else {
+                       let weightString = String(format: "%.2f", ausgefuehrterSatz.gewicht)
+                       if weightString.hasSuffix(".00") {
+                           return String(Int(ausgefuehrterSatz.gewicht))
+                       } else {
+                           return weightString.replacingOccurrences(of: ",", with: ".")
+                       }
+                   }
+               },
+               set: { newValue in
+                   let filteredValue = newValue.replacingOccurrences(of: ",", with: ".")
+                   if let value = Double(filteredValue) {
+                       ausgefuehrterSatz.gewicht = value
+                   } else {
+                       ausgefuehrterSatz.gewicht = 0.0
+                   }
+                   try? moc.save()
+               }
+           ))
+           .overlay(
+               Text("kg"),
+               alignment: .trailing
+           )
+           .keyboardType(.decimalPad)
+       }
+    
+    func createWiederholungenTextField(for ausgefuehrterSatz: AusgefuehrterSatz) -> some View {
+        TextField("Wdh.", text: Binding(
+            get: {
+                if ausgefuehrterSatz.wiederholungen == 0 {
+                    return ""
+                } else {
+                    return String(ausgefuehrterSatz.wiederholungen)
+                }
+            },
+            set: { newValue in
+                if let value = Double(newValue) {
+                    ausgefuehrterSatz.wiederholungen = Int64(value)
+                } else {
+                    ausgefuehrterSatz.wiederholungen = 0
+                }
+                try? moc.save()
+            }
+        ))
+        .overlay(
+            Text("Wdh."),
+            alignment: .trailing
+        )
+        .keyboardType(.numberPad)
+    }
+    
 }
 
 let dateFormatter: DateFormatter = {
