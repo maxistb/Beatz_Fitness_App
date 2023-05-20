@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		7A0C1E6C2A17BF5B000B350E /* Split+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E682A17BF5B000B350E /* Split+CoreDataClass.swift */; };
 		7A0C1E6D2A17BF5B000B350E /* Split+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E692A17BF5B000B350E /* Split+CoreDataProperties.swift */; };
-		7A0C1E6E2A17BF5B000B350E /* Uebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E6A2A17BF5B000B350E /* Uebung+CoreDataClass.swift */; };
-		7A0C1E6F2A17BF5B000B350E /* Uebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E6B2A17BF5B000B350E /* Uebung+CoreDataProperties.swift */; };
 		7A0C1E712A17D476000B350E /* EditUebungView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E702A17D476000B350E /* EditUebungView.swift */; };
+		7A0C1E742A1923BE000B350E /* Uebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E722A1923BE000B350E /* Uebung+CoreDataClass.swift */; };
+		7A0C1E752A1923BE000B350E /* Uebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E732A1923BE000B350E /* Uebung+CoreDataProperties.swift */; };
 		7A18D47F29F66C4D00EF6171 /* KursplanVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D47E29F66C4D00EF6171 /* KursplanVM.swift */; };
 		7A263CF029EDD74B001CAEB4 /* TrainingHistorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A263CEF29EDD74B001CAEB4 /* TrainingHistorie.swift */; };
 		7A36FE2C29FEAEE300988F7E /* Trainingseintrag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A36FE2A29FEAEE300988F7E /* Trainingseintrag+CoreDataClass.swift */; };
@@ -69,9 +69,9 @@
 /* Begin PBXFileReference section */
 		7A0C1E682A17BF5B000B350E /* Split+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7A0C1E692A17BF5B000B350E /* Split+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Split+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7A0C1E6A2A17BF5B000B350E /* Uebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataClass.swift"; sourceTree = "<group>"; };
-		7A0C1E6B2A17BF5B000B350E /* Uebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A0C1E702A17D476000B350E /* EditUebungView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUebungView.swift; sourceTree = "<group>"; };
+		7A0C1E722A1923BE000B350E /* Uebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7A0C1E732A1923BE000B350E /* Uebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A18D47E29F66C4D00EF6171 /* KursplanVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KursplanVM.swift; sourceTree = "<group>"; };
 		7A263CEF29EDD74B001CAEB4 /* TrainingHistorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHistorie.swift; sourceTree = "<group>"; };
 		7A36FE2A29FEAEE300988F7E /* Trainingseintrag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trainingseintrag+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -304,10 +304,10 @@
 		7AEC63BF29E02F3D00C8A8F3 /* ManuelleKlassen */ = {
 			isa = PBXGroup;
 			children = (
+				7A0C1E722A1923BE000B350E /* Uebung+CoreDataClass.swift */,
+				7A0C1E732A1923BE000B350E /* Uebung+CoreDataProperties.swift */,
 				7A0C1E682A17BF5B000B350E /* Split+CoreDataClass.swift */,
 				7A0C1E692A17BF5B000B350E /* Split+CoreDataProperties.swift */,
-				7A0C1E6A2A17BF5B000B350E /* Uebung+CoreDataClass.swift */,
-				7A0C1E6B2A17BF5B000B350E /* Uebung+CoreDataProperties.swift */,
 				7AB3AFF72A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataClass.swift */,
 				7AB3AFF82A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataProperties.swift */,
 				7AB3AFEF2A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataClass.swift */,
@@ -433,7 +433,6 @@
 				7A36FE2D29FEAEE300988F7E /* Trainingseintrag+CoreDataProperties.swift in Sources */,
 				7AC541E52A10F62A00F3DE8B /* TrainerlisteVM.swift in Sources */,
 				7A746BA929E09CEA00EF54C7 /* Startbildschirm.swift in Sources */,
-				7A0C1E6E2A17BF5B000B350E /* Uebung+CoreDataClass.swift in Sources */,
 				7A18D47F29F66C4D00EF6171 /* KursplanVM.swift in Sources */,
 				7A0C1E712A17D476000B350E /* EditUebungView.swift in Sources */,
 				7A724AC729FACABB001D82C4 /* TrainingseintragDetailView.swift in Sources */,
@@ -457,9 +456,9 @@
 				7AC541E02A10F0B100F3DE8B /* PreislisteView.swift in Sources */,
 				7A0C1E6D2A17BF5B000B350E /* Split+CoreDataProperties.swift in Sources */,
 				7A746BAC29E17B7C00EF54C7 /* VordefinierteUebungenView.swift in Sources */,
-				7A0C1E6F2A17BF5B000B350E /* Uebung+CoreDataProperties.swift in Sources */,
 				7AEC63B229E014BE00C8A8F3 /* UebungView.swift in Sources */,
 				7A746BC329E3F2EB00EF54C7 /* VordefinierteUebungenVM.swift in Sources */,
+				7A0C1E742A1923BE000B350E /* Uebung+CoreDataClass.swift in Sources */,
 				7A746B9D29E0863400EF54C7 /* AddSplitView.swift in Sources */,
 				7AB3AFF42A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift in Sources */,
 				7AB3AFFC2A153E6D00E5EBA8 /* VordefinierteSplitsView.swift in Sources */,
@@ -475,6 +474,7 @@
 				7A746BBD29E3246E00EF54C7 /* TrainingStarten.swift in Sources */,
 				7A746BBA29E1F5F600EF54C7 /* Allgemeines.swift in Sources */,
 				7AB3AFF92A14F55D00E5EBA8 /* AusgefuehrterSatz+CoreDataClass.swift in Sources */,
+				7A0C1E752A1923BE000B350E /* Uebung+CoreDataProperties.swift in Sources */,
 				7AEE658329E05BEE0064ED8A /* Diagramme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

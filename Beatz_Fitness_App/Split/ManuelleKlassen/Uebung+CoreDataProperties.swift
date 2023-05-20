@@ -2,7 +2,7 @@
 //  Uebung+CoreDataProperties.swift
 //  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 19.05.23.
+//  Created by Maximillian Stabe on 20.05.23.
 //
 //
 
@@ -22,6 +22,8 @@ extension Uebung {
     @NSManaged public var saetze: Int64
     @NSManaged public var videoURL: String?
     @NSManaged public var notizen: String?
+    @NSManaged public var aufwaermsaetze: Int64
+    @NSManaged public var dropsaetze: Int64
     @NSManaged public var ausgefuehrteuebung: NSOrderedSet?
     @NSManaged public var origin: Split?
     @NSManaged public var satz: NSOrderedSet?

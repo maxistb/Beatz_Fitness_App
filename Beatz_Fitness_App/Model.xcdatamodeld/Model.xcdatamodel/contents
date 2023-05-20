@@ -43,6 +43,8 @@
         <relationship name="uebung" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Uebung" inverseName="trainingseintrag" inverseEntity="Uebung"/>
     </entity>
     <entity name="Uebung" representedClassName="Uebung" syncable="YES">
+        <attribute name="aufwaermsaetze" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dropsaetze" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="notizen" optional="YES" attributeType="String"/>

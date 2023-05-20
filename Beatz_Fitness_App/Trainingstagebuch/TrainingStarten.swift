@@ -34,14 +34,14 @@ struct Trainingstagebuch: View {
                     HStack {
                         Spacer()
                         if let split = selectedSplit {
-                            NavigationLink(destination: TrainingView(viewModel: TrainingViewModel(selectedSplit: split, moc: moc))) {
-                                Text("Training starten")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .frame(width: 200)
-                                    .frame(height: 50)
-                                    .background(Color.blue)
-                                    .cornerRadius(15.0)
+                                NavigationLink(destination: TrainingView(viewModel: TrainingViewModel(selectedSplit: split, moc: moc))) {
+                                    Text("Training starten")
+                                        .font(.headline)
+                                        .foregroundColor(.white)
+                                        .frame(width: 200)
+                                        .frame(height: 50)
+                                        .background(Color.blue)
+                                        .cornerRadius(15.0)
                             }
                         }
                     }
@@ -52,6 +52,7 @@ struct Trainingstagebuch: View {
         }
     }
 }
+
 
 
 

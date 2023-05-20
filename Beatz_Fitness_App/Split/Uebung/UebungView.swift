@@ -32,12 +32,21 @@ struct UebungView: View {
                             destination: EditUebungView(uebung: uebung),
                             label: {
                                 VStack(alignment: .leading, spacing: 8) {
-                                    HStack {
                                         Text(uebung.name ?? "Error")
-                                        Text("\(uebung.saetze) Sätze")
+                                        .font(.headline)
+                                    HStack {
+                                        if uebung.saetze == 1 {
+                                            Text("\(uebung.saetze) Satz")
+                                                .foregroundColor(.gray)
+                                        }
+                                        else if uebung.saetze != 1 {
+                                            Text("\(uebung.saetze) Sätze")
+                                                .foregroundColor(.gray)
+                                        }
+                                        Text("\(uebung.dropsaetze) Drops.")
                                             .foregroundColor(.gray)
-                                            .font(.subheadline)
-                                        Spacer()
+                                        Text("\(uebung.aufwaermsaetze) Aufw.")
+                                            .foregroundColor(.gray)
                                     }
                                     TextField("Notizen", text: Binding(
                                         get: {
@@ -48,6 +57,7 @@ struct UebungView: View {
                                             try? moc.save()
                                         }
                                     ))
+                                    .foregroundColor(.secondary)
                                 }
                             }
                         )
