@@ -2,7 +2,7 @@
 //  Trainingseintrag+CoreDataClass.swift
 //  Beatz_Fitness_App
 //
-//  Created by Maximillian Stabe on 30.04.23.
+//  Created by Maximillian Stabe on 21.05.23.
 //
 //
 

@@ -16,12 +16,15 @@ class TrainingViewModel: ObservableObject {
     var selectedUebung: Uebung?
     @Published var isAufwärmsatz: [[Bool]] = Array(repeating: Array(repeating: false, count: 20), count: 20)
     @Published var isDropsatz: [[Bool]] = Array(repeating: Array(repeating: false, count: 20), count: 20)
+    @Published var notizenTraining: String = ""
     
     init(selectedSplit: Split, moc: NSManagedObjectContext) {
             self.selectedSplit = selectedSplit
             self.moc = moc
             initializeArrays()
         }
+    
+    
     
     func gewichtTextField(value: Binding<String>) -> some View {
         TextField("Gewicht", text: value)
@@ -80,6 +83,7 @@ class TrainingViewModel: ObservableObject {
         trainingseintrag.datum = Date()
         trainingseintrag.id = UUID()
         trainingseintrag.split = selectedSplit
+        trainingseintrag.notizen = notizenTraining
 
         for (index, uebung) in selectedSplit.getUebungen.enumerated() {
             let uebungsname = uebung.name ?? ""

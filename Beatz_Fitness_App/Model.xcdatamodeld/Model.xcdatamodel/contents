@@ -38,6 +38,7 @@
         <attribute name="datum" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="gewicht" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="notizen" optional="YES" attributeType="String"/>
         <attribute name="satzReihenfolge" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="wiederholungen" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="ausgefuehrteUebungen" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="AusgefuehrterSatz" inverseName="trainingseintrag" inverseEntity="AusgefuehrterSatz"/>

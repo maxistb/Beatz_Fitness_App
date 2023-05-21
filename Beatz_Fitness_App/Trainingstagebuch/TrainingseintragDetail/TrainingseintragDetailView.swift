@@ -23,22 +23,22 @@ struct TrainingseintragDetailView: View {
             ForEach(Array(ausgefuehrteSätzeNachUebung.keys.sorted()), id: \.self) { uebungname in
                 Section(header: Text(uebungname)) {
                     ForEach(ausgefuehrteSätzeNachUebung[uebungname]!, id: \.self) { ausgefuehrterSatz in
-                                    HStack {
-                                        if ausgefuehrterSatz.isDropsatz {
-                                            Section(header: Text("Dropsatz")) {
-                                                createGewichtTextField(for: ausgefuehrterSatz)
-                                            }
-                                        }
-                                        else if ausgefuehrterSatz.isDropsatz {
-                                            Section(header: Text("Aufwärm.")) {
-                                                createGewichtTextField(for: ausgefuehrterSatz)
-                                            }
-                                        }
-                                        else {
-                                            createGewichtTextField(for: ausgefuehrterSatz)
-                                        }
-                                        createWiederholungenTextField(for: ausgefuehrterSatz)
-
+                        HStack {
+                            if ausgefuehrterSatz.isDropsatz {
+                                Section(header: Text("Dropsatz")) {
+                                    createGewichtTextField(for: ausgefuehrterSatz)
+                                }
+                            }
+                            else if ausgefuehrterSatz.isDropsatz {
+                                Section(header: Text("Aufwärm.")) {
+                                    createGewichtTextField(for: ausgefuehrterSatz)
+                                }
+                            }
+                            else {
+                                createGewichtTextField(for: ausgefuehrterSatz)
+                            }
+                            createWiederholungenTextField(for: ausgefuehrterSatz)
+                            
                             Spacer()
                         }
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
@@ -62,6 +62,9 @@ struct TrainingseintragDetailView: View {
                         try? moc.save()
                     }
                 }
+            }
+            Section(header: Text("Notizen")) {
+                Text(trainingseintrag.notizen)
             }
         }
         .navigationBarTitle("", displayMode: .inline)
