@@ -16,6 +16,9 @@ struct SplitView: View {
     @State private var showAddSplitView = false
     @State private var settingsDetent = PresentationDetent.medium
     
+    let split1 = Split.create(with: "Split 1", in: PersistenceController.shared.container.viewContext)
+     let split2 = Split.create(with: "Split 2", in: PersistenceController.shared.container.viewContext)
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -46,13 +49,20 @@ struct SplitView: View {
                                 .tint(.red)
                             }
                         }
-                        .onDelete(perform: deleteItems)
                         .onMove(perform: moveItems)
+
                     }
                     Section(header: Text("Vordefinierte Splits")) {
-                        // Add predefined splits here
+                        ForEach([split1, split2], id: \.self) { split in
+                            NavigationLink(destination: UebungView(split: split)) {
+                                Text(split.name ?? "Error")
+                            }
+                        }
+                        .onMove(perform: moveItems)
                     }
                 }
+                
+                
                 .navigationBarTitle("Trainingspläne")
                 .navigationBarItems(leading:
                                         Button(action: {
@@ -77,11 +87,11 @@ struct SplitView: View {
                     AddSplitView(name: $name)
                         .navigationBarBackButtonHidden(true)
                 }
-                    .presentationDetents(
-                        [.medium, .large],
-                        selection: $settingsDetent
-                    )
-                    .navigationViewStyle(StackNavigationViewStyle())
+                .presentationDetents(
+                    [.medium, .large],
+                    selection: $settingsDetent
+                )
+                .navigationViewStyle(StackNavigationViewStyle())
             }
             .navigationTitle("Split hinzufügen")
         }
@@ -90,10 +100,8 @@ struct SplitView: View {
 
 
 
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         SplitView()
     }
 }
-

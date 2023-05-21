@@ -16,15 +16,20 @@ extension SplitView {
         try? moc.save()
     }
 
-    func moveItems(from source: IndexSet, to destination: Int) {
-        @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Split.order, ascending: true)]) var splits: FetchedResults<Split>
-        
-        do {
-            try moc.save()
-        } catch {
-            print("Error saving managed object context: \(error.localizedDescription)")
+    func moveItems(from indices: IndexSet, to newOffset: Int) {
+        var updatedIndices = indices
+
+        let splitsToUpdate = splits.enumerated()
+            .filter { updatedIndices.contains($0.offset) }
+            .map { $0.element }
+
+        for split in splitsToUpdate {
+            split.order = Int64(splits.firstIndex(of: split) ?? 0)
         }
+
+        try? moc.save()
     }
+
     
     func updateSplitName(split: Split, newName: String) {
         moc.performAndWait {

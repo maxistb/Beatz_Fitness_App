@@ -7,25 +7,40 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct VordefinierteSplitsView: View {
-    let vordefinierteSplits: [VordefinierterSplit] = [
-        VordefinierterSplit(name: "Push", uebung: ["Bankdrücken", "Brustpresse"]),
-        VordefinierterSplit(name: "Pull", uebung: ["Klimmzüge", "Rudern"])
-    ]
+    @Environment(\.managedObjectContext) var moc
+
+    var split1: Split?
+    var split2: Split?
+
+    init() {
+        split1 = nil
+        split2 = nil
+        createSplits()
+    }
 
     var body: some View {
         List {
-            NavigationLink("Push", destination: TrainerListeView()) 
+            NavigationLink("Push", destination: TrainerListeView())
         }
+    }
+
+    mutating func createSplits() {
+        split1 = Split(context: moc)
+        split1?.id = UUID()
+        split1?.name = "Split 1"
+
+        split2 = Split(context: moc)
+        split2?.id = UUID()
+        split2?.name = "Split 2"
     }
 }
 
-struct VordefinierterSplit {
-    let name: String
-    let uebung: [String]
-}
+
+
+
+
+
 
 
 

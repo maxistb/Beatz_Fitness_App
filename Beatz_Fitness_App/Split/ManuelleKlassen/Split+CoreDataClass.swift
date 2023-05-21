@@ -12,6 +12,7 @@ import CoreData
 @objc(Split)
 public class Split: NSManagedObject {
     @NSManaged var trainingseintraege: NSSet?
+    
 }
 
 extension Split {
@@ -20,6 +21,5 @@ extension Split {
         split.name = name
         return split
     }
-    
-
 }
+

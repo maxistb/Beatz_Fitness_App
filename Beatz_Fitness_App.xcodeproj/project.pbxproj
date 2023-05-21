@@ -19,6 +19,7 @@
 		7A0C1E8D2A1A3D3D000B350E /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E892A1A3D3D000B350E /* PageView.swift */; };
 		7A0C1E8E2A1A3D3D000B350E /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E8A2A1A3D3D000B350E /* PageModel.swift */; };
 		7A0C1E8F2A1A3D3D000B350E /* WillkommenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E8B2A1A3D3D000B350E /* WillkommenView.swift */; };
+		7A0C1EA32A1A681C000B350E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1EA22A1A681C000B350E /* PersistenceController.swift */; };
 		7A18D47F29F66C4D00EF6171 /* KursplanVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D47E29F66C4D00EF6171 /* KursplanVM.swift */; };
 		7A263CF029EDD74B001CAEB4 /* TrainingHistorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A263CEF29EDD74B001CAEB4 /* TrainingHistorie.swift */; };
 		7A724AC229FAC62D001D82C4 /* Satz+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A724ABE29FAC62D001D82C4 /* Satz+CoreDataClass.swift */; };
@@ -82,6 +83,7 @@
 		7A0C1E892A1A3D3D000B350E /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		7A0C1E8A2A1A3D3D000B350E /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		7A0C1E8B2A1A3D3D000B350E /* WillkommenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WillkommenView.swift; sourceTree = "<group>"; };
+		7A0C1EA22A1A681C000B350E /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		7A18D47E29F66C4D00EF6171 /* KursplanVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KursplanVM.swift; sourceTree = "<group>"; };
 		7A263CEF29EDD74B001CAEB4 /* TrainingHistorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHistorie.swift; sourceTree = "<group>"; };
 		7A724ABE29FAC62D001D82C4 /* Satz+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Satz+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				7AEC638429DD81DE00C8A8F3 /* Beatz_Fitness_App.swift */,
 				7A746BA829E09CEA00EF54C7 /* Startbildschirm.swift */,
 				7AEE657A29E05B330064ED8A /* Hauptbildschirm.swift */,
+				7A0C1EA22A1A681C000B350E /* PersistenceController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				7AF6D88529F56B330050E758 /* ViewExtension.swift in Sources */,
 				7AF6D88929F56B330050E758 /* LoginHandler.swift in Sources */,
 				7AEE657B29E05B330064ED8A /* Hauptbildschirm.swift in Sources */,
+				7A0C1EA32A1A681C000B350E /* PersistenceController.swift in Sources */,
 				7AB3AFF62A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataProperties.swift in Sources */,
 				7A746BBD29E3246E00EF54C7 /* TrainingStarten.swift in Sources */,
 				7A746BBA29E1F5F600EF54C7 /* Allgemeines.swift in Sources */,

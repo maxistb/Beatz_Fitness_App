@@ -14,7 +14,7 @@ struct Beatz_Fitness_App: App {
     
     var body: some Scene {
         WindowGroup {
-            if !UserDefaults.standard.bool(forKey: "isFirstLaunch") {
+            if UserDefaults.standard.bool(forKey: "isFirstLaunch") {
                 WillkommenView()
                     .environment(\.managedObjectContext, dataController.container.viewContext)
                     .onAppear {
