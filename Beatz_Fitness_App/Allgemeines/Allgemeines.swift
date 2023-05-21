@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Allgemeines: View {
+    @State private var showSettings = false
+    
+    
     var body: some View {
         NavigationView {
             Form {
@@ -47,10 +50,10 @@ struct Allgemeines: View {
                         }
                     }
                 }
-                    
+                
                 Section(header: Text("Trainerzeiten")) {
                     Text("Montag bis Freitag: 8 - 13 & 15 - 20 Uhr")
-                   
+                    
                 }
                 
                 Section(header: Text("Preisliste")) {
@@ -89,12 +92,7 @@ struct Allgemeines: View {
                     Text("Maximillian Stabe")
                 }
             }
-                .navigationTitle("Allgemeines")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Image(systemName: "gearshape.fill")
-                }
-            }
+            .navigationTitle("Allgemeines")
         }
     }
 }
@@ -104,4 +102,3 @@ struct EinstellungenPreviews: PreviewProvider {
         Allgemeines()
     }
 }
-

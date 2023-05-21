@@ -19,21 +19,23 @@ class TrainingViewModel: ObservableObject {
     @Published var notizenTraining: String = ""
     
     init(selectedSplit: Split, moc: NSManagedObjectContext) {
-            self.selectedSplit = selectedSplit
-            self.moc = moc
-            initializeArrays()
-        }
+        self.selectedSplit = selectedSplit
+        self.moc = moc
+        initializeArrays()
+    }
     
-    
+  
     
     func gewichtTextField(value: Binding<String>) -> some View {
-        TextField("Gewicht", text: value)
-            .keyboardType(.decimalPad)
-            .overlay(
-                Text("kg"),
-                alignment: .trailing
-            )
-    }
+           TextField("Gewicht", text: value)
+               .keyboardType(.decimalPad)
+               .overlay(
+                   Text("kg"),
+                   alignment: .trailing
+               )
+       }
+
+
     
     private func initializeArrays() {
            for index in selectedSplit.getUebungen.indices {

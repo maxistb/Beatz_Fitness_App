@@ -118,6 +118,7 @@ struct TrainingView: View {
 					TextEditor(text: $viewModel.notizenTraining)
 						.frame(height: 150)
 				}
+				
 				Section {
 					viewModel.createButton(showingAlert: $showingAlert)
 				}
