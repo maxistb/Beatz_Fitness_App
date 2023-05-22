@@ -7,34 +7,49 @@
 
 import SwiftUI
 
-struct VordefinierteSplitsView: View {
-    @Environment(\.managedObjectContext) var moc
-
-    var split1: Split?
-    var split2: Split?
-
-    init() {
-        split1 = nil
-        split2 = nil
-        createSplits()
-    }
-
+struct VordefinierteSplitView: View {
+    let split: VordefinierteSplits
+    
     var body: some View {
-        List {
-            NavigationLink("Push", destination: TrainerListeView())
+        VStack {
+            List {
+                Section(header: Text("Übungen")) {
+                    ForEach(split.uebungen) { uebung in
+                        VStack {
+                            HStack {
+                                uebung.bild
+                                    .resizable()
+                                    .scaledToFit()
+                                    .cornerRadius(10)
+                                    .frame(width: 100, height: 100)
+                                
+                                VStack(alignment: .leading) {
+                                    Text(uebung.uebungName)
+                                        .font(.headline)
+                                    
+                                    Text(uebung.uebungBeschreibung)
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                    
+                                    Text("Sätze: \(uebung.anzahlSaetze)")
+                                        .font(.subheadline)
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                            .padding(.vertical)
+                            .padding(.horizontal)
+                        }
+                    }
+                }
+            }
+            .navigationTitle(split.name)
         }
     }
-
-    mutating func createSplits() {
-        split1 = Split(context: moc)
-        split1?.id = UUID()
-        split1?.name = "Split 1"
-
-        split2 = Split(context: moc)
-        split2?.id = UUID()
-        split2?.name = "Split 2"
-    }
 }
+
+
+
+
 
 
 

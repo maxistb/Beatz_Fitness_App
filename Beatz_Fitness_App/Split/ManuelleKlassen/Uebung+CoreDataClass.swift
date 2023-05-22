@@ -11,5 +11,4 @@ import CoreData
 
 @objc(Uebung)
 public class Uebung: NSManagedObject {
-
 }

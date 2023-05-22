@@ -101,6 +101,12 @@ extension Uebung {
 
 }
 
-extension Uebung : Identifiable {
+extension Uebung {
+    static func create(with name: String, saetze: Int, in context: NSManagedObjectContext) -> Uebung {
+        let uebung = Uebung(context: context)
+        uebung.name = name
+        uebung.saetze = Int64(saetze)
+        return uebung
+    }
 
 }

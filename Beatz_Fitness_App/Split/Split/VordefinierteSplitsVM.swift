@@ -7,6 +7,8 @@
 
 import SwiftUI
 
-extension VordefinierteSplitsView {
-  
+
+struct VordefinierteSplits {
+    let name: String
+    let uebungen: [UebungsItem]
 }

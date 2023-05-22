@@ -15,9 +15,16 @@ struct SplitView: View {
     @State private var isEditMode = false
     @State private var showAddSplitView = false
     @State private var settingsDetent = PresentationDetent.medium
-    
-    let split1 = Split.create(with: "Split 1", in: PersistenceController.shared.container.viewContext)
-     let split2 = Split.create(with: "Split 2", in: PersistenceController.shared.container.viewContext)
+    @State private var vordefinierteSplits: [VordefinierteSplits] = [
+        VordefinierteSplits(
+            name: "Anfänger-Split",
+            uebungen: [
+                UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
+                UebungsItem(uebungName: "Squat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("TestBild"))
+            ]
+        ),
+    ]
+
     
     var body: some View {
         NavigationView {
@@ -50,16 +57,20 @@ struct SplitView: View {
                             }
                         }
                         .onMove(perform: moveItems)
-
+                        
                     }
                     Section(header: Text("Vordefinierte Splits")) {
-                        ForEach([split1, split2], id: \.self) { split in
-                            NavigationLink(destination: UebungView(split: split)) {
-                                Text(split.name ?? "Error")
+                        ForEach(vordefinierteSplits, id: \.name) { split in
+                            NavigationLink(destination: VordefinierteSplitView(split: split)) {
+                                Text(split.name)
                             }
                         }
-                        .onMove(perform: moveItems)
                     }
+
+
+
+//                        .onMove(perform: moveItems)
+                    
                 }
                 
                 
@@ -97,6 +108,7 @@ struct SplitView: View {
         }
     }
 }
+
 
 
 
