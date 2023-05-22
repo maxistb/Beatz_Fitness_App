@@ -6,6 +6,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="isAufwaermsatz" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isDropsatz" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="satzIndex" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="uebungname" optional="YES" attributeType="String"/>
         <attribute name="wiederholungen" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="gewichteNachUebung" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GewichteNachUebung" inverseName="gewichteArray" inverseEntity="GewichteNachUebung"/>

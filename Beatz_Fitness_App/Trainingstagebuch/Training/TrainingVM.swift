@@ -86,6 +86,8 @@ class TrainingViewModel: ObservableObject {
         trainingseintrag.id = UUID()
         trainingseintrag.split = selectedSplit
         trainingseintrag.notizen = notizenTraining
+        
+        var currentIndex = 0
 
         for (index, uebung) in selectedSplit.getUebungen.enumerated() {
             let uebungsname = uebung.name ?? ""
@@ -97,11 +99,13 @@ class TrainingViewModel: ObservableObject {
                 ausgefuehrterSatz.id = UUID()
                 ausgefuehrterSatz.uebungname = uebungsname
 
-                // Setze die Werte von isDropsatz und isAufwärmsatz basierend auf den Arrays
                 ausgefuehrterSatz.isDropsatz = isDropsatz[index][satzIndex]
                 ausgefuehrterSatz.isAufwaermsatz = isAufwärmsatz[index][satzIndex]
+                
+                ausgefuehrterSatz.satzIndex = Int64(currentIndex)
 
                 trainingseintrag.addToAusgefuehrteUebungen(ausgefuehrterSatz)
+                currentIndex += 1
             }
         }
 

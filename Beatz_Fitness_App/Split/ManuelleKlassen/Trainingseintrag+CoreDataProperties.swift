@@ -69,6 +69,6 @@ extension Trainingseintrag : Identifiable {
 extension Trainingseintrag {
     var ausgefuehrteSätzeArray: [AusgefuehrterSatz] {
         let ausgefuehrteSätzeSet = ausgefuehrteUebungen as? Set<AusgefuehrterSatz> ?? []
-        return ausgefuehrteSätzeSet.sorted { $0.wiederholungen > $1.wiederholungen }
+        return ausgefuehrteSätzeSet.sorted { $0.satzIndex < $1.satzIndex }
     }
 }

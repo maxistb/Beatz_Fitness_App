@@ -21,6 +21,7 @@ extension AusgefuehrterSatz {
     @NSManaged public var id: UUID?
     @NSManaged public var uebungname: String?
     @NSManaged public var wiederholungen: Int64
+    @NSManaged public var satzIndex: Int64
     @NSManaged public var isAufwaermsatz: Bool
     @NSManaged public var isDropsatz: Bool
     @NSManaged public var gewichteNachUebung: NSSet?
