@@ -14,14 +14,9 @@ struct EditUebungView: View {
     var uebung: Uebung
     @State private var notizenUebung = ""
     @State private var saetze: Int64
-    @State private var aufwaermsaetze: Int64
-    @State private var dropsaetze: Int64
-
     
     init(uebung: Uebung) {
         self.uebung = uebung
-        self._aufwaermsaetze = State(initialValue: uebung.aufwaermsaetze)
-        self._dropsaetze = State(initialValue: uebung.dropsaetze)
         self._saetze = State(initialValue: uebung.saetze)
     }
     
@@ -64,20 +59,6 @@ struct EditUebungView: View {
                             Text("\(saetze)")
                         }
                     }
-                    HStack {
-                        Text("Aufwärmsätze:")
-                        
-                        Stepper(value: $aufwaermsaetze, in: 0...20) {
-                            Text("\(aufwaermsaetze)")
-                        }
-                    }
-                    HStack {
-                        Text("Dropsätze:")
-                        
-                        Stepper(value: $dropsaetze, in: 0...20) {
-                            Text("\(dropsaetze)")
-                        }
-                    }
                 }
                 
                 Section {
@@ -87,8 +68,6 @@ struct EditUebungView: View {
                         Button("Speichern") {
                             uebung.name = uebung.name
                             uebung.saetze = Int64(saetze)
-                            uebung.dropsaetze = Int64(dropsaetze)
-                            uebung.aufwaermsaetze = Int64(aufwaermsaetze)
                             
                             try? moc.save()
                             presentationMode.wrappedValue.dismiss()

@@ -12,7 +12,7 @@ struct UebungView: View {
     @FetchRequest(
            entity: Uebung.entity(),
            sortDescriptors: [
-               NSSortDescriptor(keyPath: \Uebung.name, ascending: true)
+               NSSortDescriptor(keyPath: \Uebung.order, ascending: true)
            ]
        ) var uebungen: FetchedResults<Uebung>
        
@@ -43,10 +43,6 @@ struct UebungView: View {
                                             Text("\(uebung.saetze) Sätze")
                                                 .foregroundColor(.gray)
                                         }
-                                        Text("\(uebung.dropsaetze) Drops.")
-                                            .foregroundColor(.gray)
-                                        Text("\(uebung.aufwaermsaetze) Aufw.")
-                                            .foregroundColor(.gray)
                                     }
                                     TextField("Notizen", text: Binding(
                                         get: {

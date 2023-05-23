@@ -15,13 +15,16 @@ extension UebungView {
         }
         try? moc.save()
     }
+    
     func moveItems(from source: IndexSet, to destination: Int) {
-        @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Uebung.order, ascending: true)]) var uebungen: FetchedResults<Uebung>
-        // Save changes to Core Data
+        var orderedUebungen = uebungen.sorted { $0.order < $1.order }
+        orderedUebungen.move(fromOffsets: source, toOffset: destination)
+
         do {
             try moc.save()
         } catch {
             print("Error saving managed object context: \(error.localizedDescription)")
         }
     }
+
 }

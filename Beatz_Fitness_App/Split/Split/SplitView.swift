@@ -10,7 +10,7 @@ import CoreData
 
 struct SplitView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var splits: FetchedResults<Split>
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Split.order, ascending: true)]) var splits: FetchedResults<Split>
     @State private var name = ""
     @State private var isEditMode = false
     @State private var showAddSplitView = false
@@ -24,7 +24,6 @@ struct SplitView: View {
             ]
         ),
     ]
-
     
     var body: some View {
         NavigationView {
@@ -57,6 +56,7 @@ struct SplitView: View {
                             }
                         }
                         .onMove(perform: moveItems)
+                        .onDelete(perform: deleteItems)
                         
                     }
                     Section(header: Text("Vordefinierte Splits")) {
@@ -66,14 +66,8 @@ struct SplitView: View {
                             }
                         }
                     }
-
-
-
 //                        .onMove(perform: moveItems)
-                    
                 }
-                
-                
                 .navigationBarTitle("Trainingspläne")
                 .navigationBarItems(leading:
                                         Button(action: {

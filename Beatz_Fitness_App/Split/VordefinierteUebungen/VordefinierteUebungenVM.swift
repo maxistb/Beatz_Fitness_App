@@ -14,6 +14,10 @@ extension VordefinierteUebungen {
             neueUebung.id = UUID()
             neueUebung.name = uebung.uebungName
             neueUebung.saetze = Int64(anzahlSaetze[uebungen.firstIndex(where: { $0.id == uebung.id })!])
+            let newOrder = (split.uebung?.count ?? 0)
+            neueUebung.order = Int64(newOrder)
+            print("Order Übung: \(newOrder)")
+            
             split.addToUebung(neueUebung)
         }
         try? moc.save()

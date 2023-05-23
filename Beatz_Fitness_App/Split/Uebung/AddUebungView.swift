@@ -35,7 +35,7 @@ struct AddUebungView: View {
                 Section {
                     HStack {
                         Text("Sätze:")
-
+                        
                         Stepper(value: $saetze, in: 1...20) {
                             Text("\(saetze)")
                         }
@@ -46,13 +46,17 @@ struct AddUebungView: View {
                 Section {
                     HStack(alignment: .center) {
                         Spacer()
-                        
                         Button("Speichern") {
                             let neueUebung = Uebung(context: moc)
                             neueUebung.id = UUID()
                             neueUebung.name = name
                             neueUebung.saetze = Int64(saetze)
                             neueUebung.notizen = notizenUebung
+                            
+                            let newOrder = (split.uebung?.count ?? 0)
+                            neueUebung.order = Int64(newOrder)
+                            print("Order Übung: \(newOrder)")
+                            
                             split.addToUebung(neueUebung)
                             
                             try? moc.save()
@@ -61,13 +65,13 @@ struct AddUebungView: View {
                             presentationMode.wrappedValue.dismiss()
                         }
                         .font(.headline)
-                           .foregroundColor(.white)
-                           .frame(height: 50)
-                           .frame(width: 200)
-                           .background(Color.blue)
-                           .cornerRadius(15.0)
-                           
-                           Spacer()
+                        .foregroundColor(.white)
+                        .frame(height: 50)
+                        .frame(width: 200)
+                        .background(Color.blue)
+                        .cornerRadius(15.0)
+                        
+                        Spacer()
                     }
                 }
                 .listRowBackground(Color.clear)
@@ -80,6 +84,6 @@ struct AddUebungView: View {
 
 struct UebungPreview: PreviewProvider {
     static var previews: some View {
-    SplitView()
+        SplitView()
     }
 }

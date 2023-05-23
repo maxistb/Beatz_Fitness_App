@@ -23,9 +23,13 @@ struct AddSplitView: View {
                         Spacer()
                         
                         Button("Speichern") {
+                            let newOrder = (try? moc.fetch(Split.fetchRequest()).count) ?? 0
+                            
                             let neuerSplit = Split(context: moc)
                             neuerSplit.id = UUID()
                             neuerSplit.name = name
+                            neuerSplit.order = Int64(newOrder)
+                            print(newOrder)
                             
                             try? moc.save()
                             name = ""
@@ -55,3 +59,4 @@ struct AddSplitView: View {
         )
     }
 }
+

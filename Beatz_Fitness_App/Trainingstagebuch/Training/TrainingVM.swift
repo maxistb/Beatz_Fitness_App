@@ -24,8 +24,6 @@ class TrainingViewModel: ObservableObject {
         initializeArrays()
     }
     
-  
-    
     func gewichtTextField(value: Binding<String>) -> some View {
            TextField("Gewicht", text: value)
                .keyboardType(.decimalPad)
@@ -34,8 +32,6 @@ class TrainingViewModel: ObservableObject {
                    alignment: .trailing
                )
        }
-
-
     
     private func initializeArrays() {
            for index in selectedSplit.getUebungen.indices {
@@ -108,12 +104,11 @@ class TrainingViewModel: ObservableObject {
                 currentIndex += 1
             }
         }
-
         do {
             try moc.save()
         } catch {
             print("Error saving trainingseinheit: \(error.localizedDescription)")
         }
     }
-
+    
 }

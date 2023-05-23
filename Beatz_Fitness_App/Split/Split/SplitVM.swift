@@ -17,19 +17,11 @@ extension SplitView {
     }
 
     func moveItems(from indices: IndexSet, to newOffset: Int) {
-        var updatedIndices = indices
-
-        let splitsToUpdate = splits.enumerated()
-            .filter { updatedIndices.contains($0.offset) }
-            .map { $0.element }
-
-        for split in splitsToUpdate {
-            split.order = Int64(splits.firstIndex(of: split) ?? 0)
-        }
+        var orderedSplits = splits.sorted { $0.order < $1.order }
+        orderedSplits.move(fromOffsets: indices, toOffset: newOffset)
 
         try? moc.save()
     }
-
     
     func updateSplitName(split: Split, newName: String) {
         moc.performAndWait {
