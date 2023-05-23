@@ -16,9 +16,11 @@ extension UebungView {
         try? moc.save()
     }
     
-    func moveItems(from source: IndexSet, to destination: Int) {
-        var orderedUebungen = uebungen.sorted { $0.order < $1.order }
-        orderedUebungen.move(fromOffsets: source, toOffset: destination)
+    func moveItems(from indices: IndexSet, to newOffset: Int) {
+        let sortedUebungen = uebungen.sorted { $0.order < $1.order }
+
+        var newUebungen = Array(sortedUebungen)
+        newUebungen.move(fromOffsets: indices, toOffset: newOffset)
 
         do {
             try moc.save()
@@ -26,5 +28,4 @@ extension UebungView {
             print("Error saving managed object context: \(error.localizedDescription)")
         }
     }
-
 }

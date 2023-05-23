@@ -18,30 +18,45 @@ struct TrainingHistorieView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(trainingseintraege, id: \.id) { trainingseintrag in
-                    NavigationLink(destination: TrainingseintragDetailView(trainingseintrag: trainingseintrag)) {
-                        VStack(alignment: .leading) {
-                            Text(dateFormatter.string(from: trainingseintrag.datum!))
-                                .font(.headline)
-                            Text(trainingseintrag.split.name ?? "")
-                                .font(.subheadline)
+            VStack {
+                if trainingseintraege.isEmpty {
+                    Text("Du hast noch keine Einträge 🫤")
+                        .foregroundColor(.black)
+                } else {
+                    List {
+                        ForEach(trainingseintraege, id: \.id) { trainingseintrag in
+                            NavigationLink(destination: TrainingseintragDetailView(trainingseintrag: trainingseintrag)) {
+                                VStack(alignment: .leading) {
+                                    Text(dateFormatter.string(from: trainingseintrag.datum ?? Date()))
+                                        .font(.headline)
+                                    Text(trainingseintrag.split.name ?? "")
+                                        .font(.subheadline)
+                                }
+                            }
+                            .swipeActions {
+                                Button(action: {
+                                    deleteTrainingseintraege(at: trainingseintraege.firstIndex(of: trainingseintrag)!)
+                                }) {
+                                    Image(systemName: "trash")
+                                }
+                                .tint(.red)
+                            }
                         }
                     }
-                }
-                .onDelete { indexSet in
-                    deleteTrainingseintraege(at: indexSet)
                 }
             }
             .navigationBarTitle("Trainingseinträge")
         }
     }
-    func deleteTrainingseintraege(at offsets: IndexSet) {
-        for index in offsets {
-            let trainingseintrag = trainingseintraege[index]
-            moc.delete(trainingseintrag)
+    
+    func deleteTrainingseintraege(at index: Int) {
+        let trainingseintrag = trainingseintraege[index]
+        moc.delete(trainingseintrag)
+        
+        do {
+            try moc.save()
+        } catch {
         }
-        try? moc.save()
     }
     
     let dateFormatter: DateFormatter = {
