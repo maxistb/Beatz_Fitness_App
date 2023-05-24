@@ -16,34 +16,45 @@ struct Trainingstagebuch: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                VStack(spacing: 0) {
-                    ForEach(splits, id: \.self) { split in
-                        Button(action: {
-                            selectedSplit = split
-                        }) {
-                            HStack {
-                                Text(split.name ?? "")
-                                    .font(.headline)
-                                    .foregroundColor(.primary)
-                                Spacer()
-                                if split == selectedSplit {
-                                    Image(systemName: "checkmark")
-                                        .foregroundColor(.blue)
+                ZStack {
+                    if splits.isEmpty {
+                        Text("Füge Splits hinzu! 🏋🏻")
+                            .foregroundColor(.primary)
+                            .font(.headline)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                    }
+                    
+                    else {
+                        VStack(spacing: 0) {
+                            ForEach(splits, id: \.self) { split in
+                                Button(action: {
+                                    selectedSplit = split
+                                }) {
+                                    HStack {
+                                        Text(split.name ?? "")
+                                            .font(.headline)
+                                            .foregroundColor(.primary)
+                                        Spacer()
+                                        if split == selectedSplit {
+                                            Image(systemName: "checkmark")
+                                                .foregroundColor(.blue)
+                                        }
+                                    }
+                                    .padding()
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .foregroundColor(Color(UIColor.systemBackground))
+                                            .shadow(color: Color(UIColor.systemGray4), radius: 4, x: 0, y: 2)
+                                    )
                                 }
+                                .padding(.horizontal)
+                                .padding(.vertical, 4)
                             }
-                            .padding()
-                            .background(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .foregroundColor(Color(UIColor.systemBackground))
-                                    .shadow(color: Color(UIColor.systemGray4), radius: 4, x: 0, y: 2)
-                            )
                         }
-                        .padding(.horizontal)
-                        .padding(.vertical, 4)
+                        
+                        .padding(.top)
                     }
                 }
-                .padding(.top)
-                
                 Section {
                     HStack {
                         Spacer()
