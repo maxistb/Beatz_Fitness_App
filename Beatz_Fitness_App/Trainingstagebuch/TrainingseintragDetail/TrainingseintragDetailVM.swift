@@ -9,18 +9,21 @@ import SwiftUI
 
 extension TrainingseintragDetailView {
     
-    func saveGewichteUndWiederholungen() {
-          for (_, ausgefuehrteSaetze) in ausgefuehrteSätzeNachUebung {
-              for ausgefuehrterSatz in ausgefuehrteSaetze {
-                  let gewichtEntity = GewichteNachUebung(context: moc)
-                  gewichtEntity.gewichte = ausgefuehrterSatz.gewicht
-                  
-                  let wiederholungenEntity = WiederholungenNachUebung(context: moc)
-                  wiederholungenEntity.wiederholungen = ausgefuehrterSatz.wiederholungen
-              }
-          }
-          try? moc.save()
-      }
+    func saveGewichteUndWiederholungen() -> ([Double], [Int]) {
+        var gewichteArray: [Double] = []
+        var wiederholungenArray: [Int] = []
+        
+        for (_, ausgefuehrteSaetze) in ausgefuehrteSätzeNachUebung {
+            for ausgefuehrterSatz in ausgefuehrteSaetze {
+                gewichteArray.append(ausgefuehrterSatz.gewicht)
+                wiederholungenArray.append(Int(ausgefuehrterSatz.wiederholungen))
+            }
+        }
+        print(gewichteArray)
+        print(wiederholungenArray)
+        return (gewichteArray, wiederholungenArray)
+   
+    }
     
     func delete(ausgefuehrterSatz: AusgefuehrterSatz) {
         trainingseintrag.removeFromAusgefuehrteUebungen(ausgefuehrterSatz)

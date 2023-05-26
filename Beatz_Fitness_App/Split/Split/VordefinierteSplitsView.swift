@@ -9,7 +9,9 @@ import SwiftUI
 
 struct VordefinierteSplitView: View {
     let split: VordefinierteSplits
-    
+//    let vordefinierteSplitsMänner: [VordefinierteSplits] // Add this parameter
+//    @Environment(\.managedObjectContext) var moc
+
     var body: some View {
         VStack {
             List {
@@ -44,18 +46,15 @@ struct VordefinierteSplitView: View {
             }
             .navigationTitle(split.name)
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    // TODO
+                }) {
+                    Text("Split Hinzufügen")
+                }
+            }
+        }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 

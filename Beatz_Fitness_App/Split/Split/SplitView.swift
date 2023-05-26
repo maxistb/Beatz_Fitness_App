@@ -37,17 +37,6 @@ struct SplitView: View {
                   UebungsItem(uebungName: "Bizepsmaschine", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Reverse_Butterfly")),
               ]
           ),
-    //        VordefinierteSplits(
-    //            name: "Beine",
-    //            uebungen: [
-    //                UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Hacksquat")),
-    //                UebungsItem(uebungName: "Beinpresse", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Beinpresse")),
-    //                UebungsItem(uebungName: "Beinbeuger", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Beinpresse")),
-    //                UebungsItem(uebungName: "Beinstrecker schwer", uebungBeschreibung: "Für die Quads", anzahlSaetze: 3, bild: Image("Beinstrecker_neu")),
-    //                UebungsItem(uebungName: "Adduktormaschine", uebungBeschreibung: "Für die Adduktoren", anzahlSaetze: 3, bild: Image("Adduktormaschine")),
-    //                UebungsItem(uebungName: "Wadenmaschine", uebungBeschreibung: "Für die Waden", anzahlSaetze: 3, bild: Image("Wadenmaschine_alt")),
-    //            ]
-    //        ),
           VordefinierteSplits(
               name: "Oberkörper",
               uebungen: [

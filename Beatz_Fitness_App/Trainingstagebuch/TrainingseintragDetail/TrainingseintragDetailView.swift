@@ -17,7 +17,9 @@ struct TrainingseintragDetailView: View {
     var ausgefuehrteSätzeNachUebung: [String: [AusgefuehrterSatz]] {
         Dictionary(grouping: trainingseintrag.ausgefuehrteSätzeArray.sorted(by: { $0.datum ?? Date() > $1.datum ?? Date() })) { $0.uebungname ?? "Fehler" }
     }
-
+    @State private var gewichte: [Double] = []
+    @State private var wiederholungen: [Int] = []
+    
     var body: some View {
         List {
             ForEach(Array(ausgefuehrteSätzeNachUebung.keys.sorted()), id: \.self) { uebungname in
@@ -44,23 +46,12 @@ struct TrainingseintragDetailView: View {
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                             Button(role: .destructive) {
                                 delete(ausgefuehrterSatz: ausgefuehrterSatz)
-                                saveGewichteUndWiederholungen()
                             } label: {
                                 Label("Löschen", systemImage: "trash")
                             }
                         }
                     }
                     .onMove(perform: move)
-                    
-                    Button("Hinzufügen") {
-                        let newSatz = AusgefuehrterSatz(context: moc)
-                        newSatz.gewicht = 0.0
-                        newSatz.wiederholungen = 0
-                        newSatz.uebungname = uebungname
-                        newSatz.datum = Date()
-                        trainingseintrag.addToAusgefuehrteUebungen(newSatz)
-                        try? moc.save()
-                    }
                 }
             }
             Section(header: Text("Notizen")) {
@@ -78,5 +69,9 @@ struct TrainingseintragDetailView: View {
                 }
             }
         }
+        .onChange(of: ausgefuehrteSätzeNachUebung) { _ in
+            (gewichte, wiederholungen) = saveGewichteUndWiederholungen()
+        }
     }
 }
+
