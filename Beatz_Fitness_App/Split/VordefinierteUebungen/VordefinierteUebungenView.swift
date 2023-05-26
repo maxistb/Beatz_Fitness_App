@@ -10,7 +10,7 @@ import SwiftUI
 struct VordefinierteUebungen: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
-    @State public var anzahlSaetze: [Int] = [1, 1, 1, 1, 1, 1, 1, 1]
+    @State public var anzahlSaetze: [Int] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     @State public var selectedUebungen: [UebungsItem] = []
     @ObservedObject var split: Split
     @State public var selectedIndicesBeine: [Int] = []

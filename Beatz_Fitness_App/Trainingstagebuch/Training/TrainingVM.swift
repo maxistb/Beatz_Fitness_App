@@ -110,5 +110,4 @@ class TrainingViewModel: ObservableObject {
             print("Error saving trainingseinheit: \(error.localizedDescription)")
         }
     }
-    
 }

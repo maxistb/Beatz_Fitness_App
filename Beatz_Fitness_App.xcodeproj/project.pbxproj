@@ -33,6 +33,8 @@
 		7A746BBD29E3246E00EF54C7 /* TrainingStarten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BBC29E3246E00EF54C7 /* TrainingStarten.swift */; };
 		7A746BC329E3F2EB00EF54C7 /* VordefinierteUebungenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BC229E3F2EB00EF54C7 /* VordefinierteUebungenVM.swift */; };
 		7A746BC629E416B400EF54C7 /* TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BC529E416B400EF54C7 /* TrainingView.swift */; };
+		7AA72ADA2A1FEC9F00319BC8 /* WelcomeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA72AD92A1FEC9F00319BC8 /* WelcomeVideo.swift */; };
+		7AA72ADE2A1FF73700319BC8 /* Beatz_Video-Edited.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7AA72ADD2A1FF71700319BC8 /* Beatz_Video-Edited.mp4 */; };
 		7AB3AFEE2A14C85500E5EBA8 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 7AB3AFED2A14C85500E5EBA8 /* SwiftUICharts */; };
 		7AB3AFF32A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFEF2A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataClass.swift */; };
 		7AB3AFF42A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB3AFF02A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift */; };
@@ -97,6 +99,8 @@
 		7A746BBC29E3246E00EF54C7 /* TrainingStarten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingStarten.swift; sourceTree = "<group>"; };
 		7A746BC229E3F2EB00EF54C7 /* VordefinierteUebungenVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VordefinierteUebungenVM.swift; sourceTree = "<group>"; };
 		7A746BC529E416B400EF54C7 /* TrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = TrainingView.swift; sourceTree = "<group>"; usesTabs = 1; wrapsLines = 1; };
+		7AA72AD92A1FEC9F00319BC8 /* WelcomeVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVideo.swift; sourceTree = "<group>"; };
+		7AA72ADD2A1FF71700319BC8 /* Beatz_Video-Edited.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Beatz_Video-Edited.mp4"; sourceTree = "<group>"; };
 		7AB3AFEF2A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GewichteNachUebung+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7AB3AFF02A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GewichteNachUebung+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7AB3AFF12A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WiederholungenNachUebung+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -211,6 +215,15 @@
 			path = Trainingstagebuch;
 			sourceTree = "<group>";
 		};
+		7AA72AD82A1FEC9200319BC8 /* WelcomeVideo */ = {
+			isa = PBXGroup;
+			children = (
+				7AA72ADD2A1FF71700319BC8 /* Beatz_Video-Edited.mp4 */,
+				7AA72AD92A1FEC9F00319BC8 /* WelcomeVideo.swift */,
+			);
+			path = WelcomeVideo;
+			sourceTree = "<group>";
+		};
 		7AC541E32A10F60200F3DE8B /* Preisliste */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,6 +295,7 @@
 		7AEC637829DD81DE00C8A8F3 = {
 			isa = PBXGroup;
 			children = (
+				7AA72AD82A1FEC9200319BC8 /* WelcomeVideo */,
 				7A746BAA29E09D7600EF54C7 /* App */,
 				7AEC638329DD81DE00C8A8F3 /* Beatz_Fitness_App */,
 				7AEC638229DD81DE00C8A8F3 /* Products */,
@@ -431,6 +445,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AA72ADE2A1FF73700319BC8 /* Beatz_Video-Edited.mp4 in Resources */,
 				7AEC638C29DD81E000C8A8F3 /* Preview Assets.xcassets in Resources */,
 				7AEC638929DD81E000C8A8F3 /* Assets.xcassets in Resources */,
 			);
@@ -463,6 +478,7 @@
 				7AEC638729DD81DE00C8A8F3 /* SplitView.swift in Sources */,
 				7AF6D88829F56B330050E758 /* BiometricAuthentication.swift in Sources */,
 				7AB60BFD2A14BCD700744FF0 /* StatistikView.swift in Sources */,
+				7AA72ADA2A1FEC9F00319BC8 /* WelcomeVideo.swift in Sources */,
 				7A0C1E7B2A196230000B350E /* AusgefuehrterSatz+CoreDataProperties.swift in Sources */,
 				7AC541EC2A11476F00F3DE8B /* SplitVM.swift in Sources */,
 				7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */,

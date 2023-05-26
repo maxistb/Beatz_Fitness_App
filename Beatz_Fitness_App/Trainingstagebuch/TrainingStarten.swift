@@ -16,16 +16,17 @@ struct Trainingstagebuch: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                ZStack {
-                    if splits.isEmpty {
+                if splits.isEmpty {
+                    VStack {
                         Text("Füge Splits hinzu! 🏋🏻")
-                            .foregroundColor(.primary)
                             .font(.headline)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+                            .foregroundColor(.primary)
+                            .multilineTextAlignment(.center)
                     }
+                }
                     
                     else {
-                        VStack(spacing: 0) {
+                        VStack {
                             ForEach(splits, id: \.self) { split in
                                 Button(action: {
                                     selectedSplit = split
@@ -42,9 +43,8 @@ struct Trainingstagebuch: View {
                                     }
                                     .padding()
                                     .background(
-                                        RoundedRectangle(cornerRadius: 20)
-                                            .foregroundColor(Color(UIColor.systemBackground))
-                                            .shadow(color: Color(UIColor.systemGray4), radius: 4, x: 0, y: 2)
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .foregroundColor(.white)
                                     )
                                 }
                                 .padding(.horizontal)
@@ -54,7 +54,7 @@ struct Trainingstagebuch: View {
                         
                         .padding(.top)
                     }
-                }
+                
                 Section {
                     HStack {
                         Spacer()
@@ -81,4 +81,3 @@ struct Trainingstagebuch: View {
         }
     }
 }
-

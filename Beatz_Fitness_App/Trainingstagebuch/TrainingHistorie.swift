@@ -21,7 +21,6 @@ struct TrainingHistorieView: View {
             VStack {
                 if trainingseintraege.isEmpty {
                     Text("Du hast noch keine Einträge 🫤")
-                        .foregroundColor(.black)
                 } else {
                     List {
                         ForEach(trainingseintraege, id: \.id) { trainingseintrag in

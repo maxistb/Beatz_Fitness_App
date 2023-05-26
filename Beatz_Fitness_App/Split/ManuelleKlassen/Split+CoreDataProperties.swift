@@ -24,9 +24,11 @@ extension Split {
 
     var getUebungen: [Uebung] {
         get {
-            return uebung?.allObjects as? [Uebung] ?? []
+            let uebungen = uebung?.allObjects as? [Uebung] ?? []
+            return uebungen.sorted { $0.order < $1.order }
         }
     }
+
 }
 
 // MARK: Generated accessors for uebung

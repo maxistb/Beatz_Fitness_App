@@ -22,10 +22,16 @@ extension UebungView {
         var newUebungen = Array(sortedUebungen)
         newUebungen.move(fromOffsets: indices, toOffset: newOffset)
 
+        // Aktualisiere die "order" für die verschobenen Elemente
+        for (index, uebung) in newUebungen.enumerated() {
+            uebung.order = Int64(index)
+        }
+
         do {
             try moc.save()
         } catch {
             print("Error saving managed object context: \(error.localizedDescription)")
         }
     }
+
 }

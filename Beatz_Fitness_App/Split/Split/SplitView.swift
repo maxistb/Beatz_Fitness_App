@@ -15,16 +15,83 @@ struct SplitView: View {
     @State private var isEditMode = false
     @State private var showAddSplitView = false
     @State private var settingsDetent = PresentationDetent.medium
-    @State private var vordefinierteSplits: [VordefinierteSplits] = [
-        VordefinierteSplits(
-            name: "Anfänger-Split",
-            uebungen: [
-                UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
-                UebungsItem(uebungName: "Squat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("TestBild"))
-            ]
-        ),
-    ]
-    
+    @State public var vordefinierteSplitsMänner: [VordefinierteSplits] = [
+          VordefinierteSplits(
+              name: "Push",
+              uebungen: [
+                  UebungsItem(uebungName: "Brustpresse", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Brustpresse")),
+                  UebungsItem(uebungName: "Butterfly", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Butterfly")),
+                  UebungsItem(uebungName: "Seitheben", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Seithebenmaschine")),
+                  UebungsItem(uebungName: "Schulterpresse", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("FullSizeRender")),
+                  UebungsItem(uebungName: "Trizeps Pushdown", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Butterfly"))
+              ]
+          ),
+          VordefinierteSplits(
+              name: "Pull",
+              uebungen: [
+                  UebungsItem(uebungName: "Latzug", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Latzug")),
+                  UebungsItem(uebungName: "T-Bar Row", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("T-Bar")),
+                  UebungsItem(uebungName: "Highrow", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Highrow")),
+                  UebungsItem(uebungName: "Rückenstrecker", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Reverse_Butterfly")),
+                  UebungsItem(uebungName: "Reverse Butterfly", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Reverse_Butterfly")),
+                  UebungsItem(uebungName: "Bizepsmaschine", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Reverse_Butterfly")),
+              ]
+          ),
+    //        VordefinierteSplits(
+    //            name: "Beine",
+    //            uebungen: [
+    //                UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Hacksquat")),
+    //                UebungsItem(uebungName: "Beinpresse", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Beinpresse")),
+    //                UebungsItem(uebungName: "Beinbeuger", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Beinpresse")),
+    //                UebungsItem(uebungName: "Beinstrecker schwer", uebungBeschreibung: "Für die Quads", anzahlSaetze: 3, bild: Image("Beinstrecker_neu")),
+    //                UebungsItem(uebungName: "Adduktormaschine", uebungBeschreibung: "Für die Adduktoren", anzahlSaetze: 3, bild: Image("Adduktormaschine")),
+    //                UebungsItem(uebungName: "Wadenmaschine", uebungBeschreibung: "Für die Waden", anzahlSaetze: 3, bild: Image("Wadenmaschine_alt")),
+    //            ]
+    //        ),
+          VordefinierteSplits(
+              name: "Oberkörper",
+              uebungen: [
+                  UebungsItem(uebungName: "T-Bar Row", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("T-Bar")),
+                  UebungsItem(uebungName: "Rudern", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Rudern")),
+                  UebungsItem(uebungName: "Latzug", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Latzug")),
+                  UebungsItem(uebungName: "Butterfly", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Butterfly")),
+                  UebungsItem(uebungName: "Bankdrückmaschine", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Bankdrückmaschine"))
+              ]
+          ),
+          VordefinierteSplits(
+              name: "Unterkörper",
+              uebungen: [
+                  UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Hacksquat")),
+                  UebungsItem(uebungName: "Beinpresse", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Beinpresse")),
+                  UebungsItem(uebungName: "Beinbeuger", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Beinpresse")),
+                  UebungsItem(uebungName: "Wadenmaschine", uebungBeschreibung: "Für die Waden", anzahlSaetze: 3, bild: Image("Wadenmaschine_alt"))
+              ]
+          ),
+          VordefinierteSplits(
+              name: "Ganzkörper",
+              uebungen: [
+                  UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Hacksquat")),
+                  UebungsItem(uebungName: "Rudern", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Rudern")),
+                  UebungsItem(uebungName: "Butterfly", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Butterfly")),
+                  UebungsItem(uebungName: "Bankdrückmaschine", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Bankdrückmaschine")),
+                  UebungsItem(uebungName: "Schulterpresse", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("FullSizeRender"))
+              ]
+          ),
+      ]
+     @State public var vordefinierteSplitsFrauen: [VordefinierteSplits] = [
+          VordefinierteSplits(
+              name: "Beine",
+              uebungen: [
+                  UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Hacksquat")),
+                  UebungsItem(uebungName: "Beinpresse", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Beinpresse")),
+                  UebungsItem(uebungName: "Beinbeuger", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Beinpresse")),
+                  UebungsItem(uebungName: "Beinstrecker schwer", uebungBeschreibung: "Für die Quads", anzahlSaetze: 3, bild: Image("Beinstrecker_neu")),
+                  UebungsItem(uebungName: "Adduktormaschine", uebungBeschreibung: "Für die Adduktoren", anzahlSaetze: 3, bild: Image("Adduktormaschine")),
+                  UebungsItem(uebungName: "Wadenmaschine", uebungBeschreibung: "Für die Waden", anzahlSaetze: 3, bild: Image("Wadenmaschine_alt")),
+              ]
+          ),
+          ]
+
     var body: some View {
         NavigationView {
             VStack {
@@ -59,14 +126,21 @@ struct SplitView: View {
                         .onDelete(perform: deleteItems)
                         
                     }
-                    Section(header: Text("Vordefinierte Splits")) {
-                        ForEach(vordefinierteSplits, id: \.name) { split in
+                    Section(header: Text("Empfohlene Trainingspläne Männer")) {
+                        ForEach(vordefinierteSplitsMänner, id: \.name) { split in
                             NavigationLink(destination: VordefinierteSplitView(split: split)) {
                                 Text(split.name)
                             }
                         }
                     }
-//                        .onMove(perform: moveItems)
+                    
+                    Section(header: Text("Empfohlene Trainingspläne Frauen")) {
+                        ForEach(vordefinierteSplitsFrauen, id: \.name) { split in
+                            NavigationLink(destination: VordefinierteSplitView(split: split)) {
+                                Text(split.name)
+                            }
+                        }
+                    }
                 }
                 .navigationBarTitle("Trainingspläne")
                 .navigationBarItems(leading:
