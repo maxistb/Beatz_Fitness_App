@@ -9,8 +9,8 @@ import SwiftUI
 
 struct VordefinierteSplitView: View {
     let split: VordefinierteSplits
-//    let vordefinierteSplitsMänner: [VordefinierteSplits] // Add this parameter
-//    @Environment(\.managedObjectContext) var moc
+    @Environment(\.managedObjectContext) var moc
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
@@ -49,7 +49,21 @@ struct VordefinierteSplitView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
-                    // TODO
+                    let neuerSplit = Split(context: moc)
+                    neuerSplit.name = split.name
+                    
+                    for uebung in split.uebungen {
+                        let neueUebung = Uebung(context: moc)
+                        neueUebung.id = UUID()
+                        neueUebung.name = uebung.uebungName
+                        neueUebung.saetze = Int64(uebung.anzahlSaetze)
+                        neueUebung.notizen = ""
+                        
+                        neuerSplit.addToUebung(neueUebung)
+                    }
+                    
+                    try? moc.save()
+                    presentationMode.wrappedValue.dismiss()
                 }) {
                     Text("Split Hinzufügen")
                 }
@@ -57,4 +71,5 @@ struct VordefinierteSplitView: View {
         }
     }
 }
+
 

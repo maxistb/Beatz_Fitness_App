@@ -11,11 +11,10 @@ struct TrainingView: View {
 	@ObservedObject var viewModel: TrainingViewModel
 	@State private var showingAlert = false
 	@Environment(\.presentationMode) var presentationMode
-	@State private var notizenTraining = ""
-
 
 	var body: some View {
 		VStack {
+			let previousWeights = viewModel.getPreviousTrainingWeights()
 			List {
 				ForEach(viewModel.selectedSplit.getUebungen.indices, id: \.self) { uebungIndex in
 					var uebung = viewModel.selectedSplit.getUebungen[uebungIndex]
@@ -24,15 +23,47 @@ struct TrainingView: View {
 							HStack {
 								if viewModel.isAufwärmsatz[uebungIndex][saetzeIndex] {
 									Section(header: Text("Aufwärm.").font(Font.system(size: 16, weight: .regular))) {
-										viewModel.gewichtTextField(value: $viewModel.gewichte[uebungIndex][saetzeIndex])
+										viewModel.gewichtTextField(value: Binding(
+											get: { viewModel.gewichte[uebungIndex][saetzeIndex] },
+											set: { newValue in
+												viewModel.gewichte[uebungIndex][saetzeIndex] = newValue
+											}
+										))
+										.onAppear {
+											if uebungIndex < previousWeights.count && saetzeIndex < previousWeights[uebungIndex].count {
+												let previousWeight = previousWeights[uebungIndex][saetzeIndex]
+												viewModel.gewichte[uebungIndex][saetzeIndex] = previousWeight
+											}
+										}
 									}
-									
 								} else if viewModel.isDropsatz[uebungIndex][saetzeIndex] {
 									Section(header: Text("Dropsatz").font(Font.system(size: 16, weight: .regular))) {
-										viewModel.gewichtTextField(value: $viewModel.gewichte[uebungIndex][saetzeIndex])
+										viewModel.gewichtTextField(value: Binding(
+											get: { viewModel.gewichte[uebungIndex][saetzeIndex] },
+											set: { newValue in
+												viewModel.gewichte[uebungIndex][saetzeIndex] = newValue
+											}
+										))
+										.onAppear {
+											if uebungIndex < previousWeights.count && saetzeIndex < previousWeights[uebungIndex].count {
+												let previousWeight = previousWeights[uebungIndex][saetzeIndex]
+												viewModel.gewichte[uebungIndex][saetzeIndex] = previousWeight
+											}
+										}
 									}
 								} else {
-									viewModel.gewichtTextField(value: $viewModel.gewichte[uebungIndex][saetzeIndex])
+									viewModel.gewichtTextField(value: Binding(
+										get: { viewModel.gewichte[uebungIndex][saetzeIndex] },
+										set: { newValue in
+											viewModel.gewichte[uebungIndex][saetzeIndex] = newValue
+										}
+									))
+									.onAppear {
+										if uebungIndex < previousWeights.count && saetzeIndex < previousWeights[uebungIndex].count {
+											let previousWeight = previousWeights[uebungIndex][saetzeIndex]
+											viewModel.gewichte[uebungIndex][saetzeIndex] = previousWeight
+										}
+									}
 								}
 								viewModel.wiederholungenTextField(value: $viewModel.wiederholungen[uebungIndex][saetzeIndex])
 								
@@ -141,3 +172,4 @@ struct TrainingView: View {
 		}
 	}
 }
+
