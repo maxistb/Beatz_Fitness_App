@@ -56,18 +56,18 @@ struct Allgemeines: View {
                     
                 }
                 
-                Section(header: Text("Preisliste")) {
-                    NavigationLink(destination: Preisliste()) {
-                        HStack {
-                            Image("BeatzLogo")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40, height: 40)
-                                .cornerRadius(40)
-                            Text("Preisliste")
-                        }
-                    }
-                }
+//                Section(header: Text("Preisliste")) {
+//                    NavigationLink(destination: Preisliste()) {
+//                        HStack {
+//                            Image("BeatzLogo")
+//                                .resizable()
+//                                .scaledToFit()
+//                                .frame(width: 40, height: 40)
+//                                .cornerRadius(40)
+//                            Text("Preisliste")
+//                        }
+//                    }
+//                }
                 
                 Section(header: Text("Kontaktiere uns!")) {
                     HStack {

@@ -11,7 +11,7 @@ import AVFoundation
 
 struct WelcomeView: View {
     @State private var showMainScreen = false
-    private let player = AVPlayer(url: Bundle.main.url(forResource: "Beatz_Video-Edited", withExtension: "mp4")!)
+    private let player = AVPlayer(url: Bundle.main.url(forResource: "Beatz_Video-Fertig", withExtension: "mp4")!)
     private let playerLayer = AVPlayerLayer()
 
     var body: some View {
