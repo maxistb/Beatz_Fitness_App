@@ -11,7 +11,7 @@ import AVKit
 struct VideoErklärungView: View {
     var body: some View {
         VideoListe()
-        .navigationTitle("🏋🏻 Übungstutorials")
+        .navigationTitle("🎥 Übungstutorials")
     }
 }
 

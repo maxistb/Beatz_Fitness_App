@@ -93,7 +93,7 @@ struct Allgemeines: View {
                     Text("Maximillian Stabe")
                 }
             }
-            .navigationTitle("Allgemeines")
+            .navigationTitle("⚙ Allgemeines")
         }
     }
 }

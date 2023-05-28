@@ -132,7 +132,7 @@ struct SplitView: View {
                         }
                     }
                 }
-                .navigationBarTitle("Trainingspläne")
+                .navigationBarTitle("🏋🏻 Trainingspläne")
                 .navigationBarItems(leading:
                                         Button(action: {
                     withAnimation {

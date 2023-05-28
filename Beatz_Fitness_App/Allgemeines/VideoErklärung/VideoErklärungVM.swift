@@ -38,7 +38,7 @@ struct VideoListe: View {
             }
             .padding(.vertical, 12)
         }
-        .navigationTitle("🏋🏻 Übungstutorials")
+        .navigationTitle("🎥 Übungstutorials")
     }
 }
 

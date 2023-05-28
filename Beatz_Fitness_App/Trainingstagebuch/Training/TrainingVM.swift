@@ -9,14 +9,14 @@ import SwiftUI
 import CoreData
 
 class TrainingViewModel: ObservableObject {
-    @Published var gewichte: [[String]] = Array(repeating: Array(repeating: "", count: 20), count: 20)
-    @Published var wiederholungen: [[String]] = Array(repeating: Array(repeating: "", count: 20), count: 20)
+    @Published var gewichte: [[String]] = []
+    @Published var wiederholungen: [[String]] = []
+    @Published var isAufwärmsatz: [[Bool]] = []
+    @Published var isDropsatz: [[Bool]] = []
+    @Published var notizenTraining: String = ""
     let selectedSplit: Split
     let moc: NSManagedObjectContext
     var selectedUebung: Uebung?
-    @Published var isAufwärmsatz: [[Bool]] = Array(repeating: Array(repeating: false, count: 20), count: 20)
-    @Published var isDropsatz: [[Bool]] = Array(repeating: Array(repeating: false, count: 20), count: 20)
-    @Published var notizenTraining: String = ""
     
     init(selectedSplit: Split, moc: NSManagedObjectContext) {
         self.selectedSplit = selectedSplit
@@ -57,28 +57,28 @@ class TrainingViewModel: ObservableObject {
         
         return []
     }
-
-
-
-
-
     
     func gewichtTextField(value: Binding<String>) -> some View {
-           TextField("Gewicht", text: value)
-               .keyboardType(.decimalPad)
-               .overlay(
-                   Text("kg"),
-                   alignment: .trailing
-               )
-       }
+        TextField("Gewicht", text: value)
+            .keyboardType(.decimalPad)
+            .overlay(
+                Text("kg"),
+                alignment: .trailing
+            )
+    }
     
     private func initializeArrays() {
-           for index in selectedSplit.getUebungen.indices {
-               let uebung = selectedSplit.getUebungen[index]
-               isAufwärmsatz[index] = Array(repeating: false, count: Int(uebung.saetze))
-               isDropsatz[index] = Array(repeating: false, count: Int(uebung.saetze))
-           }
-       }
+        let uebungenCount = selectedSplit.getUebungen.count
+        for index in 0..<uebungenCount {
+            let uebung = selectedSplit.getUebungen[index]
+            let satzCount = Int(uebung.saetze)
+            
+            gewichte.append(Array(repeating: "", count: satzCount))
+            wiederholungen.append(Array(repeating: "", count: satzCount))
+            isAufwärmsatz.append(Array(repeating: false, count: satzCount))
+            isDropsatz.append(Array(repeating: false, count: satzCount))
+        }
+    }
     
     func wiederholungenTextField(value: Binding<String>) -> some View {
         TextField("Wdh.", text: value)
@@ -90,26 +90,26 @@ class TrainingViewModel: ObservableObject {
     }
     
     func createButton(showingAlert: Binding<Bool>) -> some View {
-           Section {
-               HStack {
-                   Spacer()
-                   Button(action: {
-                       self.saveTraining()
-                       showingAlert.wrappedValue = true
-                   }) {
-                       Text("Training abschließen")
-                           .font(.headline)
-                           .foregroundColor(.white)
-                           .frame(height: 50)
-                           .frame(width: 200)
-                           .background(Color.blue)
-                           .cornerRadius(15.0)
-                   }
-                   .padding(.vertical)
-                   Spacer()
-               }
-           }
-       }
+        Section {
+            HStack {
+                Spacer()
+                Button(action: {
+                    self.saveTraining()
+                    showingAlert.wrappedValue = true
+                }) {
+                    Text("Training abschließen")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(height: 50)
+                        .frame(width: 200)
+                        .background(Color.blue)
+                        .cornerRadius(15.0)
+                }
+                .padding(.vertical)
+                Spacer()
+            }
+        }
+    }
     
     func saveTraining() {
         guard gewichte.count == wiederholungen.count else {

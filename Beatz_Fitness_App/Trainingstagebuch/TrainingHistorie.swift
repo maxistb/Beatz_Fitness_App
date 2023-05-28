@@ -44,7 +44,7 @@ struct TrainingHistorieView: View {
                     }
                 }
             }
-            .navigationBarTitle("Trainingseinträge")
+            .navigationBarTitle("📖 Trainingseinträge")
         }
     }
     

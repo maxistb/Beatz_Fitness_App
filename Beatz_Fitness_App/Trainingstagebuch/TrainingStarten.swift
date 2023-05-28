@@ -77,7 +77,7 @@ struct Trainingstagebuch: View {
                 .padding(.vertical)
             }
             .background(Color(UIColor.systemGroupedBackground))
-            .navigationTitle("Splits")
+            .navigationTitle("🏅 Splits")
         }
     }
 }

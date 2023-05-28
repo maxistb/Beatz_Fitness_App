@@ -31,7 +31,7 @@ struct TrainingseintragDetailView: View {
                                     createGewichtTextField(for: ausgefuehrterSatz)
                                 }
                             }
-                            else if ausgefuehrterSatz.isDropsatz {
+                            else if ausgefuehrterSatz.isAufwaermsatz {
                                 Section(header: Text("Aufwärm.")) {
                                     createGewichtTextField(for: ausgefuehrterSatz)
                                 }
