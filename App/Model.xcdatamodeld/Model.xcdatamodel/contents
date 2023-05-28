@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AusgefuehrterSatz" representedClassName="AusgefuehrterSatz" syncable="YES">
+        <attribute name="datum" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="gewicht" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isAufwaermsatz" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isDropsatz" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="satzIndex" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="uebungname" optional="YES" attributeType="String"/>
+        <attribute name="wiederholungen" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="gewichteNachUebung" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="GewichteNachUebung" inverseName="gewichteArray" inverseEntity="GewichteNachUebung"/>
+        <relationship name="saetze" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Satz" inverseName="ausgefuehrteuebung" inverseEntity="Satz"/>
+        <relationship name="trainingseintrag" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trainingseintrag" inverseName="ausgefuehrteUebungen" inverseEntity="Trainingseintrag"/>
+        <relationship name="uebung" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Uebung" inverseName="ausgefuehrteuebung" inverseEntity="Uebung"/>
+        <relationship name="wiederholungenNachUebung" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WiederholungenNachUebung" inverseName="wiederholungenArray" inverseEntity="WiederholungenNachUebung"/>
+    </entity>
+    <entity name="GewichteNachUebung" representedClassName="GewichteNachUebung" syncable="YES">
+        <attribute name="gewichte" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="uebungname" optional="YES" attributeType="String"/>
+        <relationship name="gewichteArray" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AusgefuehrterSatz" inverseName="gewichteNachUebung" inverseEntity="AusgefuehrterSatz"/>
+    </entity>
+    <entity name="Satz" representedClassName="Satz" syncable="YES">
+        <attribute name="gewicht" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="wiederholungen" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="ausgefuehrteuebung" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AusgefuehrterSatz" inverseName="saetze" inverseEntity="AusgefuehrterSatz"/>
+        <relationship name="uebung" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Uebung" inverseName="satz" inverseEntity="Uebung"/>
+    </entity>
+    <entity name="Split" representedClassName="Split" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notizen" optional="YES" attributeType="String"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="trainingseintrag" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Trainingseintrag" inverseName="split" inverseEntity="Trainingseintrag"/>
+        <relationship name="uebung" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Uebung" inverseName="origin" inverseEntity="Uebung"/>
+    </entity>
+    <entity name="Trainingseintrag" representedClassName="Trainingseintrag" syncable="YES">
+        <attribute name="datum" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="gewicht" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="notizen" optional="YES" attributeType="String"/>
+        <attribute name="satzReihenfolge" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="wiederholungen" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="ausgefuehrteUebungen" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="AusgefuehrterSatz" inverseName="trainingseintrag" inverseEntity="AusgefuehrterSatz"/>
+        <relationship name="split" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Split" inverseName="trainingseintrag" inverseEntity="Split"/>
+        <relationship name="uebung" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Uebung" inverseName="trainingseintrag" inverseEntity="Uebung"/>
+    </entity>
+    <entity name="Uebung" representedClassName="Uebung" syncable="YES">
+        <attribute name="aufwaermsaetze" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dropsaetze" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="notizen" optional="YES" attributeType="String"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="saetze" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="videoURL" optional="YES" attributeType="String"/>
+        <relationship name="ausgefuehrteuebung" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="AusgefuehrterSatz" inverseName="uebung" inverseEntity="AusgefuehrterSatz"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Split" inverseName="uebung" inverseEntity="Split"/>
+        <relationship name="satz" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Satz" inverseName="uebung" inverseEntity="Satz"/>
+        <relationship name="trainingseintrag" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trainingseintrag" inverseName="uebung" inverseEntity="Trainingseintrag"/>
+    </entity>
+    <entity name="WiederholungenNachUebung" representedClassName="WiederholungenNachUebung" syncable="YES">
+        <attribute name="uebungname" optional="YES" attributeType="String"/>
+        <attribute name="wiederholungen" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="wiederholungenArray" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AusgefuehrterSatz" inverseName="wiederholungenNachUebung" inverseEntity="AusgefuehrterSatz"/>
+    </entity>
+</model>
