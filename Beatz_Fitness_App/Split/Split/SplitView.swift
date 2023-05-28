@@ -16,57 +16,58 @@ struct SplitView: View {
     @State private var showAddSplitView = false
     @State private var settingsDetent = PresentationDetent.medium
     @State public var vordefinierteSplitsMänner: [VordefinierteSplits] = [
-          VordefinierteSplits(
-              name: "Push",
-              uebungen: [
-                  UebungsItem(uebungName: "Brustpresse", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Brustpresse")),
-                  UebungsItem(uebungName: "Butterfly", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Butterfly")),
-                  UebungsItem(uebungName: "Seitheben", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Seithebenmaschine")),
-                  UebungsItem(uebungName: "Schulterpresse", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("FullSizeRender")),
-                  UebungsItem(uebungName: "Trizeps Pushdown", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Butterfly"))
-              ]
-          ),
-          VordefinierteSplits(
-              name: "Pull",
-              uebungen: [
-                  UebungsItem(uebungName: "Latzug", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Latzug")),
-                  UebungsItem(uebungName: "T-Bar Row", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("T-Bar")),
-                  UebungsItem(uebungName: "Highrow", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Highrow")),
-                  UebungsItem(uebungName: "Rückenstrecker", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Reverse_Butterfly")),
-                  UebungsItem(uebungName: "Reverse Butterfly", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Reverse_Butterfly")),
-                  UebungsItem(uebungName: "Bizepsmaschine", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Reverse_Butterfly")),
-              ]
-          ),
-          VordefinierteSplits(
-              name: "Oberkörper",
-              uebungen: [
-                  UebungsItem(uebungName: "T-Bar Row", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("T-Bar")),
-                  UebungsItem(uebungName: "Rudern", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Rudern")),
-                  UebungsItem(uebungName: "Latzug", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Latzug")),
-                  UebungsItem(uebungName: "Butterfly", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Butterfly")),
-                  UebungsItem(uebungName: "Bankdrückmaschine", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Bankdrückmaschine"))
-              ]
-          ),
-          VordefinierteSplits(
-              name: "Unterkörper",
-              uebungen: [
-                  UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Hacksquat")),
-                  UebungsItem(uebungName: "Beinpresse", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Beinpresse")),
-                  UebungsItem(uebungName: "Beinbeuger", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Beinpresse")),
-                  UebungsItem(uebungName: "Wadenmaschine", uebungBeschreibung: "Für die Waden", anzahlSaetze: 3, bild: Image("Wadenmaschine_alt"))
-              ]
-          ),
-          VordefinierteSplits(
-              name: "Ganzkörper",
-              uebungen: [
-                  UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 3, bild: Image("Hacksquat")),
-                  UebungsItem(uebungName: "Rudern", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Rudern")),
-                  UebungsItem(uebungName: "Butterfly", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Butterfly")),
-                  UebungsItem(uebungName: "Bankdrückmaschine", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("Bankdrückmaschine")),
-                  UebungsItem(uebungName: "Schulterpresse", uebungBeschreibung: "Für den Lat", anzahlSaetze: 3, bild: Image("FullSizeRender"))
-              ]
-          ),
-      ]
+            VordefinierteSplits(
+                name: "Push",
+                uebungen: [
+                    UebungsItem(uebungName: "Brustpresse", uebungBeschreibung: "Brust", anzahlSaetze: 3, bild: Image("Brustpresse")),
+                    UebungsItem(uebungName: "Butterfly", uebungBeschreibung: "Brust", anzahlSaetze: 3, bild: Image("Butterfly")),
+                    UebungsItem(uebungName: "Seitheben", uebungBeschreibung: "Schultern", anzahlSaetze: 3, bild: Image("Seithebenmaschine")),
+                    UebungsItem(uebungName: "Schulterpresse", uebungBeschreibung: "Schultern", anzahlSaetze: 3, bild: Image("FullSizeRender")),
+                    UebungsItem(uebungName: "Trizeps Pushdown", uebungBeschreibung: "Trizeps", anzahlSaetze: 3, bild: Image("Butterfly"))
+                ]
+            ),
+            VordefinierteSplits(
+                name: "Pull",
+                uebungen: [
+                    UebungsItem(uebungName: "Latzug", uebungBeschreibung: "Latissimus", anzahlSaetze: 3, bild: Image("Latzug")),
+                    UebungsItem(uebungName: "T-Bar Row", uebungBeschreibung: "Latissimus", anzahlSaetze: 3, bild: Image("T-Bar")),
+                    UebungsItem(uebungName: "Highrow", uebungBeschreibung: "Latissimus", anzahlSaetze: 3, bild: Image("Highrow")),
+                    UebungsItem(uebungName: "Rückenstrecker", uebungBeschreibung: "Latissimus", anzahlSaetze: 3, bild: Image("Reverse_Butterfly")),
+                    UebungsItem(uebungName: "Reverse Butterfly", uebungBeschreibung: "Latissimus", anzahlSaetze: 3, bild: Image("Reverse_Butterfly")),
+                    UebungsItem(uebungName: "Bizepsmaschine", uebungBeschreibung: "Bizeps", anzahlSaetze: 3, bild: Image("Reverse_Butterfly")),
+                ]
+            ),
+            VordefinierteSplits(
+                name: "Oberkörper",
+                uebungen: [
+                    UebungsItem(uebungName: "T-Bar Row", uebungBeschreibung: "Latissimus", anzahlSaetze: 3, bild: Image("T-Bar")),
+                    UebungsItem(uebungName: "Rudern", uebungBeschreibung: "Latissimus", anzahlSaetze: 3, bild: Image("Rudern")),
+                    UebungsItem(uebungName: "Latzug", uebungBeschreibung: "Latissimus", anzahlSaetze: 3, bild: Image("Latzug")),
+                    UebungsItem(uebungName: "Butterfly", uebungBeschreibung: "Brust", anzahlSaetze: 3, bild: Image("Butterfly")),
+                    UebungsItem(uebungName: "Bankdrückmaschine", uebungBeschreibung: "Brust", anzahlSaetze: 3, bild: Image("Bankdrückmaschine"))
+                ]
+            ),
+            VordefinierteSplits(
+                name: "Unterkörper",
+                uebungen: [
+                    UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Beine", anzahlSaetze: 3, bild: Image("Hacksquat")),
+                    UebungsItem(uebungName: "Beinpresse", uebungBeschreibung: "Beine", anzahlSaetze: 3, bild: Image("Beinpresse")),
+                    UebungsItem(uebungName: "Beinbeuger", uebungBeschreibung: "Beine", anzahlSaetze: 3, bild: Image("Beinpresse")),
+                    UebungsItem(uebungName: "Wadenmaschine", uebungBeschreibung: "Waden", anzahlSaetze: 3, bild: Image("Wadenmaschine_alt"))
+                ]
+            ),
+            VordefinierteSplits(
+                name: "Ganzkörper",
+                uebungen: [
+                    UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Beine", anzahlSaetze: 3, bild: Image("Hacksquat")),
+                    UebungsItem(uebungName: "Rudern", uebungBeschreibung: "Latissimus", anzahlSaetze: 3, bild: Image("Rudern")),
+                    UebungsItem(uebungName: "Butterfly", uebungBeschreibung: "Latissimus", anzahlSaetze: 3, bild: Image("Butterfly")),
+                    UebungsItem(uebungName: "Bankdrückmaschine", uebungBeschreibung: "Brust", anzahlSaetze: 3, bild: Image("Bankdrückmaschine")),
+                    UebungsItem(uebungName: "Schulterpresse", uebungBeschreibung: "Schultern", anzahlSaetze: 3, bild: Image("FullSizeRender"))
+                ]
+            ),
+        ]
+
      @State public var vordefinierteSplitsFrauen: [VordefinierteSplits] = [
           VordefinierteSplits(
               name: "Beine",

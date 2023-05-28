@@ -28,33 +28,33 @@ class TrainingViewModel: ObservableObject {
         guard let splitName = selectedSplit.name else {
             return []
         }
-
+        
         let fetchRequest: NSFetchRequest<Trainingseintrag> = Trainingseintrag.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "split.name == %@", splitName)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "datum", ascending: false)]
         fetchRequest.fetchLimit = 1
-
+        
         do {
             let results = try moc.fetch(fetchRequest)
             if let lastTrainingEntry = results.first {
                 let ausgefuehrteSätzeArray = lastTrainingEntry.ausgefuehrteSätzeArray
                 let uebungenCount = selectedSplit.getUebungen.count
-                let maxSatzIndex = ausgefuehrteSätzeArray.map { $0.satzIndex }.max() ?? 0
-                var previousWeights: [[String]] = Array(repeating: Array(repeating: "", count: Int(maxSatzIndex) + 1), count: uebungenCount)
-
+                let maxSatzOrder = ausgefuehrteSätzeArray.map { $0.satzIndex }.max() ?? 0
+                var previousWeights: [[String]] = Array(repeating: Array(repeating: "", count: Int(maxSatzOrder) + 1), count: uebungenCount)
+                
                 for satz in ausgefuehrteSätzeArray {
                     if let uebungIndex = selectedSplit.getUebungen.firstIndex(where: { $0.name == satz.uebungname }) {
                         previousWeights[uebungIndex][Int(satz.satzIndex)] = String(satz.gewicht)
                     }
                 }
-
+                
                 print(previousWeights)
                 return previousWeights
             }
         } catch {
             print("Error fetching previous training entry: \(error.localizedDescription)")
         }
-
+        
         return []
     }
 

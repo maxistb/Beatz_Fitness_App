@@ -21,7 +21,7 @@ extension Satz {
     @NSManaged public var id: UUID?
     @NSManaged public var uebung: Uebung?
     @NSManaged public var ausgefuehrteuebung: AusgefuehrterSatz?
-
+    @NSManaged public var order: Int64
 }
 
 extension Satz : Identifiable {

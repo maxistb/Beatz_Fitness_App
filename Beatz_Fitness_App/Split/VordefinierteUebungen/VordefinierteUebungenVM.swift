@@ -47,33 +47,34 @@ struct iOSCheckboxToggleStyle: ToggleStyle {
 }
 
 var uebungenBeine = [
-    UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Für die Beine", anzahlSaetze: 2, bild: Image("Hacksquat")),
-    UebungsItem(uebungName: "Wadenmaschine", uebungBeschreibung: "Für die Waden", anzahlSaetze: 2, bild: Image("Wadenmaschine_alt")),
-    UebungsItem(uebungName: "Kickbackmaschine", uebungBeschreibung: "Für den Po", anzahlSaetze: 2, bild: Image("Kickbackmaschine")),
-    UebungsItem(uebungName: "Beinstrecker schwer", uebungBeschreibung: "Für die Quads", anzahlSaetze: 2, bild: Image("Beinstrecker_neu")),
-    UebungsItem(uebungName: "Beinpressmaschine", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("Beinpressmaschine")),
-    UebungsItem(uebungName: "Beinpresse", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("Beinpresse")),
-    UebungsItem(uebungName: "Adduktormaschine", uebungBeschreibung: "Für die Adduktoren", anzahlSaetze: 2, bild: Image("Adduktormaschine")),
-    UebungsItem(uebungName: "Abduktormaschine", uebungBeschreibung: "Für die Abduktoren", anzahlSaetze: 2, bild: Image("Abduktormaschine"))
+    UebungsItem(uebungName: "Hacksquat", uebungBeschreibung: "Oberschenkelmuskulatur (Quadrizeps)", anzahlSaetze: 2, bild: Image("Hacksquat")),
+    UebungsItem(uebungName: "Wadenmaschine", uebungBeschreibung: "Wadenmuskulatur (Gastrocnemius)", anzahlSaetze: 2, bild: Image("Wadenmaschine_alt")),
+    UebungsItem(uebungName: "Kickbackmaschine", uebungBeschreibung: "Gesäßmuskulatur (Gluteus)", anzahlSaetze: 2, bild: Image("Kickbackmaschine")),
+    UebungsItem(uebungName: "Beinstrecker schwer", uebungBeschreibung: "Oberschenkelmuskulatur (Quadrizeps)", anzahlSaetze: 2, bild: Image("Beinstrecker_neu")),
+    UebungsItem(uebungName: "Beinpressmaschine", uebungBeschreibung: "Oberschenkelmuskulatur (Quadrizeps, Beinbeuger)", anzahlSaetze: 2, bild: Image("Beinpressmaschine")),
+    UebungsItem(uebungName: "Beinpresse", uebungBeschreibung: "Oberschenkelmuskulatur (Quadrizeps, Beinbeuger, Gesäßmuskulatur)", anzahlSaetze: 2, bild: Image("Beinpresse")),
+    UebungsItem(uebungName: "Adduktormaschine", uebungBeschreibung: "Adduktoren (Innenseite der Oberschenkel)", anzahlSaetze: 2, bild: Image("Adduktormaschine")),
+    UebungsItem(uebungName: "Abduktormaschine", uebungBeschreibung: "Abduktoren (Außenseite der Oberschenkel)", anzahlSaetze: 2, bild: Image("Abduktormaschine"))
 ]
 
 var uebungenRücken = [
-    UebungsItem(uebungName: "T-Bar Row", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("T-Bar")),
-    UebungsItem(uebungName: "Rudern", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("Rudern")),
-    UebungsItem(uebungName: "Reverse Butterfly", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("Reverse_Butterfly")),
-    UebungsItem(uebungName: "Latzugmaschine", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("Latzugmaschine")),
-    UebungsItem(uebungName: "Latzug", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("Latzug")),
-    UebungsItem(uebungName: "Klimmzug unterstützt", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("Klimmzugmaschine")),
-    UebungsItem(uebungName: "Highrow", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("Highrow"))
+    UebungsItem(uebungName: "T-Bar Row", uebungBeschreibung: "Latissimus (breiter Rückenmuskel)", anzahlSaetze: 2, bild: Image("T-Bar")),
+    UebungsItem(uebungName: "Rudern", uebungBeschreibung: "Latissimus (breiter Rückenmuskel)", anzahlSaetze: 2, bild: Image("Rudern")),
+    UebungsItem(uebungName: "Reverse Butterfly", uebungBeschreibung: "Latissimus (breiter Rückenmuskel)", anzahlSaetze: 2, bild: Image("Reverse_Butterfly")),
+    UebungsItem(uebungName: "Latzugmaschine", uebungBeschreibung: "Latissimus (breiter Rückenmuskel)", anzahlSaetze: 2, bild: Image("Latzugmaschine")),
+    UebungsItem(uebungName: "Latzug", uebungBeschreibung: "Latissimus (breiter Rückenmuskel)", anzahlSaetze: 2, bild: Image("Latzug")),
+    UebungsItem(uebungName: "Klimmzug unterstützt", uebungBeschreibung: "Latissimus (breiter Rückenmuskel)", anzahlSaetze: 2, bild: Image("Klimmzugmaschine")),
+    UebungsItem(uebungName: "Highrow", uebungBeschreibung: "Latissimus (breiter Rückenmuskel)", anzahlSaetze: 2, bild: Image("Highrow"))
 ]
 
 var uebungenBrust = [
-    UebungsItem(uebungName: "Dip unterstützt", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("Klimmzugmaschine")),
-    UebungsItem(uebungName: "Schulterpresse", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("FullSizeRender")),
-    UebungsItem(uebungName: "Dipmaschine", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("Dipmaschine")),
-    UebungsItem(uebungName: "Butterfly", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("Butterfly")),
-    UebungsItem(uebungName: "Brustpresse", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("Brustpresse")),
-    UebungsItem(uebungName: "Bankdrückmaschine", uebungBeschreibung: "Für den Lat", anzahlSaetze: 2, bild: Image("Bankdrückmaschine"))
+    UebungsItem(uebungName: "Dip unterstützt", uebungBeschreibung: "Brustmuskulatur (Pectoralis)", anzahlSaetze: 2, bild: Image("Klimmzugmaschine")),
+    UebungsItem(uebungName: "Schulterpresse", uebungBeschreibung: "Schultermuskulatur (Deltamuskel)", anzahlSaetze: 2, bild: Image("FullSizeRender")),
+    UebungsItem(uebungName: "Dipmaschine", uebungBeschreibung: "Brustmuskulatur (Pectoralis)", anzahlSaetze: 2, bild: Image("Dipmaschine")),
+    UebungsItem(uebungName: "Butterfly", uebungBeschreibung: "Brustmuskulatur (Pectoralis)", anzahlSaetze: 2, bild: Image("Butterfly")),
+    UebungsItem(uebungName: "Brustpresse", uebungBeschreibung: "Brustmuskulatur (Pectoralis)", anzahlSaetze: 2, bild: Image("Brustpresse")),
+    UebungsItem(uebungName: "Bankdrückmaschine", uebungBeschreibung: "Brustmuskulatur (Pectoralis)", anzahlSaetze: 2, bild: Image("Bankdrückmaschine"))
 ]
+
 
 

@@ -23,6 +23,7 @@
     <entity name="Satz" representedClassName="Satz" syncable="YES">
         <attribute name="gewicht" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="wiederholungen" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="ausgefuehrteuebung" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AusgefuehrterSatz" inverseName="saetze" inverseEntity="AusgefuehrterSatz"/>
         <relationship name="uebung" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Uebung" inverseName="satz" inverseEntity="Uebung"/>

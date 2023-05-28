@@ -51,23 +51,24 @@ struct Allgemeines: View {
                     }
                 }
                 
-                Section(header: Text("Trainerzeiten")) {
+                Section(header: Text("Trainer & Saunazeiten")) {
                     Text("Montag bis Freitag: 8 - 13 & 15 - 20 Uhr")
+                    Text("Wochenende: 10 - 14 Uhr, feiertags frei")
                     
                 }
                 
-//                Section(header: Text("Preisliste")) {
-//                    NavigationLink(destination: Preisliste()) {
-//                        HStack {
-//                            Image("BeatzLogo")
-//                                .resizable()
-//                                .scaledToFit()
-//                                .frame(width: 40, height: 40)
-//                                .cornerRadius(40)
-//                            Text("Preisliste")
-//                        }
-//                    }
-//                }
+                //                Section(header: Text("Preisliste")) {
+                //                    NavigationLink(destination: Preisliste()) {
+                //                        HStack {
+                //                            Image("BeatzLogo")
+                //                                .resizable()
+                //                                .scaledToFit()
+                //                                .frame(width: 40, height: 40)
+                //                                .cornerRadius(40)
+                //                            Text("Preisliste")
+                //                        }
+                //                    }
+                //                }
                 
                 Section(header: Text("Kontaktiere uns!")) {
                     HStack {
