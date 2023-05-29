@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Kursplan: View {
-    
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel = KursplanViewModel()
     
     var body: some View {
@@ -26,7 +26,7 @@ struct Kursplan: View {
                                 .foregroundColor(viewModel.selectedDayIndex == index ? .white : .gray)
                                 .padding(.vertical, 10)
                                 .padding(.horizontal, 20)
-                                .background(viewModel.selectedDayIndex == index ? Color.blue : Color.clear)
+                                .background(viewModel.selectedDayIndex == index ? Color(red: 0/255, green: 166/255, blue: 205/255) : Color.clear)
                                 .cornerRadius(20)
                         })
                     }
@@ -34,6 +34,19 @@ struct Kursplan: View {
                 .padding(.horizontal, 10)
             }
             .navigationBarTitle("🗓️ Kursplan")
+            .navigationBarBackButtonHidden(true)
+                   .toolbar {
+                       ToolbarItem(placement: .navigationBarLeading) {
+                           Button(action: {
+                               presentationMode.wrappedValue.dismiss()
+                           }) {
+                               HStack {
+                                   Image(systemName: "chevron.left")
+                                   Text("⚙ Allgemeines")
+                               }
+                           }
+                       }
+                   }
             
             VStack(alignment: .leading) {
                 Text(viewModel.courseTitles[viewModel.selectedDayIndex])

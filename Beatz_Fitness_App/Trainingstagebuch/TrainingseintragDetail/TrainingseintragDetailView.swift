@@ -11,6 +11,7 @@ import CoreData
 struct TrainingseintragDetailView: View {
     var trainingseintrag: Trainingseintrag
     @Environment(\.managedObjectContext) var moc
+    @Environment(\.presentationMode) var presentationMode
     @FetchRequest(entity: Trainingseintrag.entity(),
                   sortDescriptors: [NSSortDescriptor(keyPath: \Trainingseintrag.datum, ascending: true)])
     var trainingseinträge: FetchedResults<Trainingseintrag>
@@ -58,14 +59,18 @@ struct TrainingseintragDetailView: View {
                 Text(trainingseintrag.notizen)
             }
         }
-        .navigationBarTitle("", displayMode: .inline)
+        .navigationTitle(trainingseintrag.split.name ?? "")
+        .navigationBarBackButtonHidden(true)
         .toolbar {
-            ToolbarItem(placement: .principal) {
-                VStack(alignment: .center) {
-                    Text(trainingseintrag.split.name ?? "")
-                        .font(.headline)
-                    Text(dateFormatter.string(from: trainingseintrag.datum!))
-                        .font(.subheadline)
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text("📖 Trainingseinträge")
+                    }
+                    .accentColor(Color(red: 0/255, green: 166/255, blue: 205/255))
                 }
             }
         }

@@ -40,7 +40,7 @@ struct AddSplitView: View {
                         .foregroundColor(.white)
                         .frame(height: 50)
                         .frame(width: 200)
-                        .background(Color.blue)
+                        .background(Color(red: 0/255, green: 166/255, blue: 205/255))
                         .cornerRadius(15.0)
                         
                         Spacer()

@@ -36,7 +36,7 @@ struct Trainingstagebuch: View {
                                         Spacer()
                                         if split == selectedSplit {
                                             Image(systemName: "checkmark")
-                                                .foregroundColor(.blue)
+                                                .foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
                                         }
                                     }
                                     .padding()
@@ -61,7 +61,7 @@ struct Trainingstagebuch: View {
                                     .foregroundColor(.white)
                                     .frame(width: 200)
                                     .frame(height: 50)
-                                    .background(Color.blue)
+                                    .background(Color(red: 0/255, green: 166/255, blue: 205/255))
                                     .cornerRadius(15.0)
                             }
                             .padding(.top)
@@ -75,5 +75,6 @@ struct Trainingstagebuch: View {
             .background(Color(UIColor.systemGroupedBackground))
             .navigationTitle("🏅 Splits")
         }
+        .accentColor(Color(red: 0/255, green: 166/255, blue: 205/255))
     }
 }

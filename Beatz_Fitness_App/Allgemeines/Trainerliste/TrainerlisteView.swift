@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TrainerListeView: View {
     let trainers = [Dome, Vivi, Finja, Larissa, Birte, Ranjid, Anny]
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ScrollView {
@@ -36,6 +37,19 @@ struct TrainerListeView: View {
             }
         }
         .navigationTitle("💪🏼 Unsere Trainer")
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack {
+                        Image(systemName: "chevron.left")
+                        Text("⚙ Allgemeines")
+                    }
+                }
+            }
+        }
     }
 }
 

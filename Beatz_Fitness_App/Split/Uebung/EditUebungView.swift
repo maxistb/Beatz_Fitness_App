@@ -35,7 +35,7 @@ struct EditUebungView: View {
                 .onChange(of: uebung.name) { _ in
                     try? moc.save()
                 }
-
+                
                 Section(header: Text("Notizen")) {
                     TextField("Notizen", text: Binding(
                         get: {
@@ -50,11 +50,11 @@ struct EditUebungView: View {
                         try? moc.save()
                     }
                 }
-
+                
                 Section {
                     HStack {
                         Text("Sätze:")
-
+                        
                         Stepper(value: $saetze, in: 1...20) {
                             Text("\(saetze)")
                         }
@@ -73,22 +73,21 @@ struct EditUebungView: View {
                             presentationMode.wrappedValue.dismiss()
                         }
                         .font(.headline)
-                           .foregroundColor(.white)
-                           .frame(height: 50)
-                           .frame(width: 200)
-                           .background(Color.blue)
-                           .cornerRadius(15.0)
-                           
-                           Spacer()
+                        .foregroundColor(.white)
+                        .frame(height: 50)
+                        .frame(width: 200)
+                        .background(Color(red: 0/255, green: 166/255, blue: 205/255))
+                        .cornerRadius(15.0)
+                        
+                        Spacer()
                     }
                 }
                 .listRowBackground(Color.clear)
             }
             .navigationBarTitle("Übung bearbeiten")
             .onDisappear {
-                          // Aktualisiere die UebungView, wenn die EditUebungView ausgeblendet wird
-                          presentationMode.wrappedValue.dismiss()
-                      }
+                presentationMode.wrappedValue.dismiss()
+            }
         }
     }
 }

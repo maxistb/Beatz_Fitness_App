@@ -37,7 +37,7 @@ struct WelcomeView: View {
                         .font(.headline)
                         .foregroundColor(.white)
                         .frame(width: 200, height: 50)
-                        .background(Color.blue)
+                        .background(Color(red: 0/255, green: 166/255, blue: 205/255))
                         .cornerRadius(15)
                 }
                 .padding(.bottom, 100)

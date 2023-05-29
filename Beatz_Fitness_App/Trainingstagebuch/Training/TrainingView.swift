@@ -79,6 +79,7 @@ struct TrainingView: View {
 											viewModel.isDropsatz[uebungIndex][saetzeIndex] = true
 										}
 									}
+									.foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
 								}
 								else if viewModel.isDropsatz[uebungIndex][saetzeIndex] {
 									Menu("\(Image(systemName: "ellipsis"))") {
@@ -92,6 +93,7 @@ struct TrainingView: View {
 											viewModel.isDropsatz[uebungIndex][saetzeIndex] = false
 										}
 									}
+									.foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
 								}
 
 								else {
@@ -106,8 +108,10 @@ struct TrainingView: View {
 											viewModel.isDropsatz[uebungIndex][saetzeIndex] = true
 										}
 									}
+									.foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
 								}
 							}
+
 							.swipeActions {
 								Button(action: {
 									withAnimation {
@@ -133,6 +137,7 @@ struct TrainingView: View {
 							}
 						}) {
 							Text("Hinzufügen")
+								.foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
 						}
 						.onTapGesture {
 							withAnimation {
