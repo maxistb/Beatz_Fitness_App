@@ -22,7 +22,7 @@ struct Allgemeines: View {
                                 .scaledToFit()
                                 .frame(width: 40, height: 40)
                                 .cornerRadius(40)
-                            Text("Unser Kursplan")
+                            Text("Unser Kursplan 📅")
                         }
                     }
                     
@@ -33,26 +33,32 @@ struct Allgemeines: View {
                                 .scaledToFit()
                                 .frame(width: 40, height: 40)
                                 .cornerRadius(40)
-                            Text("Unsere Trainer")
+                            Text("Unsere Trainer 💪🏼")
                         }
                     }
                 }
                 
-                Section(header: Text("Videotutorials")) {
+                Section(header: Text("Übungstutorials")) {
                     NavigationLink(destination: VideoErklärungView()) {
                         HStack {
-                            Image("BeatzLogo")
+                            Image("Beatz_Logo")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 40, height: 40)
                                 .cornerRadius(40)
-                            Text("Tutorials zu allen Übungen")
+                            Text("Übungstutorials 🎥")
                         }
                     }
                 }
                 
-                Section(header: Text("Trainer & Saunazeiten")) {
+                Section(header: Text("Trainerzeiten ⌛️")) {
                     Text("Montag bis Freitag: 8 - 13 & 15 - 20 Uhr")
+                    Text("Wochenende: 10 - 14 Uhr, feiertags frei")
+                    
+                }
+                
+                Section(header: Text("Saunazeiten 🧖🏼‍♂️")) {
+                    Text("Montag bis Freitag: 8 - 13 & 15 - 21 Uhr")
                     Text("Wochenende: 10 - 14 Uhr, feiertags frei")
                     
                 }

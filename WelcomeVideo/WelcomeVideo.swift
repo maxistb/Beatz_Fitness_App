@@ -25,6 +25,11 @@ struct WelcomeView: View {
 
             VStack {
                 Spacer()
+                Image("Beatz_Logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 350, height: 350)
+                Spacer()
                 Button(action: {
                     showMainScreen = true
                 }) {

@@ -12,17 +12,15 @@ struct Trainingstagebuch: View {
     @FetchRequest(entity: Split.entity(), sortDescriptors: [])
     var splits: FetchedResults<Split>
     @State private var selectedSplit: Split?
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         NavigationView {
             ScrollView {
                 if splits.isEmpty {
-                    VStack {
                         Text("Füge Splits hinzu! 🏋🏻")
                             .font(.headline)
                             .foregroundColor(.primary)
-                            .multilineTextAlignment(.center)
-                    }
                 }
                     
                     else {
@@ -43,18 +41,16 @@ struct Trainingstagebuch: View {
                                     }
                                     .padding()
                                     .background(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .foregroundColor(.white)
+                                        RoundedRectangle(cornerRadius: 15)
+                                            .foregroundColor(colorScheme == .dark ? Color(red: 28/255, green: 27/255, blue: 31/255) : Color.white)
                                     )
                                 }
                                 .padding(.horizontal)
-                                .padding(.vertical, 4)
+                                .padding(.vertical, 2)
                             }
                         }
-                        
                         .padding(.top)
                     }
-                
                 Section {
                     HStack {
                         Spacer()

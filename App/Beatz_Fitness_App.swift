@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct Beatz_Fitness_App: App {
-    @StateObject private var appState = AppState()
     @StateObject private var dataController = DataController(name: "Model")
     
     var body: some Scene {

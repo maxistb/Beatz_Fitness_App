@@ -20,7 +20,7 @@ struct UebungView: View {
        @State private var name = ""
        @State private var showAddUebungView = false
        @State private var showUebungListBeatz = false
-       @State private var settingsDetent = PresentationDetent.medium
+//       @State private var settingsDetent = PresentationDetent.medium
        @State private var notizenSplit = ""
     
     var body: some View {
@@ -101,10 +101,10 @@ struct UebungView: View {
                 NavigationView {
                     AddUebungView(split: split)
                 }
-                .presentationDetents(
-                    [.medium, .large],
-                    selection: $settingsDetent
-                )
+//                .presentationDetents(
+//                    [.medium, .large],
+//                    selection: $settingsDetent
+//                )
                 .navigationTitle("Übung hinzufügen")
             }
             .sheet(isPresented: $showUebungListBeatz) {

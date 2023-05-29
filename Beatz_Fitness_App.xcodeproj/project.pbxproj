@@ -16,9 +16,6 @@
 		7A0C1E7B2A196230000B350E /* AusgefuehrterSatz+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E792A196230000B350E /* AusgefuehrterSatz+CoreDataProperties.swift */; };
 		7A0C1E822A1A16A7000B350E /* Trainingseintrag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E802A1A16A7000B350E /* Trainingseintrag+CoreDataClass.swift */; };
 		7A0C1E832A1A16A7000B350E /* Trainingseintrag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E812A1A16A7000B350E /* Trainingseintrag+CoreDataProperties.swift */; };
-		7A0C1E8D2A1A3D3D000B350E /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E892A1A3D3D000B350E /* PageView.swift */; };
-		7A0C1E8E2A1A3D3D000B350E /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E8A2A1A3D3D000B350E /* PageModel.swift */; };
-		7A0C1E8F2A1A3D3D000B350E /* WillkommenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1E8B2A1A3D3D000B350E /* WillkommenView.swift */; };
 		7A0C1EA32A1A681C000B350E /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0C1EA22A1A681C000B350E /* PersistenceController.swift */; };
 		7A18D47F29F66C4D00EF6171 /* KursplanVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A18D47E29F66C4D00EF6171 /* KursplanVM.swift */; };
 		7A263CF029EDD74B001CAEB4 /* TrainingHistorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A263CEF29EDD74B001CAEB4 /* TrainingHistorie.swift */; };
@@ -62,13 +59,6 @@
 		7AEE657F29E05BBC0064ED8A /* KursplanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE657E29E05BBC0064ED8A /* KursplanView.swift */; };
 		7AEE658129E05BE10064ED8A /* TrainerlisteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE658029E05BE10064ED8A /* TrainerlisteView.swift */; };
 		7AEE658329E05BEE0064ED8A /* Diagramme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEE658229E05BEE0064ED8A /* Diagramme.swift */; };
-		7AF6D87A29F56A570050E758 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 7AF6D87929F56A570050E758 /* SwiftKeychainWrapper */; };
-		7AF6D88329F56B330050E758 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6D87C29F56B330050E758 /* LoginViewModel.swift */; };
-		7AF6D88429F56B330050E758 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6D87D29F56B330050E758 /* LoginView.swift */; };
-		7AF6D88529F56B330050E758 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6D87E29F56B330050E758 /* ViewExtension.swift */; };
-		7AF6D88729F56B330050E758 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6D88029F56B330050E758 /* AppState.swift */; };
-		7AF6D88829F56B330050E758 /* BiometricAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6D88129F56B330050E758 /* BiometricAuthentication.swift */; };
-		7AF6D88929F56B330050E758 /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6D88229F56B330050E758 /* LoginHandler.swift */; };
 		7AF6D8A529F59FF50050E758 /* VideoErklärungView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF6D8A429F59FF50050E758 /* VideoErklärungView.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,9 +72,6 @@
 		7A0C1E792A196230000B350E /* AusgefuehrterSatz+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AusgefuehrterSatz+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7A0C1E802A1A16A7000B350E /* Trainingseintrag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trainingseintrag+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7A0C1E812A1A16A7000B350E /* Trainingseintrag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trainingseintrag+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		7A0C1E892A1A3D3D000B350E /* PageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
-		7A0C1E8A2A1A3D3D000B350E /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
-		7A0C1E8B2A1A3D3D000B350E /* WillkommenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WillkommenView.swift; sourceTree = "<group>"; };
 		7A0C1EA22A1A681C000B350E /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		7A18D47E29F66C4D00EF6171 /* KursplanVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KursplanVM.swift; sourceTree = "<group>"; };
 		7A263CEF29EDD74B001CAEB4 /* TrainingHistorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingHistorie.swift; sourceTree = "<group>"; };
@@ -128,12 +115,6 @@
 		7AEE657E29E05BBC0064ED8A /* KursplanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KursplanView.swift; sourceTree = "<group>"; };
 		7AEE658029E05BE10064ED8A /* TrainerlisteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerlisteView.swift; sourceTree = "<group>"; };
 		7AEE658229E05BEE0064ED8A /* Diagramme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagramme.swift; sourceTree = "<group>"; };
-		7AF6D87C29F56B330050E758 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		7AF6D87D29F56B330050E758 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		7AF6D87E29F56B330050E758 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		7AF6D88029F56B330050E758 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		7AF6D88129F56B330050E758 /* BiometricAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricAuthentication.swift; sourceTree = "<group>"; };
-		7AF6D88229F56B330050E758 /* LoginHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
 		7AF6D8A429F59FF50050E758 /* VideoErklärungView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoErklärungView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +123,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AF6D87A29F56A570050E758 /* SwiftKeychainWrapper in Frameworks */,
 				7AB3AFEE2A14C85500E5EBA8 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,16 +130,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7A0C1E882A1A3D27000B350E /* WillkommenView */ = {
-			isa = PBXGroup;
-			children = (
-				7A0C1E8B2A1A3D3D000B350E /* WillkommenView.swift */,
-				7A0C1E8A2A1A3D3D000B350E /* PageModel.swift */,
-				7A0C1E892A1A3D3D000B350E /* PageView.swift */,
-			);
-			name = WillkommenView;
-			sourceTree = "<group>";
-		};
 		7A746B9829E05DB000EF54C7 /* Kursplan */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,11 +286,9 @@
 				7A746B9929E05DD600EF54C7 /* Split */,
 				7A746BC429E4139900EF54C7 /* Trainingstagebuch */,
 				7A746BBB29E1F60800EF54C7 /* Allgemeines */,
-				7AF6D87B29F56AA50050E758 /* LoginScreen */,
 				7AEC638829DD81E000C8A8F3 /* Assets.xcassets */,
 				7AEE658229E05BEE0064ED8A /* Diagramme.swift */,
 				7AB60BFC2A14BCD700744FF0 /* StatistikView.swift */,
-				7A0C1E882A1A3D27000B350E /* WillkommenView */,
 				7AEC639229DD820E00C8A8F3 /* Model.xcdatamodeld */,
 				7AEC638A29DD81E000C8A8F3 /* Preview Content */,
 			);
@@ -356,19 +324,6 @@
 			path = ManuelleKlassen;
 			sourceTree = "<group>";
 		};
-		7AF6D87B29F56AA50050E758 /* LoginScreen */ = {
-			isa = PBXGroup;
-			children = (
-				7AF6D88029F56B330050E758 /* AppState.swift */,
-				7AF6D88129F56B330050E758 /* BiometricAuthentication.swift */,
-				7AF6D88229F56B330050E758 /* LoginHandler.swift */,
-				7AF6D87D29F56B330050E758 /* LoginView.swift */,
-				7AF6D87C29F56B330050E758 /* LoginViewModel.swift */,
-				7AF6D87E29F56B330050E758 /* ViewExtension.swift */,
-			);
-			path = LoginScreen;
-			sourceTree = "<group>";
-		};
 		7AF6D89129F599470050E758 /* VideoErklärung */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,7 +351,6 @@
 			);
 			name = Beatz_Fitness_App;
 			packageProductDependencies = (
-				7AF6D87929F56A570050E758 /* SwiftKeychainWrapper */,
 				7AB3AFED2A14C85500E5EBA8 /* SwiftUICharts */,
 			);
 			productName = VideoCoreData;
@@ -460,29 +414,23 @@
 			files = (
 				7A263CF029EDD74B001CAEB4 /* TrainingHistorie.swift in Sources */,
 				7A724AC329FAC62D001D82C4 /* Satz+CoreDataProperties.swift in Sources */,
-				7A0C1E8F2A1A3D3D000B350E /* WillkommenView.swift in Sources */,
-				7AF6D88429F56B330050E758 /* LoginView.swift in Sources */,
 				7AC541E22A10F5D500F3DE8B /* PreislisteVM.swift in Sources */,
 				7AC541F72A11554600F3DE8B /* VideoErklärungVM.swift in Sources */,
 				7AEE657F29E05BBC0064ED8A /* KursplanView.swift in Sources */,
 				7AC541F42A11499C00F3DE8B /* TrainingVM.swift in Sources */,
-				7A0C1E8D2A1A3D3D000B350E /* PageView.swift in Sources */,
 				7A0C1E832A1A16A7000B350E /* Trainingseintrag+CoreDataProperties.swift in Sources */,
 				7AC541E52A10F62A00F3DE8B /* TrainerlisteVM.swift in Sources */,
 				7A746BA929E09CEA00EF54C7 /* Startbildschirm.swift in Sources */,
-				7A0C1E8E2A1A3D3D000B350E /* PageModel.swift in Sources */,
 				7A18D47F29F66C4D00EF6171 /* KursplanVM.swift in Sources */,
 				7A0C1E712A17D476000B350E /* EditUebungView.swift in Sources */,
 				7A724AC729FACABB001D82C4 /* TrainingseintragDetailView.swift in Sources */,
 				7A0C1E6C2A17BF5B000B350E /* Split+CoreDataClass.swift in Sources */,
 				7AEC638729DD81DE00C8A8F3 /* SplitView.swift in Sources */,
-				7AF6D88829F56B330050E758 /* BiometricAuthentication.swift in Sources */,
 				7AB60BFD2A14BCD700744FF0 /* StatistikView.swift in Sources */,
 				7AA72ADA2A1FEC9F00319BC8 /* WelcomeVideo.swift in Sources */,
 				7A0C1E7B2A196230000B350E /* AusgefuehrterSatz+CoreDataProperties.swift in Sources */,
 				7AC541EC2A11476F00F3DE8B /* SplitVM.swift in Sources */,
 				7AEC639629DD824B00C8A8F3 /* DataController.swift in Sources */,
-				7AF6D88729F56B330050E758 /* AppState.swift in Sources */,
 				7A0C1E7A2A196230000B350E /* AusgefuehrterSatz+CoreDataClass.swift in Sources */,
 				7AC541DE2A0FB6E400F3DE8B /* TrainingseintragDetailVM.swift in Sources */,
 				7AEE658129E05BE10064ED8A /* TrainerlisteView.swift in Sources */,
@@ -503,12 +451,9 @@
 				7A746B9D29E0863400EF54C7 /* AddSplitView.swift in Sources */,
 				7AB3AFF42A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataProperties.swift in Sources */,
 				7AB3AFFC2A153E6D00E5EBA8 /* VordefinierteSplitsView.swift in Sources */,
-				7AF6D88329F56B330050E758 /* LoginViewModel.swift in Sources */,
 				7AF6D8A529F59FF50050E758 /* VideoErklärungView.swift in Sources */,
 				7A746BC629E416B400EF54C7 /* TrainingView.swift in Sources */,
 				7AB3AFF32A14F53D00E5EBA8 /* GewichteNachUebung+CoreDataClass.swift in Sources */,
-				7AF6D88529F56B330050E758 /* ViewExtension.swift in Sources */,
-				7AF6D88929F56B330050E758 /* LoginHandler.swift in Sources */,
 				7AEE657B29E05B330064ED8A /* Hauptbildschirm.swift in Sources */,
 				7A0C1EA32A1A681C000B350E /* PersistenceController.swift in Sources */,
 				7AB3AFF62A14F53D00E5EBA8 /* WiederholungenNachUebung+CoreDataProperties.swift in Sources */,
@@ -651,9 +596,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -661,9 +606,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Maximillian-Stabe.VideoCoreData";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -682,9 +630,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -692,9 +640,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Maximillian-Stabe.VideoCoreData";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -745,11 +696,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7AB3AFEC2A14C85500E5EBA8 /* XCRemoteSwiftPackageReference "ChartView" */;
 			productName = SwiftUICharts;
-		};
-		7AF6D87929F56A570050E758 /* SwiftKeychainWrapper */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7AF6D87829F56A570050E758 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
-			productName = SwiftKeychainWrapper;
 		};
 /* End XCSwiftPackageProductDependency section */
 

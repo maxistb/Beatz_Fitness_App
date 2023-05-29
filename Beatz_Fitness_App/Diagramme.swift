@@ -33,11 +33,6 @@ struct Diagramme: View {
         let durchschnitt = gewichte.reduce(0, { $0 + $1.gewicht / 12})
 
         VStack {
-            
-       
-            
-
-            
             Text("Bankdrücken Fortschritte")
             Text("Durchschnittsgewicht: \(String(format: "%.2f", locale: Locale(identifier: "de_DE"), durchschnitt))kg")
                 .fontWeight(.semibold)
