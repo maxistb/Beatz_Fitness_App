@@ -39,10 +39,8 @@ struct Hauptbildschirm: View {
                 }
         }
         .navigationBarBackButtonHidden(true)
-        .accentColor(.blue)
-        
+        .accentColor(Color(red: 0/255, green: 166/255, blue: 205/255))
     }
-    
 }
 
 

@@ -68,6 +68,7 @@ struct EditUebungView: View {
                         Button("Speichern") {
                             uebung.name = uebung.name
                             uebung.saetze = Int64(saetze)
+                            print("\(uebung.name ?? ""): \(uebung.order)")
                             
                             try? moc.save()
                             presentationMode.wrappedValue.dismiss()

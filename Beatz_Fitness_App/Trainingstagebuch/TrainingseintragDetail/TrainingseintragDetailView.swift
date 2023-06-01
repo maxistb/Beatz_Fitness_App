@@ -27,23 +27,23 @@ struct TrainingseintragDetailView: View {
                 Section(header: Text(uebungname)) {
                     ForEach(ausgefuehrteSätzeNachUebung[uebungname]!, id: \.self) { ausgefuehrterSatz in
                         HStack {
-                            if ausgefuehrterSatz.isDropsatz {
-                                Section(header: Text("Dropsatz")) {
+                            if let ausgefuehrterSatz = ausgefuehrteSätzeNachUebung[uebungname]?.first(where: { $0.id == ausgefuehrterSatz.id }) {
+                                if ausgefuehrterSatz.isDropsatz {
+                                    Section(header: Text("Dropsatz")) {
+                                        createGewichtTextField(for: ausgefuehrterSatz)
+                                    }
+                                } else if ausgefuehrterSatz.isAufwaermsatz {
+                                    Section(header: Text("Aufwärm.")) {
+                                        createGewichtTextField(for: ausgefuehrterSatz)
+                                    }
+                                } else {
                                     createGewichtTextField(for: ausgefuehrterSatz)
                                 }
+                                createWiederholungenTextField(for: ausgefuehrterSatz)
+                                Spacer()
                             }
-                            else if ausgefuehrterSatz.isAufwaermsatz {
-                                Section(header: Text("Aufwärm.")) {
-                                    createGewichtTextField(for: ausgefuehrterSatz)
-                                }
-                            }
-                            else {
-                                createGewichtTextField(for: ausgefuehrterSatz)
-                            }
-                            createWiederholungenTextField(for: ausgefuehrterSatz)
-                            
-                            Spacer()
                         }
+
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                             Button(role: .destructive) {
                                 delete(ausgefuehrterSatz: ausgefuehrterSatz)
@@ -53,6 +53,18 @@ struct TrainingseintragDetailView: View {
                         }
                     }
                     .onMove(perform: move)
+                    Button(action: {
+                        withAnimation {
+                            let neuerSatz = AusgefuehrterSatz(context: moc)
+                            neuerSatz.uebungname = uebungname
+                            neuerSatz.datum = Date() // Aktuelles Datum
+                            trainingseintrag.addToAusgefuehrteUebungen(neuerSatz)
+                            try? moc.save()
+                        }
+                    }) {
+                        Text("Hinzufügen")
+                            .foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
+                    }
                 }
             }
             Section(header: Text("Notizen")) {

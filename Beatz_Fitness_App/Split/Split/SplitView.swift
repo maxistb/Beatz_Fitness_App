@@ -15,6 +15,7 @@ struct SplitView: View {
     @State private var isEditMode = false
     @State private var showAddSplitView = false
     @State private var settingsDetent = PresentationDetent.medium
+    @State public var splitArray: [Split] = []
     @State public var vordefinierteSplitsMänner: [VordefinierteSplits] = [
             VordefinierteSplits(
                 name: "Push",
@@ -165,7 +166,9 @@ struct SplitView: View {
             .navigationTitle("Split hinzufügen")
         }
         .accentColor(Color(red: 0/255, green: 166/255, blue: 205/255))
-
+        .onAppear {
+            splitArray = Array(splits)
+        }
     }
 }
 

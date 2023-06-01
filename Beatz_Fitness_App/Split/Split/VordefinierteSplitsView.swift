@@ -64,6 +64,15 @@ struct VordefinierteSplitView: View {
                     Text("Split Hinzufügen")
                 }
             }
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack {
+                        Text("🏋🏻 Trainingspläne") 
+                    }
+                }
+            }
         }
     }
 }

@@ -13,18 +13,16 @@ struct Beatz_Fitness_App: App {
     
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
-                .environment(\.managedObjectContext, dataController.container.viewContext)
+            if UserDefaults.standard.bool(forKey: "isFirstLaunch") {
+                WelcomeView()
+                    .environment(\.managedObjectContext, dataController.container.viewContext)
+                    .onAppear {
+                        UserDefaults.standard.set(false, forKey: "isFirstLaunch")
+                    }
+            } else {
+                Hauptbildschirm()
+                    .environment(\.managedObjectContext, dataController.container.viewContext)
+            }
         }
     }
 }
-
-
-//if UserDefaults.standard.bool(forKey: "isFirstLaunch") {
-//    WillkommenView()
-//        .environment(\.managedObjectContext, dataController.container.viewContext)
-//        .onAppear {
-//            UserDefaults.standard.set(false, forKey: "isFirstLaunch")
-//        }
-//} else {
-//}

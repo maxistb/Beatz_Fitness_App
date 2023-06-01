@@ -55,7 +55,7 @@ struct AddUebungView: View {
                             
                             let newOrder = (split.uebung?.count ?? 0)
                             neueUebung.order = Int64(newOrder)
-                            print("Order Übung: \(newOrder)")
+                            print("\(neueUebung.name): \(neueUebung.order)")
                             
                             split.addToUebung(neueUebung)
                             

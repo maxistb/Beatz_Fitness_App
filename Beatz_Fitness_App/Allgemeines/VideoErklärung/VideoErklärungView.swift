@@ -14,14 +14,12 @@ struct VideoErklärungView: View {
     var body: some View {
         VideoListe()
             .navigationTitle("🎥 Übungstutorials")
-            .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
                     }) {
                         HStack {
-                            Image(systemName: "chevron.left")
                             Text("⚙ Allgemeines")
                         }
                     }

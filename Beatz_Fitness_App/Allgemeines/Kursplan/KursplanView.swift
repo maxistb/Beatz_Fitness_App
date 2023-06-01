@@ -34,19 +34,17 @@ struct Kursplan: View {
                 .padding(.horizontal, 10)
             }
             .navigationBarTitle("🗓️ Kursplan")
-            .navigationBarBackButtonHidden(true)
-                   .toolbar {
-                       ToolbarItem(placement: .navigationBarLeading) {
-                           Button(action: {
-                               presentationMode.wrappedValue.dismiss()
-                           }) {
-                               HStack {
-                                   Image(systemName: "chevron.left")
-                                   Text("⚙ Allgemeines")
-                               }
-                           }
-                       }
-                   }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        HStack {
+                            Text("⚙ Allgemeines")
+                        }
+                    }
+                }
+            }
             
             VStack(alignment: .leading) {
                 Text(viewModel.courseTitles[viewModel.selectedDayIndex])

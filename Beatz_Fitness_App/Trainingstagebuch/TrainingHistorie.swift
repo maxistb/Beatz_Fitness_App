@@ -61,7 +61,9 @@ struct TrainingHistorieView: View {
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
+        formatter.locale = Locale(identifier: "de_DE")
         return formatter
     }()
+
 }
 

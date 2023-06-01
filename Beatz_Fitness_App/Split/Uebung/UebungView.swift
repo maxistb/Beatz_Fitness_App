@@ -9,19 +9,21 @@ import SwiftUI
 
 struct UebungView: View {
     @Environment(\.managedObjectContext) var moc
+    @Environment(\.presentationMode) var presentationMode
     @FetchRequest(
-           entity: Uebung.entity(),
-           sortDescriptors: [
-               NSSortDescriptor(keyPath: \Uebung.order, ascending: true)
-           ]
-       ) var uebungen: FetchedResults<Uebung>
-       
-       var split: Split
-       @State private var name = ""
-       @State private var showAddUebungView = false
-       @State private var showUebungListBeatz = false
-//       @State private var settingsDetent = PresentationDetent.medium
-       @State private var notizenSplit = ""
+        entity: Uebung.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Uebung.order, ascending: true)
+        ]
+    ) var uebungen: FetchedResults<Uebung>
+    @State public var uebungenArray: [Uebung] = [] // Separate mutable Kopie der uebungen-Sammlung
+    
+    var split: Split
+    @State private var name = ""
+    @State private var showAddUebungView = false
+    @State private var showUebungListBeatz = false
+    @State private var settingsDetent = PresentationDetent.medium
+    @State private var notizenSplit = ""
     
     var body: some View {
         VStack {
@@ -32,7 +34,7 @@ struct UebungView: View {
                             destination: EditUebungView(uebung: uebung),
                             label: {
                                 VStack(alignment: .leading, spacing: 8) {
-                                        Text(uebung.name ?? "Error")
+                                    Text(uebung.name ?? "Error")
                                         .font(.headline)
                                     HStack {
                                         if uebung.saetze == 1 {
@@ -67,8 +69,8 @@ struct UebungView: View {
                             .tint(.red)
                         }
                     }
-                .onMove(perform: moveItems)
-            
+                    .onMove(perform: moveItems)
+                    
                 }
                 Section(header: Text("Notizen")) {
                     TextEditor(text: $notizenSplit)
@@ -96,20 +98,32 @@ struct UebungView: View {
                         Image(systemName: "plus")
                     }
                 }
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        HStack {
+                            Text("🏋🏻 Trainingspläne")
+                        }
+                    }
+                }
             }
             .sheet(isPresented: $showAddUebungView) {
                 NavigationView {
                     AddUebungView(split: split)
                 }
-//                .presentationDetents(
-//                    [.medium, .large],
-//                    selection: $settingsDetent
-//                )
+                .presentationDetents(
+                    [.medium, .large],
+                    selection: $settingsDetent
+                )
                 .navigationTitle("Übung hinzufügen")
             }
             .sheet(isPresented: $showUebungListBeatz) {
                 VordefinierteUebungen(split: split)
             }
+        }
+        .onAppear {
+            uebungenArray = Array(uebungen) 
         }
     }
 }
