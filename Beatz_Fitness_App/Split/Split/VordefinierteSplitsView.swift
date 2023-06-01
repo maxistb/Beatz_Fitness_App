@@ -54,7 +54,10 @@ struct VordefinierteSplitView: View {
                         neueUebung.name = uebung.uebungName
                         neueUebung.saetze = Int64(uebung.anzahlSaetze)
                         neueUebung.notizen = ""
-                        
+                        let newOrder = (neuerSplit.uebung?.count ?? 0)
+                        neueUebung.order = Int64(newOrder)
+                        print("Order Übung: \(newOrder)")
+
                         neuerSplit.addToUebung(neueUebung)
                     }
                     

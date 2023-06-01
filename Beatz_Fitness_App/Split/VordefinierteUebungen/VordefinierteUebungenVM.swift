@@ -14,9 +14,9 @@ extension VordefinierteUebungen {
             neueUebung.id = UUID()
             neueUebung.name = uebung.uebungName
             neueUebung.saetze = Int64(anzahlSaetze[uebungenBeine.firstIndex(where: { $0.id == uebung.id }) ?? 1])
-//            let newOrder = (split.uebung?.count ?? 0)
-//            neueUebung.order = Int64(newOrder)
-//            print("Order Übung: \(newOrder)")
+            let newOrder = (split.uebung?.count ?? 0)
+            neueUebung.order = Int64(newOrder)
+            print("Order Übung: \(newOrder)")
             
             split.addToUebung(neueUebung)
         }

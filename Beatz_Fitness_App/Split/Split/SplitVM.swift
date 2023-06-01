@@ -17,16 +17,24 @@ extension SplitView {
         
     }
 
-    func moveItems(indices: IndexSet, newOffset: Int) {
-          splitArray.move(fromOffsets: indices, toOffset: newOffset) // Verschieben der Elemente in der separaten Kopie
-          
-          // Aktualisieren der Reihenfolge in der uebungenArray-Kopie
-          for (index, split) in splitArray.enumerated() {
-              split.order = Int64(index)
-          }
-          
-          try? moc.save() // Speichern der Änderungen im moc
-      }
+    func moveItems(from source: IndexSet, to destination: Int) {
+        var revisedSplits: [Split] = splits.map { $0 }
+        revisedSplits.move(fromOffsets: source, toOffset: destination)
+        
+        // Update the order property of the splits based on their new positions
+        for index in 0..<revisedSplits.count {
+            revisedSplits[index].order = Int64(index)
+        }
+        
+        // Save the changes to the managed object context
+        for split in revisedSplits {
+            moc.performAndWait {
+                split.order = split.order // Trigger change notification
+            }
+        }
+        try? moc.save()
+    }
+
     
 //    func moveItems(at sets: IndexSet, destination: Int) {
 //        let itemToMove = sets.first!
