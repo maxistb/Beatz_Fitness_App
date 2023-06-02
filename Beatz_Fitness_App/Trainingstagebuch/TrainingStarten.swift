@@ -73,7 +73,7 @@ struct Trainingstagebuch: View {
                 .padding(.vertical)
             }
             .background(Color(UIColor.systemGroupedBackground))
-            .navigationTitle("🏅 Splits")
+            .navigationTitle("🏆 Splits")
         }
         .accentColor(Color(red: 0/255, green: 166/255, blue: 205/255))
     }

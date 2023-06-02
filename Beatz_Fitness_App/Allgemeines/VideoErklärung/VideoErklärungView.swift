@@ -9,11 +9,11 @@ import SwiftUI
 import AVKit
 
 struct VideoErklärungView: View {
-    @Environment(\.presentationMode) var presentationMode
+//    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
-        VideoListe()
-            .navigationTitle("🎥 Übungstutorials")
+            VideoListe()
+                .navigationTitle("🎥 Übungstutorials")
 //            .toolbar {
 //                ToolbarItem(placement: .navigationBarLeading) {
 //                    Button(action: {

@@ -34,8 +34,8 @@ struct Kursplan: View {
                     }
                     .padding(.horizontal, 10)
                 }
-                .navigationBarTitle("🗓️ Kursplan") // Zeige den Navigationstitel "Kursplan" an
-                .navigationBarHidden(false) // Zeige die Standard-Navigationsleiste an
+                .navigationBarTitle("🗓️ Kursplan")
+//                .navigationBarBackButtonHidden(true)
                 
                 VStack(alignment: .leading) {
                     Text(viewModel.courseTitles[viewModel.selectedDayIndex])
@@ -70,20 +70,20 @@ struct Kursplan: View {
                     )
                 }
             .edgesIgnoringSafeArea(.bottom)
-            .navigationBarItems(leading: backButton)
+//            .navigationBarItems(leading: backButton)
         }
     }
     
-    var backButton: some View {
-        Button(action: {
-            presentationMode.wrappedValue.dismiss()
-        }) {
-            HStack {
-                Image(systemName: "chevron.left")
-                Text("⚙️ Allgemeines")
-            }
-        }
-    }
+//    var backButton: some View {
+//        Button(action: {
+//            presentationMode.wrappedValue.dismiss()
+//        }) {
+//            HStack {
+//                Image(systemName: "chevron.left")
+//                Text("⚙️ Allgemeines")
+//            }
+//        }
+//    }
 }
 
 

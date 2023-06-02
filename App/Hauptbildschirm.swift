@@ -18,8 +18,8 @@ struct Hauptbildschirm: View {
                 }
             TrainingHistorieView()
                 .tabItem {
-                    Image(systemName: "chart.line.uptrend.xyaxis.circle.fill")
-                    Text("Historie")
+                    Image(systemName: "book")
+                    Text("Trainingstagebuch")
                 }
             Trainingstagebuch()
                 .tabItem {
@@ -35,7 +35,7 @@ struct Hauptbildschirm: View {
             Allgemeines()
                 .tabItem {
                     Image(systemName: "info.bubble")
-                    Text("Allgemeines")
+                    Text("Allgemein")
                 }
         }
         .navigationBarBackButtonHidden(true)

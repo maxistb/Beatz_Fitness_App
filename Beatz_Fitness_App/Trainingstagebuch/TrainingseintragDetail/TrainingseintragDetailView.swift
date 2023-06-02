@@ -43,7 +43,7 @@ struct TrainingseintragDetailView: View {
                                 Spacer()
                             }
                         }
-
+                        
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                             Button(role: .destructive) {
                                 delete(ausgefuehrterSatz: ausgefuehrterSatz)
@@ -72,6 +72,36 @@ struct TrainingseintragDetailView: View {
             }
         }
         .navigationTitle(trainingseintrag.split.name ?? "")
+//        .navigationBarBackButtonHidden(true)
+//        .navigationBarItems(leading:
+//                                Button(action: {
+//            withAnimation {
+//                presentationMode.wrappedValue.dismiss()
+//            }
+//        }) {
+//            HStack {
+//                Image(systemName: "chevron.left")
+//                Text("📖 Trainingseinträge")
+//            }
+//            .foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
+//        }
+//        )
+//        .gesture(
+//            DragGesture().onChanged { _ in
+//                withAnimation(.default) {
+//                    presentationMode.wrappedValue.dismiss()
+//                }
+//            }
+//        )
+//        .onChange(of: ausgefuehrteSätzeNachUebung) { _ in
+//            (gewichte, wiederholungen) = saveGewichteUndWiederholungen()
+//        }
+    }
+}
+
+
+
+
 //        .toolbar {
 //            ToolbarItem(placement: .navigationBarLeading) {
 //                Button(action: {
@@ -84,9 +114,3 @@ struct TrainingseintragDetailView: View {
 //                }
 //            }
 //        }
-        .onChange(of: ausgefuehrteSätzeNachUebung) { _ in
-            (gewichte, wiederholungen) = saveGewichteUndWiederholungen()
-        }
-    }
-}
-
