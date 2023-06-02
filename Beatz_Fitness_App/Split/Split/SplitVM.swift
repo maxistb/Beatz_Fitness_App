@@ -27,7 +27,7 @@ extension SplitView {
         
         for split in revisedSplits {
             split.order = split.order
-            print("\(split.name) \(split.order)")
+            print("\(split.name ?? "") \(split.order)")
             
         }
         try? moc.save()

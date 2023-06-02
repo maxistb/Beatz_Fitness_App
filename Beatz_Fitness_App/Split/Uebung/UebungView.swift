@@ -17,7 +17,6 @@ struct UebungView: View {
         ]
     ) var uebungen: FetchedResults<Uebung>
     @State public var uebungenArray: [Uebung] = [] // Separate mutable Kopie der uebungen-Sammlung
-    
     var split: Split
     @State private var name = ""
     @State private var showAddUebungView = false
@@ -96,15 +95,6 @@ struct UebungView: View {
                         
                     }) {
                         Image(systemName: "plus")
-                    }
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        HStack {
-                            Text("🏋🏻 Trainingspläne")
-                        }
                     }
                 }
             }

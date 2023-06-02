@@ -72,20 +72,18 @@ struct TrainingseintragDetailView: View {
             }
         }
         .navigationTitle(trainingseintrag.split.name ?? "")
-        .navigationBarBackButtonHidden(true)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    HStack {
-                        Image(systemName: "chevron.left")
-                        Text("📖 Trainingseinträge")
-                    }
-                    .accentColor(Color(red: 0/255, green: 166/255, blue: 205/255))
-                }
-            }
-        }
+//        .toolbar {
+//            ToolbarItem(placement: .navigationBarLeading) {
+//                Button(action: {
+//                    presentationMode.wrappedValue.dismiss()
+//                }) {
+//                    HStack {
+//                        Text("📖 Trainingseinträge")
+//                    }
+//                    .accentColor(Color(red: 0/255, green: 166/255, blue: 205/255))
+//                }
+//            }
+//        }
         .onChange(of: ausgefuehrteSätzeNachUebung) { _ in
             (gewichte, wiederholungen) = saveGewichteUndWiederholungen()
         }

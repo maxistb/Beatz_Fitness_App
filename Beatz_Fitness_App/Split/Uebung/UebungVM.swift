@@ -19,7 +19,7 @@ extension UebungView {
             moc.delete(uebung)
         }
         
-        for (index, uebung) in split.getUebungen.enumerated() {
+        for (_, uebung) in split.getUebungen.enumerated() {
             if uebung.order > Int64(sortedOffsets.count - 1) {
                 uebung.order -= Int64(sortedOffsets.count)
             }
@@ -45,7 +45,7 @@ extension UebungView {
         for (index, uebung) in newUebungen.enumerated() {
             uebung.order = Int64(index)
             print("Index: \(index)")
-            print("\(uebung.name) \(uebung.order)")
+            print("\(uebung.name ?? "") \(uebung.order)")
         }
         
         do {

@@ -35,18 +35,7 @@ struct TrainerListeView: View {
                     Divider()
                 }
             }
-        }
-        .navigationTitle("💪🏼 Unsere Trainer")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }) {
-                    HStack {
-                        Text("⚙ Allgemeines")
-                    }
-                }
-            }
+            .navigationTitle("💪🏼 Unsere Trainer")
         }
     }
 }

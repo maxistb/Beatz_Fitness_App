@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct TrainingView: View {
-	@ObservedObject var viewModel: TrainingViewModel
+	@StateObject var viewModel: TrainingViewModel
 	@State private var showingAlert = false
 	@Environment(\.presentationMode) var presentationMode
-
+	
 	var body: some View {
 		VStack {
 			let previousWeights = viewModel.getPreviousTrainingWeights()
@@ -95,7 +95,7 @@ struct TrainingView: View {
 									}
 									.foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
 								}
-
+								
 								else {
 									Menu("\(Image(systemName: "ellipsis"))") {
 										Button("Aufwärmsatz") {
@@ -111,7 +111,7 @@ struct TrainingView: View {
 									.foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
 								}
 							}
-
+							
 							.swipeActions {
 								Button(action: {
 									withAnimation {
@@ -127,27 +127,23 @@ struct TrainingView: View {
 								.tint(.red)
 							}
 						}
-						
-						Button(action: {
-							withAnimation {
-								uebung.saetze += 1
-								viewModel.isAufwärmsatz[uebungIndex].append(false)
-								viewModel.isDropsatz[uebungIndex].append(false)
-								uebung = viewModel.selectedSplit.getUebungen[uebungIndex]
-							}
-						}) {
-							Text("Hinzufügen")
-								.foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
-						}
-						.onTapGesture {
-							withAnimation {
-								uebung.saetze += 1
-								viewModel.isAufwärmsatz[uebungIndex].append(false)
-								viewModel.isDropsatz[uebungIndex].append(false)
-								uebung = viewModel.selectedSplit.getUebungen[uebungIndex]
+						Section {
+							Button(action: {
+								withAnimation {
+									uebung.saetze += 1
+									viewModel.isAufwärmsatz[uebungIndex].append(false)
+									viewModel.isDropsatz[uebungIndex].append(false)
+									viewModel.gewichte[uebungIndex].append("")
+									viewModel.wiederholungen[uebungIndex].append("")
+									uebung = viewModel.selectedSplit.getUebungen[uebungIndex]
+								}
+							}) {
+								Text("Hinzufügen")
+									.foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
 							}
 						}
 					}
+					
 				}
 				
 				Section(header: Text("Notizen")) {
@@ -160,7 +156,12 @@ struct TrainingView: View {
 				}
 				.listRowBackground(Color.clear)
 				.listStyle(InsetGroupedListStyle())
+				
 			}
+			//				.onTapGesture {
+			//					UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+			//				}
+			
 			.navigationBarTitle(viewModel.selectedSplit.name ?? "")
 			.alert(isPresented: $showingAlert) {
 				Alert(
@@ -177,4 +178,3 @@ struct TrainingView: View {
 		}
 	}
 }
-

@@ -12,7 +12,7 @@ struct Allgemeines: View {
     
     
     var body: some View {
-        NavigationView {
+        return NavigationView {
             Form {
                 Section(header: Text("Kursplan & Unsere Trainer")) {
                     NavigationLink(destination: Kursplan(viewModel: KursplanViewModel())) {
@@ -99,7 +99,7 @@ struct Allgemeines: View {
                     Text("Maximillian Stabe")
                 }
             }
-            .navigationBarTitle("⚙ Allgemeines")
+            .navigationBarTitle("⚙️ Allgemeines")
         }
         .accentColor(Color(red: 0/255, green: 166/255, blue: 205/255))
     }

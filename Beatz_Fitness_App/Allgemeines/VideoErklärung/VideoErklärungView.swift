@@ -14,17 +14,17 @@ struct VideoErklärungView: View {
     var body: some View {
         VideoListe()
             .navigationTitle("🎥 Übungstutorials")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        presentationMode.wrappedValue.dismiss()
-                    }) {
-                        HStack {
-                            Text("⚙ Allgemeines")
-                        }
-                    }
-                }
-        }
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarLeading) {
+//                    Button(action: {
+//                        presentationMode.wrappedValue.dismiss()
+//                    }) {
+//                        HStack {
+//                            Text("⚙ Allgemeines")
+//                        }
+//                    }
+//                }
+//        }
     }
 }
 

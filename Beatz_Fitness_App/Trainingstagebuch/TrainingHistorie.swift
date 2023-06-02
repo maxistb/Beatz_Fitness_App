@@ -26,9 +26,9 @@ struct TrainingHistorieView: View {
                         ForEach(trainingseintraege, id: \.id) { trainingseintrag in
                             NavigationLink(destination: TrainingseintragDetailView(trainingseintrag: trainingseintrag)) {
                                 VStack(alignment: .leading) {
-                                    Text(dateFormatter.string(from: trainingseintrag.datum ?? Date()))
-                                        .font(.headline)
                                     Text(trainingseintrag.split.name ?? "")
+                                        .font(.headline)
+                                    Text(dateFormatter.string(from: trainingseintrag.datum ?? Date()))
                                         .font(.subheadline)
                                 }
                             }
