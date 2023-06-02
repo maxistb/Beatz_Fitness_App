@@ -16,10 +16,16 @@ struct TrainingseintragDetailView: View {
                   sortDescriptors: [NSSortDescriptor(keyPath: \Trainingseintrag.datum, ascending: true)])
     var trainingseinträge: FetchedResults<Trainingseintrag>
     var ausgefuehrteSätzeNachUebung: [String: [AusgefuehrterSatz]] {
-        Dictionary(grouping: trainingseintrag.ausgefuehrteSätzeArray.sorted(by: { $0.datum ?? Date() > $1.datum ?? Date() })) { $0.uebungname ?? "Fehler" }
+        Dictionary(grouping: trainingseintrag.ausgefuehrteSätzeArray.sorted(by: { $0.satzIndex < $1.satzIndex })) { $0.uebungname ?? "Fehler" }
     }
     @State private var gewichte: [Double] = []
     @State private var wiederholungen: [Int] = []
+    
+    init(trainingseintrag: Trainingseintrag) {
+           self.trainingseintrag = trainingseintrag
+           _gewichte = State(initialValue: saveGewichteUndWiederholungen().0)
+           _wiederholungen = State(initialValue: saveGewichteUndWiederholungen().1)
+       }
     
     var body: some View {
         List {
@@ -57,7 +63,11 @@ struct TrainingseintragDetailView: View {
                         withAnimation {
                             let neuerSatz = AusgefuehrterSatz(context: moc)
                             neuerSatz.uebungname = uebungname
-                            neuerSatz.datum = Date() // Aktuelles Datum
+                            neuerSatz.datum = Date()
+                            neuerSatz.id = UUID()
+                            neuerSatz.satzIndex = getNextSatzIndex()
+
+                            print("\(neuerSatz.uebungname): \(neuerSatz.satzIndex)")
                             trainingseintrag.addToAusgefuehrteUebungen(neuerSatz)
                             try? moc.save()
                         }
@@ -72,45 +82,5 @@ struct TrainingseintragDetailView: View {
             }
         }
         .navigationTitle(trainingseintrag.split.name ?? "")
-//        .navigationBarBackButtonHidden(true)
-//        .navigationBarItems(leading:
-//                                Button(action: {
-//            withAnimation {
-//                presentationMode.wrappedValue.dismiss()
-//            }
-//        }) {
-//            HStack {
-//                Image(systemName: "chevron.left")
-//                Text("📖 Trainingseinträge")
-//            }
-//            .foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
-//        }
-//        )
-//        .gesture(
-//            DragGesture().onChanged { _ in
-//                withAnimation(.default) {
-//                    presentationMode.wrappedValue.dismiss()
-//                }
-//            }
-//        )
-//        .onChange(of: ausgefuehrteSätzeNachUebung) { _ in
-//            (gewichte, wiederholungen) = saveGewichteUndWiederholungen()
-//        }
     }
 }
-
-
-
-
-//        .toolbar {
-//            ToolbarItem(placement: .navigationBarLeading) {
-//                Button(action: {
-//                    presentationMode.wrappedValue.dismiss()
-//                }) {
-//                    HStack {
-//                        Text("📖 Trainingseinträge")
-//                    }
-//                    .accentColor(Color(red: 0/255, green: 166/255, blue: 205/255))
-//                }
-//            }
-//        }

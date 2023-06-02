@@ -19,29 +19,49 @@ extension TrainingseintragDetailView {
                 wiederholungenArray.append(Int(ausgefuehrterSatz.wiederholungen))
             }
         }
-        print(gewichteArray)
-        print(wiederholungenArray)
+//        print(gewichteArray)
+//        print(wiederholungenArray)
         return (gewichteArray, wiederholungenArray)
    
     }
     
+    func getNextSatzIndex() -> Int64 {
+        let currentIndex = ausgefuehrteSätzeNachUebung.flatMap { $0.value }.map { $0.satzIndex }.max() ?? -1
+        return max(currentIndex + 1, 0)
+    }
+
+
     func delete(ausgefuehrterSatz: AusgefuehrterSatz) {
+        let satzIndex = ausgefuehrterSatz.satzIndex
         trainingseintrag.removeFromAusgefuehrteUebungen(ausgefuehrterSatz)
         try? moc.save()
+        
+        for ausgefuehrterSatz in trainingseintrag.ausgefuehrteSätzeArray {
+            if ausgefuehrterSatz.satzIndex > satzIndex {
+                ausgefuehrterSatz.satzIndex -= 1
+            }
+            print(satzIndex)
+        }
+        
+        try? moc.save()
     }
-    
+
     func move(from source: IndexSet, to destination: Int) {
-         var indices = Array(source)
-         indices.sort()
-         for (i, index) in indices.enumerated() {
-             if index < destination {
-                 trainingseinträge[destination - indices.count + i].split.order = Int64(index)
-             } else {
-                 trainingseinträge[destination + i].split.order = Int64(index + indices.count)
-             }
-         }
-         try? moc.save()
-     }
+        let sortedSätze = trainingseintrag.ausgefuehrteSätzeArray.sorted { $0.satzIndex < $1.satzIndex }
+        
+        var newSätze = Array(sortedSätze)
+        newSätze.move(fromOffsets: source, toOffset: destination)
+        
+        // Aktualisiere die "satzIndex" für die verschobenen Sätze
+        for (index, satz) in newSätze.enumerated() {
+            satz.satzIndex = Int64(index)
+            print("\(satz.satzIndex)")
+        }
+        
+        try? moc.save()
+    }
+
+
     
     func createGewichtTextField(for ausgefuehrterSatz: AusgefuehrterSatz) -> some View {
            TextField("Gewicht", text: Binding(

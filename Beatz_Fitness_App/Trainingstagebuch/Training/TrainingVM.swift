@@ -138,6 +138,7 @@ class TrainingViewModel: ObservableObject {
                 ausgefuehrterSatz.isAufwaermsatz = isAufwärmsatz[index][satzIndex]
                 
                 ausgefuehrterSatz.satzIndex = Int64(currentIndex)
+                print("\(ausgefuehrterSatz) \(currentIndex)")
 
                 trainingseintrag.addToAusgefuehrteUebungen(ausgefuehrterSatz)
                 currentIndex += 1
