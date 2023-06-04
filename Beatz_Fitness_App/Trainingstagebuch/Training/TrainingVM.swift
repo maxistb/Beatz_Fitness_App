@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import Introspect
 
 class TrainingViewModel: ObservableObject {
     @Published var gewichte: [[String]] = []
@@ -150,4 +151,11 @@ class TrainingViewModel: ObservableObject {
             print("Error saving trainingseinheit: \(error.localizedDescription)")
         }
     }
+}
+
+
+extension  UITextField {
+   @objc func doneButtonTapped(button:UIBarButtonItem) -> Void {
+      self.resignFirstResponder()
+   }
 }

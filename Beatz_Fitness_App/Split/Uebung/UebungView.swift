@@ -10,19 +10,19 @@ import SwiftUI
 struct UebungView: View {
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
+    @FocusState var isInputActive: Bool
     @FetchRequest(
         entity: Uebung.entity(),
         sortDescriptors: [
             NSSortDescriptor(keyPath: \Uebung.order, ascending: true)
         ]
     ) var uebungen: FetchedResults<Uebung>
-    @State public var uebungenArray: [Uebung] = [] // Separate mutable Kopie der uebungen-Sammlung
+    @State public var uebungenArray: [Uebung] = []
     var split: Split
     @State private var name = ""
     @State private var showAddUebungView = false
     @State private var showUebungListBeatz = false
     @State private var settingsDetent = PresentationDetent.medium
-    @State private var notizenSplit = ""
     
     var body: some View {
         VStack {
@@ -55,6 +55,7 @@ struct UebungView: View {
                                         }
                                     ))
                                     .foregroundColor(.secondary)
+                                    .focused($isInputActive)
                                 }
                             }
                         )
@@ -72,9 +73,27 @@ struct UebungView: View {
                     
                 }
                 Section(header: Text("Notizen")) {
-                    TextEditor(text: $notizenSplit)
-                        .frame(height: 150)
+                    TextField("", text: Binding(
+                        get: {
+                            split.notizen ?? ""
+                        },
+                        set: { newValue in
+                            split.notizen = newValue
+                            try? moc.save()
+                        }
+                    ), axis: .vertical)
+                    .focused($isInputActive)
+                    .toolbar {
+                        ToolbarItemGroup(placement: .keyboard) {
+                            Spacer()
+                            Button("Fertig") {
+                                isInputActive = false
+                                try? moc.save()
+                            }
+                        }
+                    }
                 }
+
             }
             
             .navigationBarTitle(Text(split.name ?? "Error"))
@@ -113,7 +132,7 @@ struct UebungView: View {
             }
         }
         .onAppear {
-            uebungenArray = Array(uebungen) 
+            uebungenArray = Array(uebungen)
         }
     }
 }

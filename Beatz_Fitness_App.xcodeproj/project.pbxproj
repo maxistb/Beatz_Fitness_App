@@ -30,6 +30,7 @@
 		7A746BBD29E3246E00EF54C7 /* TrainingStarten.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BBC29E3246E00EF54C7 /* TrainingStarten.swift */; };
 		7A746BC329E3F2EB00EF54C7 /* VordefinierteUebungenVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BC229E3F2EB00EF54C7 /* VordefinierteUebungenVM.swift */; };
 		7A746BC629E416B400EF54C7 /* TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A746BC529E416B400EF54C7 /* TrainingView.swift */; };
+		7A7879442A2C937F00342545 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 7A7879432A2C937F00342545 /* Introspect */; };
 		7AA72ADA2A1FEC9F00319BC8 /* WelcomeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA72AD92A1FEC9F00319BC8 /* WelcomeVideo.swift */; };
 		7AAF36782A24A1570085E85E /* Beatz_Video-Fertig.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7AAF36772A24A13C0085E85E /* Beatz_Video-Fertig.mp4 */; };
 		7AB3AFEE2A14C85500E5EBA8 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 7AB3AFED2A14C85500E5EBA8 /* SwiftUICharts */; };
@@ -124,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AB3AFEE2A14C85500E5EBA8 /* SwiftUICharts in Frameworks */,
+				7A7879442A2C937F00342545 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +354,7 @@
 			name = Beatz_Fitness_App;
 			packageProductDependencies = (
 				7AB3AFED2A14C85500E5EBA8 /* SwiftUICharts */,
+				7A7879432A2C937F00342545 /* Introspect */,
 			);
 			productName = VideoCoreData;
 			productReference = 7AEC638129DD81DE00C8A8F3 /* Beatz_Fitness_App.app */;
@@ -383,6 +386,7 @@
 			mainGroup = 7AEC637829DD81DE00C8A8F3;
 			packageReferences = (
 				7AB3AFEC2A14C85500E5EBA8 /* XCRemoteSwiftPackageReference "ChartView" */,
+				7A7879422A2C937F00342545 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = 7AEC638229DD81DE00C8A8F3 /* Products */;
 			projectDirPath = "";
@@ -672,6 +676,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7A7879422A2C937F00342545 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.1;
+			};
+		};
 		7AB3AFEC2A14C85500E5EBA8 /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView.git";
@@ -683,6 +695,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7A7879432A2C937F00342545 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A7879422A2C937F00342545 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
 		7AB3AFED2A14C85500E5EBA8 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7AB3AFEC2A14C85500E5EBA8 /* XCRemoteSwiftPackageReference "ChartView" */;

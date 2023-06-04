@@ -14,7 +14,7 @@ struct EditUebungView: View {
     var uebung: Uebung
     @State private var notizenUebung = ""
     @State private var saetze: Int64
-    
+    @FocusState private var isInputActive: Bool
     init(uebung: Uebung) {
         self.uebung = uebung
         self._saetze = State(initialValue: uebung.saetze)
@@ -32,6 +32,16 @@ struct EditUebungView: View {
                         try? moc.save()
                     }
                 ))
+                .focused($isInputActive)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("Fertig") {
+                            isInputActive = false
+                            try? moc.save()
+                        }
+                    }
+                }
                 .onChange(of: uebung.name) { _ in
                     try? moc.save()
                 }
@@ -46,11 +56,11 @@ struct EditUebungView: View {
                             try? moc.save()
                         }
                     ))
+                    .focused($isInputActive)
                     .onChange(of: uebung.notizen) { _ in
                         try? moc.save()
                     }
                 }
-                
                 Section {
                     HStack {
                         Text("Sätze:")

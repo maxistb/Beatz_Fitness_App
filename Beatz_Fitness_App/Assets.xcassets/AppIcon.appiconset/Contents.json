@@ -67,6 +67,7 @@
       "size" : "64x64"
     },
     {
+      "filename" : "Beatz_Logo.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
@@ -91,7 +92,7 @@
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "BeatzLogoResized.png",
+      "filename" : "1024x1024-removebg.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"

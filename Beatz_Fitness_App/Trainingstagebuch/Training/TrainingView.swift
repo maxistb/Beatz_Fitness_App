@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import Introspect
 
 struct TrainingView: View {
 	@StateObject var viewModel: TrainingViewModel
 	@State private var showingAlert = false
 	@Environment(\.presentationMode) var presentationMode
+	@State private var isEditing = false
+	@FocusState var isInputActive: Bool
 	
 	var body: some View {
 		VStack {
@@ -29,6 +32,15 @@ struct TrainingView: View {
 												viewModel.gewichte[uebungIndex][saetzeIndex] = newValue
 											}
 										))
+										.introspectTextField { (textField) in
+											let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: textField.frame.size.width, height: 44))
+											let flexButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+											let doneButton = UIBarButtonItem(title: "Fertig", style: .done, target: self, action: #selector(textField.doneButtonTapped(button:)))
+											doneButton.tintColor = UIColor.init(Color(red: 0/255, green: 166/255, blue: 205/255))
+											toolBar.items = [flexButton, doneButton]
+											toolBar.setItems([flexButton, doneButton], animated: true)
+											textField.inputAccessoryView = toolBar
+										}
 										.onAppear {
 											if uebungIndex < previousWeights.count && saetzeIndex < previousWeights[uebungIndex].count {
 												let previousWeight = previousWeights[uebungIndex][saetzeIndex]
@@ -44,6 +56,15 @@ struct TrainingView: View {
 												viewModel.gewichte[uebungIndex][saetzeIndex] = newValue
 											}
 										))
+										.introspectTextField { (textField) in
+											let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: textField.frame.size.width, height: 44))
+											let flexButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+											let doneButton = UIBarButtonItem(title: "Fertig", style: .done, target: self, action: #selector(textField.doneButtonTapped(button:)))
+											doneButton.tintColor = UIColor.init(Color(red: 0/255, green: 166/255, blue: 205/255))
+											toolBar.items = [flexButton, doneButton]
+											toolBar.setItems([flexButton, doneButton], animated: true)
+											textField.inputAccessoryView = toolBar
+										}
 										.onAppear {
 											if uebungIndex < previousWeights.count && saetzeIndex < previousWeights[uebungIndex].count {
 												let previousWeight = previousWeights[uebungIndex][saetzeIndex]
@@ -58,6 +79,15 @@ struct TrainingView: View {
 											viewModel.gewichte[uebungIndex][saetzeIndex] = newValue
 										}
 									))
+									.introspectTextField { (textField) in
+										let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: textField.frame.size.width, height: 44))
+										let flexButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+										let doneButton = UIBarButtonItem(title: "Fertig", style: .done, target: self, action: #selector(textField.doneButtonTapped(button:)))
+										doneButton.tintColor = UIColor.init(Color(red: 0/255, green: 166/255, blue: 205/255))
+										toolBar.items = [flexButton, doneButton]
+										toolBar.setItems([flexButton, doneButton], animated: true)
+										textField.inputAccessoryView = toolBar
+									}
 									.onAppear {
 										if uebungIndex < previousWeights.count && saetzeIndex < previousWeights[uebungIndex].count {
 											let previousWeight = previousWeights[uebungIndex][saetzeIndex]
@@ -66,6 +96,15 @@ struct TrainingView: View {
 									}
 								}
 								viewModel.wiederholungenTextField(value: $viewModel.wiederholungen[uebungIndex][saetzeIndex])
+									.introspectTextField { (textField) in
+										let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: textField.frame.size.width, height: 44))
+										let flexButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+										let doneButton = UIBarButtonItem(title: "Fertig", style: .done, target: self, action: #selector(textField.doneButtonTapped(button:)))
+										doneButton.tintColor = UIColor.init(Color(red: 0/255, green: 166/255, blue: 205/255))
+										toolBar.items = [flexButton, doneButton]
+										toolBar.setItems([flexButton, doneButton], animated: true)
+										textField.inputAccessoryView = toolBar
+									}
 								
 								if viewModel.isAufwärmsatz[uebungIndex][saetzeIndex] {
 									Menu("\(Image(systemName: "ellipsis"))") {
@@ -80,8 +119,7 @@ struct TrainingView: View {
 										}
 									}
 									.foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
-								}
-								else if viewModel.isDropsatz[uebungIndex][saetzeIndex] {
+								} else if viewModel.isDropsatz[uebungIndex][saetzeIndex] {
 									Menu("\(Image(systemName: "ellipsis"))") {
 										Button("Satz") {
 											viewModel.isDropsatz[uebungIndex][saetzeIndex] = false
@@ -94,9 +132,7 @@ struct TrainingView: View {
 										}
 									}
 									.foregroundColor(Color(red: 0/255, green: 166/255, blue: 205/255))
-								}
-								
-								else {
+								} else {
 									Menu("\(Image(systemName: "ellipsis"))") {
 										Button("Aufwärmsatz") {
 											viewModel.isDropsatz[uebungIndex][saetzeIndex] = false
@@ -147,8 +183,16 @@ struct TrainingView: View {
 				}
 				
 				Section(header: Text("Notizen")) {
-					TextEditor(text: $viewModel.notizenTraining)
-						.frame(height: 150)
+					TextField("", text: $viewModel.notizenTraining, axis: .vertical)
+						.focused($isInputActive)
+						.toolbar {
+							ToolbarItemGroup(placement: .keyboard) {
+								Spacer()
+								Button("Fertig") {
+									isInputActive = false
+								}
+							}
+						}
 				}
 				
 				Section {
@@ -158,10 +202,6 @@ struct TrainingView: View {
 				.listStyle(InsetGroupedListStyle())
 				
 			}
-			//				.onTapGesture {
-			//					UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-			//				}
-			
 			.navigationBarTitle(viewModel.selectedSplit.name ?? "")
 			.alert(isPresented: $showingAlert) {
 				Alert(
@@ -178,3 +218,4 @@ struct TrainingView: View {
 		}
 	}
 }
+

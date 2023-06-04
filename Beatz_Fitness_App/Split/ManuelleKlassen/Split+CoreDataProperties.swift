@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension Split {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Split> {
