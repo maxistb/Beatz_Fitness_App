@@ -9,22 +9,23 @@ import SwiftUI
 import AVKit
 
 struct VideoErklärungView: View {
-//    @Environment(\.presentationMode) var presentationMode
-    
+    @Environment(\.presentationMode) var presentationMode
+
     var body: some View {
             VideoListe()
                 .navigationTitle("🎥 Übungstutorials")
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarLeading) {
-//                    Button(action: {
-//                        presentationMode.wrappedValue.dismiss()
-//                    }) {
-//                        HStack {
-//                            Text("⚙ Allgemeines")
-//                        }
-//                    }
-//                }
-//        }
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading: backButton)
+    }
+    var backButton: some View {
+        Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+                Image(systemName: "chevron.left")
+                Text("ℹ️ Allgemeines")
+            }
+        }
     }
 }
 

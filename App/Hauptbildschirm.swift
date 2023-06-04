@@ -34,7 +34,7 @@ struct Hauptbildschirm: View {
             Allgemeines()
                 .tabItem {
                     Image(systemName: "info.bubble")
-                    Text("Allgemein")
+                    Text("Allgemeines")
                 }
         }
         .navigationBarBackButtonHidden(true)

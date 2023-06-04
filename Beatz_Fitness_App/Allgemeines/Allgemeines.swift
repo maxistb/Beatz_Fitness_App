@@ -99,7 +99,8 @@ struct Allgemeines: View {
                     Text("Maximillian Stabe")
                 }
             }
-            .navigationBarTitle("Allgemein")
+            .navigationBarTitle("ℹ️ Allgemeines")
+            .navigationBarTitle("Zurück")
         }
         .accentColor(Color(red: 0/255, green: 166/255, blue: 205/255))
     }

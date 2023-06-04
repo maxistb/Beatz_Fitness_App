@@ -36,6 +36,18 @@ struct TrainerListeView: View {
                 }
             }
             .navigationTitle("💪🏼 Unsere Trainer")
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: backButton)
+        }
+    }
+    var backButton: some View {
+        Button(action: {
+            presentationMode.wrappedValue.dismiss()
+        }) {
+            HStack {
+                Image(systemName: "chevron.left")
+                Text("ℹ️ Allgemeines")
+            }
         }
     }
 }
