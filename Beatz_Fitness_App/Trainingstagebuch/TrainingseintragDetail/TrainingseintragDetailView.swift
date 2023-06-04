@@ -12,6 +12,7 @@ struct TrainingseintragDetailView: View {
     var trainingseintrag: Trainingseintrag
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
+    @FocusState var isInputActive: Bool
     @FetchRequest(entity: Trainingseintrag.entity(),
                   sortDescriptors: [NSSortDescriptor(keyPath: \Trainingseintrag.datum, ascending: true)])
     var trainingseinträge: FetchedResults<Trainingseintrag>
@@ -118,7 +119,25 @@ struct TrainingseintragDetailView: View {
                 }
             }
             Section(header: Text("Notizen")) {
-                Text(trainingseintrag.notizen)
+                TextField("", text: Binding(
+                    get: {
+                        trainingseintrag.notizen ?? ""
+                    },
+                    set: { newValue in
+                        trainingseintrag.notizen = newValue
+                        try? moc.save()
+                    }
+                ), axis: .vertical)
+                .focused($isInputActive)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        Spacer()
+                        Button("Fertig") {
+                            isInputActive = false
+                            try? moc.save()
+                        }
+                    }
+                }
             }
         }
         .navigationTitle(trainingseintrag.split.name ?? "")
