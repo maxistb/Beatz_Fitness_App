@@ -19,8 +19,8 @@ extension TrainingseintragDetailView {
                 wiederholungenArray.append(Int(ausgefuehrterSatz.wiederholungen))
             }
         }
-        print(gewichteArray)
-        print(wiederholungenArray)
+//        print(gewichteArray)
+//        print(wiederholungenArray)
         return (gewichteArray, wiederholungenArray)
    
     }
@@ -40,7 +40,7 @@ extension TrainingseintragDetailView {
             if ausgefuehrterSatz.satzIndex > satzIndex {
                 ausgefuehrterSatz.satzIndex -= 1
             }
-            print(satzIndex)
+//            print(satzIndex)
         }
         
         try? moc.save()
@@ -54,7 +54,7 @@ extension TrainingseintragDetailView {
         
         for (index, satz) in newSätze.enumerated() {
             satz.satzIndex = Int64(index)
-            print("\(satz.satzIndex)")
+//            print("\(satz.satzIndex)")
         }
         
         try? moc.save()

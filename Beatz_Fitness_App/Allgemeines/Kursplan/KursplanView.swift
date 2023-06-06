@@ -80,7 +80,7 @@ struct Kursplan: View {
         }) {
             HStack {
                 Image(systemName: "chevron.left")
-                Text("⚙️ Allgemeines")
+                Text("ℹ️ Allgemeines")
             }
         }
     }

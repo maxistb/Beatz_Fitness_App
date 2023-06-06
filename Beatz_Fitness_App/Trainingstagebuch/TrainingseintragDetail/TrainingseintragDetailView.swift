@@ -29,9 +29,13 @@ struct TrainingseintragDetailView: View {
        }
     
     var body: some View {
-        List {
-            ForEach(Array(ausgefuehrteSätzeNachUebung.keys.sorted()), id: \.self) { uebungname in
-                Section(header: Text(uebungname)) {
+            List {
+                ForEach(Array(ausgefuehrteSätzeNachUebung.keys.sorted(by: { (uebungname1, uebungname2) -> Bool in
+                    let satzIndex1 = ausgefuehrteSätzeNachUebung[uebungname1]?.first?.satzIndex ?? 0
+                    let satzIndex2 = ausgefuehrteSätzeNachUebung[uebungname2]?.first?.satzIndex ?? 0
+                    return satzIndex1 < satzIndex2
+                })), id: \.self) { uebungname in
+                    Section(header: Text(uebungname)) {
                     ForEach(ausgefuehrteSätzeNachUebung[uebungname]!, id: \.self) { ausgefuehrterSatz in
                         HStack {
                             if let ausgefuehrterSatz = ausgefuehrteSätzeNachUebung[uebungname]?.first(where: { $0.id == ausgefuehrterSatz.id }) {
@@ -72,7 +76,7 @@ struct TrainingseintragDetailView: View {
                                             doneButton.tintColor = UIColor.init(Color(red: 0/255, green: 166/255, blue: 205/255))
                                             toolBar.items = [flexButton, doneButton]
                                             toolBar.setItems([flexButton, doneButton], animated: true)
-                                            print(ausgefuehrteSätzeNachUebung.keys.sorted())
+//                                            print(ausgefuehrteSätzeNachUebung.keys.sorted())
                                             textField.inputAccessoryView = toolBar
                                         }
 
@@ -109,7 +113,7 @@ struct TrainingseintragDetailView: View {
                             neuerSatz.id = UUID()
                             neuerSatz.satzIndex = getNextSatzIndex()
 
-                            print("\(neuerSatz.uebungname): \(neuerSatz.satzIndex)")
+//                            print("\(neuerSatz.uebungname): \(neuerSatz.satzIndex)")
                             trainingseintrag.addToAusgefuehrteUebungen(neuerSatz)
                             try? moc.save()
                         }
