@@ -19,8 +19,8 @@ extension TrainingseintragDetailView {
                 wiederholungenArray.append(Int(ausgefuehrterSatz.wiederholungen))
             }
         }
-//        print(gewichteArray)
-//        print(wiederholungenArray)
+        print(gewichteArray)
+        print(wiederholungenArray)
         return (gewichteArray, wiederholungenArray)
    
     }
@@ -52,7 +52,6 @@ extension TrainingseintragDetailView {
         var newSätze = Array(sortedSätze)
         newSätze.move(fromOffsets: source, toOffset: destination)
         
-        // Aktualisiere die "satzIndex" für die verschobenen Sätze
         for (index, satz) in newSätze.enumerated() {
             satz.satzIndex = Int64(index)
             print("\(satz.satzIndex)")

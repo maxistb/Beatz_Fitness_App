@@ -14,7 +14,7 @@ struct TrainingseintragDetailView: View {
     @Environment(\.presentationMode) var presentationMode
     @FocusState var isInputActive: Bool
     @FetchRequest(entity: Trainingseintrag.entity(),
-                  sortDescriptors: [NSSortDescriptor(keyPath: \Trainingseintrag.datum, ascending: true)])
+                  sortDescriptors: [NSSortDescriptor(keyPath: \Trainingseintrag.order, ascending: true)])
     var trainingseinträge: FetchedResults<Trainingseintrag>
     var ausgefuehrteSätzeNachUebung: [String: [AusgefuehrterSatz]] {
         Dictionary(grouping: trainingseintrag.ausgefuehrteSätzeArray.sorted(by: { $0.satzIndex < $1.satzIndex })) { $0.uebungname ?? "Fehler" }
@@ -72,6 +72,7 @@ struct TrainingseintragDetailView: View {
                                             doneButton.tintColor = UIColor.init(Color(red: 0/255, green: 166/255, blue: 205/255))
                                             toolBar.items = [flexButton, doneButton]
                                             toolBar.setItems([flexButton, doneButton], animated: true)
+                                            print(ausgefuehrteSätzeNachUebung.keys.sorted())
                                             textField.inputAccessoryView = toolBar
                                         }
 

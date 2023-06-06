@@ -83,7 +83,7 @@ class TrainingViewModel: ObservableObject {
     
     func wiederholungenTextField(value: Binding<String>) -> some View {
         TextField("Wdh.", text: value)
-            .keyboardType(.decimalPad)
+            .keyboardType(.numberPad)
             .overlay(
                 Text("Wdh."),
                 alignment: .trailing
@@ -122,6 +122,7 @@ class TrainingViewModel: ObservableObject {
         trainingseintrag.id = UUID()
         trainingseintrag.split = selectedSplit
         trainingseintrag.notizen = notizenTraining
+        trainingseintrag.name = trainingseintrag.split.name ?? ""
         
         var currentIndex = 0
 

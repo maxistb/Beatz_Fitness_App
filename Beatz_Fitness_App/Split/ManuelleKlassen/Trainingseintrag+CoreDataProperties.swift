@@ -20,7 +20,9 @@ extension Trainingseintrag {
     @NSManaged public var gewicht: Double
     @NSManaged public var id: UUID?
     @NSManaged public var wiederholungen: Int64
+    @NSManaged public var order: Int64
     @NSManaged public var notizen: String
+    @NSManaged public var name: String
     @NSManaged public var satzReihenfolge: Int64
     @NSManaged public var ausgefuehrteUebungen: NSSet?
     @NSManaged public var split: Split

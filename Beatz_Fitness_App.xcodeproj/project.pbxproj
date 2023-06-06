@@ -148,7 +148,6 @@
 				7AC541F02A11483800F3DE8B /* Split */,
 				7AC541EF2A11482F00F3DE8B /* Uebung */,
 				7AC541F12A11495C00F3DE8B /* VordefinierteUebungen */,
-				7AEC639529DD824B00C8A8F3 /* DataController.swift */,
 			);
 			path = Split;
 			sourceTree = "<group>";
@@ -160,6 +159,7 @@
 				7A746BA829E09CEA00EF54C7 /* Startbildschirm.swift */,
 				7AEE657A29E05B330064ED8A /* Hauptbildschirm.swift */,
 				7A0C1EA22A1A681C000B350E /* PersistenceController.swift */,
+				7AEC639529DD824B00C8A8F3 /* DataController.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
