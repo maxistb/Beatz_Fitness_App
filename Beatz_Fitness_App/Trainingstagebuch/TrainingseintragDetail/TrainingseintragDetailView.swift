@@ -76,7 +76,9 @@ struct TrainingseintragDetailView: View {
                                             doneButton.tintColor = UIColor.init(Color(red: 0/255, green: 166/255, blue: 205/255))
                                             toolBar.items = [flexButton, doneButton]
                                             toolBar.setItems([flexButton, doneButton], animated: true)
-//                                            print(ausgefuehrteSätzeNachUebung.keys.sorted())
+                                            saveGewichte(trainingseintrag: trainingseintrag)
+                                            print(saveGewichte(trainingseintrag: trainingseintrag))
+//                                            print(ausgefuehrteSätzeNachUebung)
                                             textField.inputAccessoryView = toolBar
                                         }
 
@@ -126,7 +128,7 @@ struct TrainingseintragDetailView: View {
             Section(header: Text("Notizen")) {
                 TextField("", text: Binding(
                     get: {
-                        trainingseintrag.notizen ?? ""
+                        trainingseintrag.notizen 
                     },
                     set: { newValue in
                         trainingseintrag.notizen = newValue

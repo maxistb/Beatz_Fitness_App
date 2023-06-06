@@ -14,6 +14,7 @@ struct TrainingView: View {
 	@Environment(\.presentationMode) var presentationMode
 	@State private var isEditing = false
 	@FocusState var isInputActive: Bool
+		
 	
 	var body: some View {
 		VStack {

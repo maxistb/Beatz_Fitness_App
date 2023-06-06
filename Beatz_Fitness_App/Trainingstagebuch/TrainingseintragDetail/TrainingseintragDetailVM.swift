@@ -25,6 +25,29 @@ extension TrainingseintragDetailView {
    
     }
     
+    func saveGewichte(trainingseintrag: Trainingseintrag) -> [String: [[Double]]] {
+        var gewichteDict: [String: [[Double]]] = [:]
+
+        for (uebungname, ausgefuehrteSaetze) in ausgefuehrteSätzeNachUebung {
+            var gewichteArray: [[Double]] = []
+
+            for satz in ausgefuehrteSaetze {
+                let gewicht = satz.gewicht
+                let satzIndex = satz.satzIndex
+
+                if gewichteArray.count <= satzIndex {
+                    gewichteArray.append([gewicht])
+                } else {
+                    gewichteArray[Int(satzIndex)].append(gewicht)
+                }
+            }
+
+            gewichteDict[uebungname] = gewichteArray
+        }
+
+        return gewichteDict
+    }
+    
     func getNextSatzIndex() -> Int64 {
         let currentIndex = ausgefuehrteSätzeNachUebung.flatMap { $0.value }.map { $0.satzIndex }.max() ?? -1
         return max(currentIndex + 1, 0)
