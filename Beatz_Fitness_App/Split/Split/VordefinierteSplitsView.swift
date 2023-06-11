@@ -45,8 +45,12 @@ struct VordefinierteSplitView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
+                    let newOrder = (try? moc.fetch(Split.fetchRequest()).count) ?? 0
                     let neuerSplit = Split(context: moc)
                     neuerSplit.name = split.name
+                    neuerSplit.order = Int64(newOrder)
+                    print("Order Split: \(newOrder)")
+
                     
                     for uebung in split.uebungen {
                         let neueUebung = Uebung(context: moc)
@@ -56,7 +60,7 @@ struct VordefinierteSplitView: View {
                         neueUebung.notizen = ""
                         let newOrder = (neuerSplit.uebung?.count ?? 0)
                         neueUebung.order = Int64(newOrder)
-                        print("Order Übung: \(newOrder)")
+//                        print("Order Übung: \(newOrder)")
 
                         neuerSplit.addToUebung(neueUebung)
                     }
