@@ -13,7 +13,7 @@ class PersistenceController {
     let container: NSPersistentContainer
 
     private init() {
-        container = NSPersistentContainer(name: "YourDataModel") // Stellen Sie sicher, den Namen Ihres Data Models einzugeben
+        container = NSPersistentContainer(name: "YourDataModel")
         container.loadPersistentStores { description, error in
             if let error = error {
                 fatalError("Fehler beim Laden des Core Data-Stacks: \(error.localizedDescription)")

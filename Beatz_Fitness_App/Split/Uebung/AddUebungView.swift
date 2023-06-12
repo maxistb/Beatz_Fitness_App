@@ -47,22 +47,7 @@ struct AddUebungView: View {
                     HStack(alignment: .center) {
                         Spacer()
                         Button("Speichern") {
-                            let neueUebung = Uebung(context: moc)
-                            neueUebung.id = UUID()
-                            neueUebung.name = name
-                            neueUebung.saetze = Int64(saetze)
-                            neueUebung.notizen = notizenUebung
-                            
-                            let newOrder = (split.uebung?.count ?? 0)
-                            neueUebung.order = Int64(newOrder)
-                            print("\(neueUebung.name ?? ""): \(neueUebung.order)")
-                            
-                            split.addToUebung(neueUebung)
-                            
-                            try? moc.save()
-                            name = ""
-                            saetze = 1
-                            presentationMode.wrappedValue.dismiss()
+                            addUebung()
                         }
                         .font(.headline)
                         .foregroundColor(.white)
@@ -78,6 +63,25 @@ struct AddUebungView: View {
             }
         }
         .navigationBarTitle("Übung hinzufügen")
+    }
+    
+    private func addUebung() {
+        let neueUebung = Uebung(context: moc)
+        neueUebung.id = UUID()
+        neueUebung.name = name
+        neueUebung.saetze = Int64(saetze)
+        neueUebung.notizen = notizenUebung
+        
+        let newOrder = (split.uebung?.count ?? 0)
+        neueUebung.order = Int64(newOrder)
+        print("\(neueUebung.name ?? ""): \(neueUebung.order)")
+        
+        split.addToUebung(neueUebung)
+        
+        try? moc.save()
+        name = ""
+        saetze = 1
+        presentationMode.wrappedValue.dismiss()
     }
 }
 

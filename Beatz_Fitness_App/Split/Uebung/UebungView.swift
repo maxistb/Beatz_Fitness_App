@@ -19,7 +19,6 @@ struct UebungView: View {
     ) var uebungen: FetchedResults<Uebung>
     @State public var uebungenArray: [Uebung] = []
     var split: Split
-    @State private var name = ""
     @State private var showAddUebungView = false
     @State private var showUebungListBeatz = false
     @State private var settingsDetent = PresentationDetent.medium

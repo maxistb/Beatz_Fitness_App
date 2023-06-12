@@ -27,11 +27,4 @@ struct Startbildschirm: View {
             }
         }
     }
-    
-    
-    struct Startbildschirm_Previews: PreviewProvider {
-        static var previews: some View {
-            Startbildschirm()
-        }
-    }
 }

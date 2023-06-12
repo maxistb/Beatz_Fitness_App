@@ -11,7 +11,7 @@ struct VordefinierteSplitView: View {
     let split: VordefinierteSplits
     @Environment(\.managedObjectContext) var moc
     @Environment(\.presentationMode) var presentationMode
-
+    
     var body: some View {
         VStack {
             List(split.uebungen) { uebung in
@@ -45,41 +45,20 @@ struct VordefinierteSplitView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button(action: {
-                    let newOrder = (try? moc.fetch(Split.fetchRequest()).count) ?? 0
-                    let neuerSplit = Split(context: moc)
-                    neuerSplit.name = split.name
-                    neuerSplit.order = Int64(newOrder)
-                    print("Order Split: \(newOrder)")
-
-                    
-                    for uebung in split.uebungen {
-                        let neueUebung = Uebung(context: moc)
-                        neueUebung.id = UUID()
-                        neueUebung.name = uebung.uebungName
-                        neueUebung.saetze = Int64(uebung.anzahlSaetze)
-                        neueUebung.notizen = ""
-                        let newOrder = (neuerSplit.uebung?.count ?? 0)
-                        neueUebung.order = Int64(newOrder)
-//                        print("Order Übung: \(newOrder)")
-
-                        neuerSplit.addToUebung(neueUebung)
-                    }
-                    
-                    try? moc.save()
-                    presentationMode.wrappedValue.dismiss()
+                    createNewSplit()
                 }) {
                     Text("Split Hinzufügen")
                 }
             }
-//            ToolbarItem(placement: .navigationBarLeading) {
-//                Button(action: {
-//                    presentationMode.wrappedValue.dismiss()
-//                }) {
-//                    HStack {
-//                        Text("🏋🏻 Trainingspläne")
-//                    }
-//                }
-//            }
+            //            ToolbarItem(placement: .navigationBarLeading) {
+            //                Button(action: {
+            //                    presentationMode.wrappedValue.dismiss()
+            //                }) {
+            //                    HStack {
+            //                        Text("🏋🏻 Trainingspläne")
+            //                    }
+            //                }
+            //            }
         }
     }
 }

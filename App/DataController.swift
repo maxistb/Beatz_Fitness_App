@@ -8,8 +8,8 @@
 import Foundation
 import CoreData
 
+// DataController für Main Methode
 class DataController: ObservableObject {
-    
     var container: NSPersistentContainer
     
     init(name: String) {

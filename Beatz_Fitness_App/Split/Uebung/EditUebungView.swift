@@ -15,6 +15,7 @@ struct EditUebungView: View {
     @State private var notizenUebung = ""
     @State private var saetze: Int64
     @FocusState private var isInputActive: Bool
+    
     init(uebung: Uebung) {
         self.uebung = uebung
         self._saetze = State(initialValue: uebung.saetze)

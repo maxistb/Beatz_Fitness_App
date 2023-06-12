@@ -218,8 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				7AEC63B129E014BE00C8A8F3 /* UebungView.swift */,
-				7A0C1E702A17D476000B350E /* EditUebungView.swift */,
 				7AC541ED2A1147FE00F3DE8B /* UebungVM.swift */,
+				7A0C1E702A17D476000B350E /* EditUebungView.swift */,
 				7A746B9E29E0878400EF54C7 /* AddUebungView.swift */,
 			);
 			path = Uebung;
